@@ -66,6 +66,9 @@ namespace Generator
         [SerializeField]
         private Scrollbar _scrollBarMapSize = null;
 
+        [SerializeField]
+        private Button _buttonChangeMapSize = null;
+
         [Space(10)]
 
         [SerializeField]
@@ -92,6 +95,8 @@ namespace Generator
 
         private Coroutine _coGrid = null;
 
+        private float _beforeValue = 0f;
+
         [Space(10)]
 
         public readonly string _resources = "Resources";
@@ -100,14 +105,21 @@ namespace Generator
 
         private void Start()
         {
-            _scrollBarMapSize.value = _terrainFild.terrainData.size.x;
-
-            _scrollBarMapSize.onValueChanged.AddListener(ResizeingMap);
+            _beforeValue = _scrollBarMapSize.value;
+            
+            _buttonChangeMapSize.onClick.AddListener(() => { ResizeingMap(_scrollBarMapSize.value); });
             _buttonMakeing.onClick.AddListener(Generate);
         }
 
         private void ResizeingMap(float value)
         {
+            if(_beforeValue == value)
+            {
+                return;
+            }
+
+            _beforeValue = value;
+
             DestryObjs(_trHillParant);
             DestryObjs(_trMinaralParant);
             DestryObjs(_trGanParant);
@@ -126,15 +138,17 @@ namespace Generator
 
             _objects.transform.localScale = new Vector3(convert / 256f, 1, convert / 256f);
 
-            if(_coGrid != null)
+            if(_mapData == null)
+            {
+                _mapData = new MapData();
+            }
+
+            if (_coGrid != null)
             {
                 StopCoroutine(_coGrid);
             }
 
-            _coGrid = StartCoroutine(Co_Grid((int)convert, () => 
-            { 
-            
-            }));
+            _coGrid = StartCoroutine(Co_Grid((int)convert, false));
         }
 
         private void DestryObjs(Transform parant)
@@ -151,20 +165,33 @@ namespace Generator
             parant.transform.DetachChildren();
         }
 
-        IEnumerator Co_Grid(int lenght, System.Action onResult)
+        IEnumerator Co_Grid(int lenght, bool isGenerate)
         {
             _mapData.nodes = new Node[lenght, lenght];
+            Debug.Log("lenght       " + lenght + "         isGenerate      " + isGenerate);
+
 
             for (int y = 0; y < lenght; y++)
             {
                 for (int x = 0; x < lenght; x++)
                 {
+                    _mapData.nodes[x, y] = new Node();
+
                     _mapData.nodes[x, y].x = x;
                     _mapData.nodes[x, y].x = y;
-                    CheckNode(ref _mapData.nodes[x, y]);
+
+                    CheckNode(ref _mapData.nodes[x, y], isGenerate);
 
                     yield return null;
                 }
+            }
+
+            if(isGenerate == false)
+            {
+                Debug.Log("Grid Count " + _mapData.nodes.Length);
+
+                _coGrid = null;
+                yield break;
             }
 
             yield return null;
@@ -194,10 +221,9 @@ namespace Generator
             yield return null;
 
             _coGrid = null;
-            onResult?.Invoke();
         }
 
-        private void CheckNode(ref Node node)
+        private void CheckNode(ref Node node, bool isGenerate)
         {
             bool detected = false;
 
@@ -209,21 +235,24 @@ namespace Generator
 
             if (Physics.Raycast(pos, Vector3.down, out RaycastHit hit, Mathf.Infinity))
             {
-                if (hit.collider.gameObject.tag.Equals(_resources))
+                if(isGenerate == true)
                 {
-                    detected = true;
-                }
+                    if (hit.collider.gameObject.tag.Equals(_resources))
+                    {
+                        detected = true;
+                    }
 
-                if (hit.collider.gameObject.tag.Equals(_startPoint))
-                {
-                    detected = true;
-                }
+                    if (hit.collider.gameObject.tag.Equals(_startPoint))
+                    {
+                        detected = true;
+                    }
 
-                if(detected == true)
-                {
-                    node.topographic.isWalkable = false;
-                    node.topographic.height = hit.point.y;
-                    return;
+                    if (detected == true)
+                    {
+                        node.topographic.isWalkable = false;
+                        node.topographic.height = hit.point.y;
+                        return;
+                    }
                 }
 
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 0.5f, NavMesh.AllAreas))
@@ -237,6 +266,20 @@ namespace Generator
         private void Generate()
         {
             _mapData = new MapData();
+
+            NavMeshSurface surface = _terrainFild.gameObject.GetComponentInChildren<NavMeshSurface>();
+            if (surface.navMeshData == null)
+            {
+                surface.RemoveData();
+                surface.BuildNavMesh();
+            }
+
+            if (_coGrid != null)
+            {
+                StopCoroutine(_coGrid);
+            }
+
+            _coGrid = StartCoroutine(Co_Grid((int)_terrainFild.terrainData.size.x, true));
         }
     }
 }
