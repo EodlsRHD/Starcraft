@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using TMPro;
 
 namespace Generator
 {
@@ -69,6 +70,15 @@ namespace Generator
         [SerializeField]
         private Button _buttonChangeMapSize = null;
 
+        [SerializeField]
+        private Button _buttonMineral = null;
+
+        [SerializeField]
+        private Button _buttonGas = null;
+
+        [SerializeField]
+        private TMP_InputField _inputQuantity = null;
+
         [Space(10)]
 
         [SerializeField]
@@ -91,6 +101,14 @@ namespace Generator
         [SerializeField]
         private Transform _trGanParant = null;
 
+        [Header("Prefab")]
+
+        [SerializeField]
+        private GameObject _objMineralPrefab = null;
+
+        [SerializeField]
+        private GameObject _objGasPrefab = null;
+
         private MapData _mapData = null;
 
         private Coroutine _coGrid = null;
@@ -106,9 +124,29 @@ namespace Generator
         private void Start()
         {
             _beforeValue = _scrollBarMapSize.value;
-            
+
+            _buttonMineral.onClick.AddListener(() => { InstantiateResources(eResourceType.Mineral); });
+            _buttonGas.onClick.AddListener(() => { InstantiateResources(eResourceType.Gas); });
+            _inputQuantity.text = "0";
+
             _buttonChangeMapSize.onClick.AddListener(() => { ResizeingMap(_scrollBarMapSize.value); });
             _buttonMakeing.onClick.AddListener(Generate);
+        }
+
+        private void InstantiateResources(eResourceType type)
+        {
+            switch(type)
+            {
+                case eResourceType.Mineral:
+                    GameObject mineral = Instantiate(_objMineralPrefab, _trMinaralParant);
+                    mineral.name = _resources + "Mineral" + "_" + _inputQuantity.text;
+                    break;
+
+                case eResourceType.Gas:
+                    GameObject gas = Instantiate(_objGasPrefab, _trGanParant);
+                    gas.name = _resources + "_" + "Gas" + "_" + _inputQuantity.text;
+                    break;
+            }
         }
 
         private void ResizeingMap(float value)
@@ -162,13 +200,13 @@ namespace Generator
                     Destroy(iter.gameObject);
                 }
             }
+
             parant.transform.DetachChildren();
         }
 
         IEnumerator Co_Grid(int lenght, bool isGenerate)
         {
             _mapData.nodes = new Node[lenght, lenght];
-            Debug.Log("lenght       " + lenght + "         isGenerate      " + isGenerate);
 
 
             for (int y = 0; y < lenght; y++)
@@ -181,15 +219,13 @@ namespace Generator
                     _mapData.nodes[x, y].x = y;
 
                     CheckNode(ref _mapData.nodes[x, y], isGenerate);
-
-                    yield return null;
                 }
+
+                yield return null;
             }
 
             if(isGenerate == false)
             {
-                Debug.Log("Grid Count " + _mapData.nodes.Length);
-
                 _coGrid = null;
                 yield break;
             }
@@ -205,7 +241,7 @@ namespace Generator
                 int y = Mathf.FloorToInt(objResources[i].transform.position.y);
 
                 _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[0]);
-                _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[1]);
+                _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[2]);
 
             }
 
