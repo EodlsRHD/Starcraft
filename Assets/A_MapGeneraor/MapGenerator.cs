@@ -167,6 +167,8 @@ namespace Generator
                 _mapSize = _scrollBarMapSize.value * 256;
             }
 
+            _mapSizeHalf = _mapSize * 0.5f;
+
             _layMask_ground = LayerMask.GetMask(_ground);
 
             _buttonUnSelect.onClick.AddListener(UnSelectObject);
@@ -296,13 +298,9 @@ namespace Generator
             }
             else if(cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
             {
-                if(cameraPos.x < _mapSizeHalf)
+                if(cameraPos.x != _mapSizeHalf)
                 {
                     cameraPos.x -= Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
-                }
-                else
-                {
-                    cameraPos.x = _mapSizeHalf;
                 }
             }
 
