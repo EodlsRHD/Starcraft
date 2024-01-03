@@ -64,6 +64,17 @@ namespace Generator
     {
         [Header("UI")]
 
+        [Header("Select Object")]
+
+        [SerializeField]
+        private TMP_Text _textSelectObjInfoName = null;
+
+        [SerializeField]
+        private Button _buttonUnSelect = null;
+
+        [SerializeField]
+        private Button _buttonDestroy = null;
+
         [Header("Info")]
 
         [SerializeField]
@@ -125,6 +136,12 @@ namespace Generator
         [SerializeField]
         private GameObject _objLoading = null;
 
+        [SerializeField]
+        private RectTransform _rtrRawImage = null;
+
+        [SerializeField]
+        private GameObject _objSelectInfo = null;
+
         [Header("Parant")]
 
         [SerializeField]
@@ -137,7 +154,7 @@ namespace Generator
         private Transform _trGanParant = null;
 
         [SerializeField]
-        private Transform _trStartPosition = null;
+        private Transform _trStartPositionParant = null;
 
         [Header("Prefab")]
 
@@ -154,6 +171,8 @@ namespace Generator
 
         private Coroutine _coGrid = null;
 
+        private GameObject _selectObject = null;
+
         private float _beforeValue = 0f;
 
         private float _mapSize = 0f;
@@ -161,6 +180,10 @@ namespace Generator
         private readonly string _resources = "Resources";
 
         private readonly string _startPoint = "StartPoint";
+
+        private readonly string _ground = "Ground";
+
+        private LayerMask _layMask_ground;
 
         private bool _isRed = false;
 
@@ -176,6 +199,8 @@ namespace Generator
 
         private bool _isBlack = false;
 
+        private bool _isMakeGridDone = true;
+
         private void Start()
         {
             _beforeValue = _scrollBarMapSize.value;
@@ -189,6 +214,11 @@ namespace Generator
                 _mapSize = _scrollBarMapSize.value * 256;
             }
 
+            _layMask_ground = LayerMask.GetMask(_ground);
+
+            _buttonUnSelect.onClick.AddListener(UnSelectObject);
+            _buttonDestroy.onClick.AddListener(DestroyObject);
+
             _buttonMineral.onClick.AddListener(() => { InstantiateResources(eResourceType.Mineral); });
             _buttonGas.onClick.AddListener(() => { InstantiateResources(eResourceType.Gas); });
             _inputQuantity.text = "0";
@@ -197,6 +227,96 @@ namespace Generator
 
             _buttonChangeMapSize.onClick.AddListener(() => { ResizeingMap(_scrollBarMapSize.value); });
             _buttonGenerate.onClick.AddListener(Generate);
+
+            _objSelectInfo.gameObject.SetActive(false);
+        }
+
+        private void OnApplicationQuit()
+        {
+            _scrollBarMapSize.value = 0f;
+            _cameraPpreview.orthographicSize = 32f;
+            _terrainFild.terrainData.size = new Vector3(64f, _terrainFild.terrainData.size.y, 64f);
+        }
+
+        private void Update()
+        {
+            if(_isMakeGridDone == false)
+            {
+                return;
+            }
+
+            Vector3 shootRayPos = Vector3.zero;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 mousePos = Input.mousePosition;
+                float x = mousePos.x - _rtrRawImage.transform.position.x;
+                float y = mousePos.y - _rtrRawImage.transform.position.y;
+
+                x /= (_rtrRawImage.rect.width * 0.5f);
+                y /= (_rtrRawImage.rect.height * 0.5f);
+
+                Vector3 cameraPos = _cameraPpreview.transform.position;
+                float halfMapSize = _mapSize * 0.5f;
+                shootRayPos = new Vector3(cameraPos.x + (halfMapSize * x), cameraPos.y, cameraPos.z + (halfMapSize * y));
+
+                if(Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, ~_layMask_ground))
+                {
+                    if(hit.collider.tag.Equals(_ground))
+                    {
+                        return;
+                    }
+
+                    _selectObject = hit.collider.gameObject;
+                    _textSelectObjInfoName.text = _selectObject.name;
+
+                    _objSelectInfo.gameObject.SetActive(true);
+                }
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                if (_selectObject == null)
+                {
+                    return;
+                }
+
+                if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
+                {
+                    Debug.LogError(hit.collider.gameObject.name);
+                    _selectObject.transform.position = hit.point;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (_selectObject == null)
+                {
+                    return;
+                }
+
+                if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
+                {
+                    Debug.LogError(hit.collider.gameObject.name);
+                    _selectObject.transform.position = hit.point;
+                }
+            }
+        }
+
+        private void UnSelectObject()
+        {
+            _objSelectInfo.gameObject.SetActive(false);
+            _textSelectObjInfoName.text = string.Empty;
+            _selectObject = null;
+        }
+
+        private void DestroyObject()
+        {
+            _objSelectInfo.gameObject.SetActive(false);
+            _textSelectObjInfoName.text = string.Empty;
+
+            Destroy(_selectObject);
+            _selectObject = null;
         }
 
         private void InstantiateResources(eResourceType type)
@@ -316,7 +436,7 @@ namespace Generator
                     break;
             }
 
-            GameObject newStartPosition = Instantiate(_objStartPositionPrefab, _trStartPosition);
+            GameObject newStartPosition = Instantiate(_objStartPositionPrefab, _trStartPositionParant);
             newStartPosition.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
 
             if (Physics.Raycast(new Vector3(_mapSize * 0.5f, 100f, _mapSize * 0.5f), Vector3.down, out RaycastHit hit, Mathf.Infinity))
@@ -342,6 +462,7 @@ namespace Generator
             }
 
             _beforeValue = value;
+            _isMakeGridDone = false;
 
             DestryObjs(_trHillParant);
             DestryObjs(_trMinaralParant);
@@ -413,7 +534,15 @@ namespace Generator
 
             if(isGenerate == false)
             {
+                InitializeGrid(lenght);
+
+                _isMakeGridDone = true;
+
                 _coGrid = null;
+
+                _buttonGenerate.gameObject.SetActive(true);
+                _objLoading.gameObject.SetActive(false);
+
                 yield break;
             }
 
@@ -444,11 +573,19 @@ namespace Generator
             yield return null;
 
             FileGenerate(_mapData);
+            InitializeGrid(lenght);
+
+            _isMakeGridDone = true;
 
             _coGrid = null;
 
             _buttonGenerate.gameObject.SetActive(true);
             _objLoading.gameObject.SetActive(false);
+        }
+
+        private void InitializeGrid(int value)
+        {
+            
         }
 
         private void  FileGenerate(MapData mapData)
