@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using TMPro;
+using System.IO;
+using System.IO.Compression;
+using UnityEditor;
 
 namespace Generator
 {
@@ -61,14 +64,35 @@ namespace Generator
     {
         [Header("UI")]
 
+        [Header("Info")]
+
         [SerializeField]
-        private Button _buttonMakeing = null;
+        private TMP_InputField _inputName = null;
+
+        [SerializeField]
+        private TMP_InputField _inputDescription = null;
+
+        [SerializeField]
+        private TMP_InputField _inputMaker = null;
+
+        [SerializeField]
+        private TMP_InputField _inputVersion = null;
+
+        [SerializeField]
+        private TMP_InputField _inputMaxPlayer = null;
+
+        [Header("Map Size")]
+
+        [SerializeField]
+        private Button _buttonGenerate = null;
 
         [SerializeField]
         private Scrollbar _scrollBarMapSize = null;
 
         [SerializeField]
         private Button _buttonChangeMapSize = null;
+
+        [Header("Resources")]
 
         [SerializeField]
         private Button _buttonMineral = null;
@@ -79,7 +103,15 @@ namespace Generator
         [SerializeField]
         private TMP_InputField _inputQuantity = null;
 
-        [Space(10)]
+        [Header("Start Point")]
+
+        [SerializeField]
+        private TMP_Dropdown _dropdownColor = null;
+
+        [SerializeField]
+        private Button _buttonMakePosition = null;
+
+        [Header("Objects")]
 
         [SerializeField]
         private Terrain _terrainFild = null;
@@ -89,6 +121,9 @@ namespace Generator
 
         [SerializeField]
         private GameObject _objects = null;
+
+        [SerializeField]
+        private GameObject _objLoading = null;
 
         [Header("Parant")]
 
@@ -101,6 +136,9 @@ namespace Generator
         [SerializeField]
         private Transform _trGanParant = null;
 
+        [SerializeField]
+        private Transform _trStartPosition = null;
+
         [Header("Prefab")]
 
         [SerializeField]
@@ -109,43 +147,190 @@ namespace Generator
         [SerializeField]
         private GameObject _objGasPrefab = null;
 
+        [SerializeField]
+        private GameObject _objStartPositionPrefab = null;
+
         private MapData _mapData = null;
 
         private Coroutine _coGrid = null;
 
         private float _beforeValue = 0f;
 
-        [Space(10)]
+        private float _mapSize = 0f;
 
-        public readonly string _resources = "Resources";
+        private readonly string _resources = "Resources";
 
-        public readonly string _startPoint = "StartPoint";
+        private readonly string _startPoint = "StartPoint";
+
+        private bool _isRed = false;
+
+        private bool _isOrange = false;
+
+        private bool _isYellow = false;
+
+        private bool _isGreen = false;
+
+        private bool _isBlue = false;
+
+        private bool _isPurple = false;
+
+        private bool _isBlack = false;
 
         private void Start()
         {
             _beforeValue = _scrollBarMapSize.value;
 
+            if(_scrollBarMapSize.value == 0)
+            {
+                _mapSize = 64;
+            }
+            else
+            {
+                _mapSize = _scrollBarMapSize.value * 256;
+            }
+
             _buttonMineral.onClick.AddListener(() => { InstantiateResources(eResourceType.Mineral); });
             _buttonGas.onClick.AddListener(() => { InstantiateResources(eResourceType.Gas); });
             _inputQuantity.text = "0";
 
+            _buttonMakePosition.onClick.AddListener(() => { InstantiateStartPosition(_dropdownColor.value); });
+
             _buttonChangeMapSize.onClick.AddListener(() => { ResizeingMap(_scrollBarMapSize.value); });
-            _buttonMakeing.onClick.AddListener(Generate);
+            _buttonGenerate.onClick.AddListener(Generate);
         }
 
         private void InstantiateResources(eResourceType type)
         {
-            switch(type)
+            GameObject newObj = new GameObject();
+            Destroy(newObj);
+
+            switch (type)
             {
                 case eResourceType.Mineral:
-                    GameObject mineral = Instantiate(_objMineralPrefab, _trMinaralParant);
-                    mineral.name = _resources + "Mineral" + "_" + _inputQuantity.text;
+                    newObj = Instantiate(_objMineralPrefab, _trMinaralParant);
+                    newObj.name = _resources + "_" + 0 + "_" + _inputQuantity.text;
                     break;
 
                 case eResourceType.Gas:
-                    GameObject gas = Instantiate(_objGasPrefab, _trGanParant);
-                    gas.name = _resources + "_" + "Gas" + "_" + _inputQuantity.text;
+                    newObj = Instantiate(_objGasPrefab, _trGanParant);
+                    newObj.name = _resources + "_" + 1 + "_" + _inputQuantity.text;
                     break;
+            }
+
+            newObj.tag = _resources;
+
+            if (Physics.Raycast(new Vector3(_mapSize * 0.5f, 100f, _mapSize * 0.5f), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            {
+                newObj.transform.position = new Vector3(hit.point.x, hit.point.y + (newObj.transform.localScale.y * 0.5f), hit.point.z);
+            }
+        }
+
+        private void InstantiateStartPosition(int value)
+        {
+            Color color = new Color();
+
+            switch (value)
+            {
+                case 0: // red
+                    {
+                        if (_isRed == true)
+                        {
+                            return;
+                        }
+
+                        color = Color.red;
+                        _isRed = true;
+                    }
+                    break;
+
+                case 1: // orange
+                    {
+                        if (_isOrange == true)
+                        {
+                            return;
+                        }
+
+                        color = new Color(1.0f, 0.64f, 0f);
+                        _isOrange = true;
+                    }
+                    break;
+
+                case 2: // yellow
+                    {
+                        if (_isYellow == true)
+                        {
+                            return;
+                        }
+
+                        color = Color.yellow;
+                        _isYellow = true;
+                    }
+                    break;
+
+                case 3: // green
+                    {
+                        if (_isGreen == true)
+                        {
+                            return;
+                        }
+
+                        color = Color.green;
+                        _isGreen = true;
+                    }
+                    break;
+
+                case 4: // blue
+                    {
+                        if (_isBlue == true)
+                        {
+                            return;
+                        }
+
+                        color = Color.blue;
+                        _isBlue = true;
+                    }
+                    break;
+
+                case 5: // purple
+                    {
+                        if (_isPurple == true)
+                        {
+                            return;
+                        }
+
+                        color = new Color(180f / 255f, 0f, 180f / 255f);
+                        _isPurple = true;
+                    }
+                    break;
+
+                case 6: // black
+                    {
+                        if (_isBlack == true)
+                        {
+                            return;
+                        }
+
+                        color = Color.black;
+                        _isBlack = true;
+                    }
+                    break;
+            }
+
+            GameObject newStartPosition = Instantiate(_objStartPositionPrefab, _trStartPosition);
+            newStartPosition.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+
+            if (Physics.Raycast(new Vector3(_mapSize * 0.5f, 100f, _mapSize * 0.5f), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            {
+                newStartPosition.transform.position = new Vector3(hit.point.x, hit.point.y + (newStartPosition.transform.localScale.y * 0.5f), hit.point.z);
+            }
+
+            if (newStartPosition.TryGetComponent(out SpriteRenderer spriteRenderer))
+            {
+                spriteRenderer.color = color;
+            }
+            else
+            {
+                Debug.LogError("_objStartPositionPrefab does not contain a SpriteRenderer component.");
             }
         }
 
@@ -162,19 +347,19 @@ namespace Generator
             DestryObjs(_trMinaralParant);
             DestryObjs(_trGanParant);
 
-            float convert = value * 256;
+            _mapSize = value * 256;
 
             if(value == 0)
             {
-                convert = 64;
+                _mapSize = 64;
             }
 
-            _terrainFild.terrainData.size = new Vector3(convert, _terrainFild.terrainData.size.y, convert);
+            _terrainFild.terrainData.size = new Vector3(_mapSize, _terrainFild.terrainData.size.y, _mapSize);
 
-            _cameraPpreview.orthographicSize = convert * 0.5f;
-            _cameraPpreview.transform.position = new Vector3(convert * 0.5f, _cameraPpreview.transform.position.y, convert * 0.5f);
+            _cameraPpreview.orthographicSize = _mapSize * 0.5f;
+            _cameraPpreview.transform.position = new Vector3(_mapSize * 0.5f, _cameraPpreview.transform.position.y, _mapSize * 0.5f);
 
-            _objects.transform.localScale = new Vector3(convert / 256f, 1, convert / 256f);
+            _objects.transform.localScale = new Vector3(_mapSize / 256f, 1, _mapSize / 256f);
 
             if(_mapData == null)
             {
@@ -186,7 +371,7 @@ namespace Generator
                 StopCoroutine(_coGrid);
             }
 
-            _coGrid = StartCoroutine(Co_Grid((int)convert, false));
+            _coGrid = StartCoroutine(Co_Grid((int)_mapSize, false));
         }
 
         private void DestryObjs(Transform parant)
@@ -206,8 +391,10 @@ namespace Generator
 
         IEnumerator Co_Grid(int lenght, bool isGenerate)
         {
-            _mapData.nodes = new Node[lenght, lenght];
+            _buttonGenerate.gameObject.SetActive(false);
+            _objLoading.gameObject.SetActive(true);
 
+            _mapData.nodes = new Node[lenght, lenght];
 
             for (int y = 0; y < lenght; y++)
             {
@@ -240,7 +427,7 @@ namespace Generator
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
                 int y = Mathf.FloorToInt(objResources[i].transform.position.y);
 
-                _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[0]);
+                _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[2]);
 
             }
@@ -256,7 +443,63 @@ namespace Generator
 
             yield return null;
 
+            FileGenerate(_mapData);
+
             _coGrid = null;
+
+            _buttonGenerate.gameObject.SetActive(true);
+            _objLoading.gameObject.SetActive(false);
+        }
+
+        private void  FileGenerate(MapData mapData)
+        {
+            string directory = EditorUtility.SaveFolderPanel("Export map data", "", mapData.name);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(mapData);
+
+            string usc2FilePath =string.Empty;
+            string textFilePath = directory + "/" + mapData.name + ".txt";
+            string objFilePath = string.Empty;
+
+            // text file
+            var textfile = File.CreateText(textFilePath);
+            textfile.Close();
+
+            using (StreamWriter sw = new StreamWriter(textFilePath))
+            {
+                sw.Write(json);
+
+                sw.Flush();
+                sw.Close();
+            }
+
+            // terrain Data file
+            var guids = AssetDatabase.FindAssets(_terrainFild.terrainData.name, new[] { "Assets" });
+            string assetPath = AssetDatabase.GUIDToAssetPath(guids[0]);
+            assetPath = Application.dataPath + "/" + assetPath.Split("/")[1];
+            objFilePath = directory + "/" + _terrainFild.terrainData.name + ".asset";
+
+            File.Copy(assetPath, objFilePath, true);
+
+            // zip
+            DirectoryInfo di = new DirectoryInfo(directory + "/" + mapData.name);
+
+            if (di.Exists == false)
+            {
+                di.Create();
+                File.Move(textFilePath, directory + "/" + mapData.name + "/" + mapData.name + ".txt");
+                File.Move(objFilePath, directory + "/" + mapData.name + "/" + _terrainFild.terrainData.name + ".asset");
+
+                ZipFile.CreateFromDirectory(di.FullName, di.FullName + ".USC2");
+                usc2FilePath = di.FullName + "USC2";
+
+                di.Delete(true);
+
+                Debug.Log("Done!!  save path : " + usc2FilePath);
+            }
+            else
+            {
+                Debug.LogError("False");
+            }
         }
 
         private void CheckNode(ref Node node, bool isGenerate)
@@ -302,6 +545,39 @@ namespace Generator
         private void Generate()
         {
             _mapData = new MapData();
+
+            if(_inputName.text.Length == 0)
+            {
+                Debug.LogError("The map name cannot be empty.");
+                return;
+            }
+
+            if (_inputMaxPlayer.text.Length == 0)
+            {
+                Debug.LogError("The player cannot be empty.");
+                return;
+            }
+
+            if (_inputMaxPlayer.text.Equals("0"))
+            {
+                Debug.LogError("The player cannot be zero.");
+                return;
+            }
+
+            if (int.Parse(_inputMaxPlayer.text) > 6)
+            {
+                Debug.LogError("There cannot be more than 6 players.");
+                return;
+            }
+
+            _mapData.name = _inputName.text;
+            _mapData.description = _inputDescription.text;
+            _mapData.maker = _inputMaker.text;
+            _mapData.version = _inputVersion.text;
+            _mapData.maxPlayer = int.Parse(_inputMaxPlayer.text);
+
+            _mapData.mapSizeX = (int)_mapSize;
+            _mapData.mapSizeY = (int)_mapSize;
 
             NavMeshSurface surface = _terrainFild.gameObject.GetComponentInChildren<NavMeshSurface>();
             if (surface.navMeshData == null)

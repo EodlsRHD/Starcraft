@@ -37,7 +37,7 @@ public class MapData
     public string thumbnailPath = string.Empty;
 
     public int mapSizeX = 0;
-    public int mpaSizeY = 0;
+    public int mapSizeY = 0;
 
     public Node[,] nodes = null;
 }
