@@ -278,14 +278,39 @@ namespace Generator
                 return;
             }
 
-            _cameraPpreview.orthographicSize -= value * (_mapSize / 265f);
+            value *= (_mapSize / 265f);
+
+            Vector3 cameraPos = _cameraPpreview.transform.position;
+
+            if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
+            {
+                cameraPos.x = Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
+            }
+
+            if (cameraPos.x - _cameraPpreview.orthographicSize > 0)
+            {
+                cameraPos.x = Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
+            }
+
+            if (cameraPos.y + _cameraPpreview.orthographicSize < _mapSize)
+            {
+                cameraPos.y = Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
+            }
+
+            if (cameraPos.y - _cameraPpreview.orthographicSize > 0)
+            {
+                cameraPos.y = Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
+            }
+
+            _cameraPpreview.orthographicSize -= value;
+            _cameraPpreview.transform.position = cameraPos;
         }
 
         private void CameraMove(Vector3 cameraPos, float x, float y)
         {
             if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
             {
-                if (x >= 0.95f)
+                if (x >= 0.95f && x <= 1f)
                 {
                     cameraPos.x += 10f * Time.deltaTime;
                 }
@@ -293,7 +318,7 @@ namespace Generator
 
             if (cameraPos.x - _cameraPpreview.orthographicSize > 0)
             {
-                if (x <= -0.95f)
+                if (x <= -0.95f && x >= -1f)
                 {
                     cameraPos.x -= 10f * Time.deltaTime;
                 }
@@ -301,7 +326,7 @@ namespace Generator
 
             if (cameraPos.z + _cameraPpreview.orthographicSize < _mapSize)
             {
-                if (y >= 0.95f)
+                if (y >= 0.95f && y <= 1f)
                 {
                     cameraPos.z += 10f * Time.deltaTime;
                 }
@@ -309,7 +334,7 @@ namespace Generator
 
             if (cameraPos.z - _cameraPpreview.orthographicSize > 0)
             {
-                if (y <= -0.95f)
+                if (y <= -0.95f && y >= -1f)
                 {
                     cameraPos.z -= 10f * Time.deltaTime;
                 }
