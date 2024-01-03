@@ -282,24 +282,28 @@ namespace Generator
 
             Vector3 cameraPos = _cameraPpreview.transform.position;
 
-            if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
+            if (cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
             {
-                cameraPos.x = Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
+                Debug.LogError("1");
+                cameraPos.x -= Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
             }
 
-            if (cameraPos.x - _cameraPpreview.orthographicSize > 0)
+            if (cameraPos.x - _cameraPpreview.orthographicSize < 0)
             {
-                cameraPos.x = Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
+                Debug.LogError("2");
+                cameraPos.x += Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
             }
 
-            if (cameraPos.y + _cameraPpreview.orthographicSize < _mapSize)
+            if (cameraPos.y + _cameraPpreview.orthographicSize > _mapSize)
             {
-                cameraPos.y = Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
+                Debug.LogError("3");
+                cameraPos.y -= Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
             }
 
-            if (cameraPos.y - _cameraPpreview.orthographicSize > 0)
+            if (cameraPos.y - _cameraPpreview.orthographicSize < 0)
             {
-                cameraPos.y = Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
+                Debug.LogError("4");
+                cameraPos.y += Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
             }
 
             _cameraPpreview.orthographicSize -= value;
