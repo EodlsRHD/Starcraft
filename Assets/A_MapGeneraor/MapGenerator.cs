@@ -7,59 +7,10 @@ using TMPro;
 using System.IO;
 using System.IO.Compression;
 using UnityEditor;
+using UnityEngine.EventSystems;
 
 namespace Generator
 {
-    //[System.Serializable]
-    //public class MapData
-    //{
-    //    public string name = string.Empty;
-    //    public string description = string.Empty;
-    //    public string version = string.Empty;
-    //    public string maker = string.Empty;
-    //    public int maxPlayer = 0;
-
-    //    public string thumbnailPath = string.Empty;
-
-    //    public int mapSizeX = 0;
-    //    public int mpaSizeY = 0;
-
-    //    public Node[,] mapData = null;
-    //}
-
-    //[System.Serializable]
-    //public class Node
-    //{
-    //    public float x = 0;
-    //    public float y = 0;
-
-    //    public Topographic topographic = null;
-    //    public StartPosition startPosition = null;
-    //    public Resource resource = null;
-    //}
-
-    //[System.Serializable]
-    //public class Topographic
-    //{
-    //    public bool walkable = false;
-    //    public bool isHill = false;
-    //    public byte height = 0; // 0 ~ 1
-    //}
-
-    //[System.Serializable]
-    //public class StartPosition
-    //{
-    //    public int team = 0;
-    //    public ePlayerColor playerColor = ePlayerColor.Non;
-    //}
-
-    //[System.Serializable]
-    //public class Resource
-    //{
-    //    public eResourceType type = eResourceType.Non;
-    //    public int quantity = 0;
-    //}
-
     public class MapGenerator : MonoBehaviour
     {
         [Header("UI")]
@@ -245,24 +196,34 @@ namespace Generator
                 return;
             }
 
-            Vector3 shootRayPos = Vector3.zero;
+            if(EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                return;
+            }
 
+            Vector2 mousePos = Input.mousePosition;
+            float x = mousePos.x - _rtrRawImage.transform.position.x;
+            float y = mousePos.y - _rtrRawImage.transform.position.y;
+
+            x /= (_rtrRawImage.rect.width * 0.5f);
+            y /= (_rtrRawImage.rect.height * 0.5f);
+
+            Vector3 cameraPos = _cameraPpreview.transform.position;
+            float halfMapSize = _mapSize * 0.5f;
+            Vector3 shootRayPos = new Vector3(cameraPos.x + (halfMapSize * x), cameraPos.y, cameraPos.z + (halfMapSize * y));
+
+            InputMouseClick(shootRayPos);
+            InputMouseWhill();
+            CameraMove(cameraPos, x, y);
+        }
+
+        private void InputMouseClick(Vector3 shootRayPos)
+        {
             if (Input.GetMouseButtonDown(0))
             {
-                Vector2 mousePos = Input.mousePosition;
-                float x = mousePos.x - _rtrRawImage.transform.position.x;
-                float y = mousePos.y - _rtrRawImage.transform.position.y;
-
-                x /= (_rtrRawImage.rect.width * 0.5f);
-                y /= (_rtrRawImage.rect.height * 0.5f);
-
-                Vector3 cameraPos = _cameraPpreview.transform.position;
-                float halfMapSize = _mapSize * 0.5f;
-                shootRayPos = new Vector3(cameraPos.x + (halfMapSize * x), cameraPos.y, cameraPos.z + (halfMapSize * y));
-
-                if(Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, ~_layMask_ground))
+                if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, ~_layMask_ground))
                 {
-                    if(hit.collider.tag.Equals(_ground))
+                    if (_selectObject == null)
                     {
                         return;
                     }
@@ -276,14 +237,13 @@ namespace Generator
 
             if (Input.GetMouseButton(0))
             {
-                if (_selectObject == null)
-                {
-                    return;
-                }
-
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
-                    Debug.LogError(hit.collider.gameObject.name);
+                    if (_selectObject == null)
+                    {
+                        return;
+                    }
+
                     _selectObject.transform.position = hit.point;
                 }
             }
@@ -297,10 +257,65 @@ namespace Generator
 
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
-                    Debug.LogError(hit.collider.gameObject.name);
                     _selectObject.transform.position = hit.point;
                 }
             }
+        }
+
+        private void InputMouseWhill()
+        {
+            float value = Input.mouseScrollDelta.y;
+
+            if(_cameraPpreview.orthographicSize < 5)
+            {
+                _cameraPpreview.orthographicSize = 5;
+                return;
+            }
+
+            if(_cameraPpreview.orthographicSize > _mapSize * 0.5f)
+            {
+                _cameraPpreview.orthographicSize = _mapSize * 0.5f;
+                return;
+            }
+
+            _cameraPpreview.orthographicSize -= value * (_mapSize / 265f);
+        }
+
+        private void CameraMove(Vector3 cameraPos, float x, float y)
+        {
+            if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
+            {
+                if (x >= 0.95f)
+                {
+                    cameraPos.x += 10f * Time.deltaTime;
+                }
+            }
+
+            if (cameraPos.x - _cameraPpreview.orthographicSize > 0)
+            {
+                if (x <= -0.95f)
+                {
+                    cameraPos.x -= 10f * Time.deltaTime;
+                }
+            }
+
+            if (cameraPos.z + _cameraPpreview.orthographicSize < _mapSize)
+            {
+                if (y >= 0.95f)
+                {
+                    cameraPos.z += 10f * Time.deltaTime;
+                }
+            }
+
+            if (cameraPos.z - _cameraPpreview.orthographicSize > 0)
+            {
+                if (y <= -0.95f)
+                {
+                    cameraPos.z -= 10f * Time.deltaTime;
+                }
+            }
+
+            _cameraPpreview.transform.position = cameraPos;
         }
 
         private void UnSelectObject()
