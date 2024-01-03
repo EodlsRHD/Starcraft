@@ -128,6 +128,8 @@ namespace Generator
 
         private float _mapSize = 0f;
 
+        private float _mapSizeHalf = 0f;
+
         private readonly string _resources = "Resources";
 
         private readonly string _startPoint = "StartPoint";
@@ -209,8 +211,7 @@ namespace Generator
             y /= (_rtrRawImage.rect.height * 0.5f);
 
             Vector3 cameraPos = _cameraPpreview.transform.position;
-            float halfMapSize = _mapSize * 0.5f;
-            Vector3 shootRayPos = new Vector3(cameraPos.x + (halfMapSize * x), cameraPos.y, cameraPos.z + (halfMapSize * y));
+            Vector3 shootRayPos = new Vector3(cameraPos.x + (_mapSizeHalf * x), cameraPos.y, cameraPos.z + (_mapSizeHalf * y));
 
             InputMouseClick(shootRayPos);
             InputMouseWhill();
@@ -272,51 +273,36 @@ namespace Generator
                 return;
             }
 
-            if(_cameraPpreview.orthographicSize > _mapSize * 0.5f)
+            if(_cameraPpreview.orthographicSize > _mapSizeHalf)
             {
-                _cameraPpreview.orthographicSize = _mapSize * 0.5f;
+                _cameraPpreview.orthographicSize = _mapSizeHalf;
                 return;
             }
 
             value *= (_mapSize / 265f);
-
-            Vector3 cameraPos = _cameraPpreview.transform.position;
-
-            if (cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
-            {
-                Debug.LogError("1");
-                cameraPos.x -= Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
-            }
-
-            if (cameraPos.x - _cameraPpreview.orthographicSize < 0)
-            {
-                Debug.LogError("2");
-                cameraPos.x += Mathf.Abs((cameraPos.x + _cameraPpreview.orthographicSize) - _mapSize);
-            }
-
-            if (cameraPos.y + _cameraPpreview.orthographicSize > _mapSize)
-            {
-                Debug.LogError("3");
-                cameraPos.y -= Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
-            }
-
-            if (cameraPos.y - _cameraPpreview.orthographicSize < 0)
-            {
-                Debug.LogError("4");
-                cameraPos.y += Mathf.Abs((cameraPos.y + _cameraPpreview.orthographicSize) - _mapSize);
-            }
-
             _cameraPpreview.orthographicSize -= value;
-            _cameraPpreview.transform.position = cameraPos;
         }
 
         private void CameraMove(Vector3 cameraPos, float x, float y)
         {
+            Debug.LogError(cameraPos.x);
+
             if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
             {
                 if (x >= 0.95f && x <= 1f)
                 {
                     cameraPos.x += 10f * Time.deltaTime;
+                }
+            }
+            else if(cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
+            {
+                if(cameraPos.x < _mapSizeHalf)
+                {
+                    cameraPos.x -= Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
+                }
+                else
+                {
+                    cameraPos.x = _mapSizeHalf;
                 }
             }
 
@@ -327,6 +313,13 @@ namespace Generator
                     cameraPos.x -= 10f * Time.deltaTime;
                 }
             }
+            else if(cameraPos.x - _cameraPpreview.orthographicSize < 0)
+            {
+                if (cameraPos.x != _mapSizeHalf)
+                {
+                    cameraPos.x += Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
+                }
+            }
 
             if (cameraPos.z + _cameraPpreview.orthographicSize < _mapSize)
             {
@@ -335,12 +328,26 @@ namespace Generator
                     cameraPos.z += 10f * Time.deltaTime;
                 }
             }
+            else if(cameraPos.z + _cameraPpreview.orthographicSize > _mapSize)
+            {
+                if (cameraPos.z != _mapSizeHalf)
+                {
+                    cameraPos.z -= Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
+                }
+            }
 
             if (cameraPos.z - _cameraPpreview.orthographicSize > 0)
             {
                 if (y <= -0.95f && y >= -1f)
                 {
                     cameraPos.z -= 10f * Time.deltaTime;
+                }
+            }
+            else if (cameraPos.z - _cameraPpreview.orthographicSize < 0)
+            {
+                if (cameraPos.z != _mapSizeHalf)
+                {
+                    cameraPos.z += Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
                 }
             }
 
@@ -383,7 +390,7 @@ namespace Generator
 
             newObj.tag = _resources;
 
-            if (Physics.Raycast(new Vector3(_mapSize * 0.5f, 100f, _mapSize * 0.5f), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            if (Physics.Raycast(new Vector3(_mapSizeHalf, 100f, _mapSizeHalf), Vector3.down, out RaycastHit hit, Mathf.Infinity))
             {
                 newObj.transform.position = new Vector3(hit.point.x, hit.point.y + (newObj.transform.localScale.y * 0.5f), hit.point.z);
             }
@@ -483,7 +490,7 @@ namespace Generator
             GameObject newStartPosition = Instantiate(_objStartPositionPrefab, _trStartPositionParant);
             newStartPosition.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
 
-            if (Physics.Raycast(new Vector3(_mapSize * 0.5f, 100f, _mapSize * 0.5f), Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            if (Physics.Raycast(new Vector3(_mapSize, 100f, _mapSize), Vector3.down, out RaycastHit hit, Mathf.Infinity))
             {
                 newStartPosition.transform.position = new Vector3(hit.point.x, hit.point.y + (newStartPosition.transform.localScale.y * 0.5f), hit.point.z);
             }
@@ -518,6 +525,8 @@ namespace Generator
             {
                 _mapSize = 64;
             }
+
+            _mapSizeHalf = _mapSize * 0.5f;
 
             _terrainFild.terrainData.size = new Vector3(_mapSize, _terrainFild.terrainData.size.y, _mapSize);
 
