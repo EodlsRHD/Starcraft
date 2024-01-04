@@ -287,20 +287,11 @@ namespace Generator
 
         private void CameraMove(Vector3 cameraPos, float x, float y)
         {
-            Debug.LogError(cameraPos.x);
-
             if (cameraPos.x + _cameraPpreview.orthographicSize < _mapSize)
             {
                 if (x >= 0.95f && x <= 1f)
                 {
                     cameraPos.x += 10f * Time.deltaTime;
-                }
-            }
-            else if(cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
-            {
-                if(cameraPos.x != _mapSizeHalf)
-                {
-                    cameraPos.x -= Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
                 }
             }
 
@@ -311,26 +302,12 @@ namespace Generator
                     cameraPos.x -= 10f * Time.deltaTime;
                 }
             }
-            else if(cameraPos.x - _cameraPpreview.orthographicSize < 0)
-            {
-                if (cameraPos.x != _mapSizeHalf)
-                {
-                    cameraPos.x += Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
-                }
-            }
 
             if (cameraPos.z + _cameraPpreview.orthographicSize < _mapSize)
             {
                 if (y >= 0.95f && y <= 1f)
                 {
                     cameraPos.z += 10f * Time.deltaTime;
-                }
-            }
-            else if(cameraPos.z + _cameraPpreview.orthographicSize > _mapSize)
-            {
-                if (cameraPos.z != _mapSizeHalf)
-                {
-                    cameraPos.z -= Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
                 }
             }
 
@@ -341,11 +318,36 @@ namespace Generator
                     cameraPos.z -= 10f * Time.deltaTime;
                 }
             }
-            else if (cameraPos.z - _cameraPpreview.orthographicSize < 0)
+
+            if (cameraPos.x + _cameraPpreview.orthographicSize > _mapSize)
+            {
+                if (cameraPos.x != _mapSizeHalf)
+                {
+                    cameraPos.x -= _cameraPpreview.orthographicSize - (_mapSize - cameraPos.x);
+                }
+            }
+
+            if (cameraPos.x - _cameraPpreview.orthographicSize < 0)
+            {
+                if (cameraPos.x != _mapSizeHalf)
+                {
+                    cameraPos.x += _cameraPpreview.orthographicSize - cameraPos.x;
+                }
+            }
+
+            if (cameraPos.z + _cameraPpreview.orthographicSize > _mapSize)
             {
                 if (cameraPos.z != _mapSizeHalf)
                 {
-                    cameraPos.z += Mathf.Abs((cameraPos.z + _cameraPpreview.orthographicSize) - _mapSize);
+                    cameraPos.z -= _cameraPpreview.orthographicSize - (_mapSize - cameraPos.z);
+                }
+            }
+
+            if (cameraPos.z - _cameraPpreview.orthographicSize < 0)
+            {
+                if (cameraPos.z != _mapSizeHalf)
+                {
+                    cameraPos.z += _cameraPpreview.orthographicSize - cameraPos.z;
                 }
             }
 
