@@ -51,7 +51,7 @@ public class LoadScene : MonoBehaviour
     {
         if (GameManager.instance.TEST_MODE == true)
         {
-            StartCoroutine(CoLoading(eLoadScene));
+            StartCoroutine(Co_Loading(eLoadScene));
         }
         else
         {
@@ -64,7 +64,7 @@ public class LoadScene : MonoBehaviour
         _onLoadDoneCallback?.Invoke();
     }
 
-    IEnumerator CoLoading(eScene eLoadScene)
+    IEnumerator Co_Loading(eScene eLoadScene)
     {
         Debug.Log("IEnumerator LoadScene   " + eLoadScene);
 

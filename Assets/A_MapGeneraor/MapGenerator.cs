@@ -8,6 +8,7 @@ using System.IO;
 using System.IO.Compression;
 using UnityEditor;
 using UnityEngine.EventSystems;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Generator
 {
@@ -599,7 +600,7 @@ namespace Generator
                     _mapData.nodes[x, y] = new Node();
 
                     _mapData.nodes[x, y].x = x;
-                    _mapData.nodes[x, y].x = y;
+                    _mapData.nodes[x, y].y = y;
 
                     CheckNode(ref _mapData.nodes[x, y], isGenerate);
                 }
@@ -668,9 +669,9 @@ namespace Generator
             string directory = EditorUtility.SaveFolderPanel("Export map data", "", mapData.name);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(mapData);
 
-            string usc2FilePath =string.Empty;
+            string usc2FilePath = string.Empty;
             string textFilePath = directory + "/" + mapData.name + ".txt";
-            string objFilePath = string.Empty;
+            string objFilePath = directory + "/" + "MapData" + ".txt";
 
             // text file
             var textfile = File.CreateText(textFilePath);
@@ -685,6 +686,10 @@ namespace Generator
             }
 
             // terrain Data file
+
+            //var objfile = File.CreateText(objFilePath);
+            //objfile.Close();
+
             var guids = AssetDatabase.FindAssets(_terrainFild.terrainData.name, new[] { "Assets" });
             string assetPath = AssetDatabase.GUIDToAssetPath(guids[0]);
             assetPath = Application.dataPath + "/" + assetPath.Split("/")[1];
@@ -728,6 +733,8 @@ namespace Generator
             {
                 if(isGenerate == true)
                 {
+                    node.topographic.height = hit.point.y;
+
                     if (hit.collider.gameObject.tag.Equals(_resources))
                     {
                         detected = true;
@@ -741,7 +748,6 @@ namespace Generator
                     if (detected == true)
                     {
                         node.topographic.isWalkable = false;
-                        node.topographic.height = hit.point.y;
                         return;
                     }
                 }
@@ -750,6 +756,11 @@ namespace Generator
                 {
                     node.topographic.isWalkable = true;
                     node.topographic.height = navHit.position.y;
+
+                    if(navHit.position.y >= 1f)
+                    {
+                        node.topographic.isHill = true;
+                    }
                 }
             }
         }

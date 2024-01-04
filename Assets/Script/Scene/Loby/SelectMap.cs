@@ -64,7 +64,7 @@ public class Topographic
 [System.Serializable]
 public class StartPosition
 {
-    public int team = 0;
+    public int team = -1;
     public ePlayerColor playerColor = ePlayerColor.Non;
 }
 

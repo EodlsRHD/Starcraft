@@ -10,7 +10,7 @@ public class CustomPlay : MonoBehaviour
     private SelectMap _selectMap = null;
 
     [SerializeField]
-    private Button _buttonStart= null;
+    private Button _buttonStart = null;
 
     [SerializeField]
     private Button _buttonClose = null;

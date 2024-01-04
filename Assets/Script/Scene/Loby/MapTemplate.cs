@@ -34,8 +34,8 @@ public class MapTemplate : MonoBehaviour
 
     private void OnOpenMapData()
     {
-        MapData data = GameManager.instance.toolManager.ConvertToData(new MapData(), _dataPath);
+        UnZipMapFile file = GameManager.instance.toolManager.UnZipFile(_dataPath);
 
-        _onMapInfoCallback?.Invoke(data);
+        _onMapInfoCallback?.Invoke(file.mapData);
     }
 }

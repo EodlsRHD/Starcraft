@@ -38,16 +38,14 @@ public class MapInfo : MonoBehaviour
     {
         GameManager.instance.toolManager.ImageDownload(data.thumbnailPath, (texture, result) => 
         {
-            if(result == false)
+            if(result == true)
             {
-                return;
-            }
+                Sprite s = GameManager.instance.toolManager.ConvertTextureToSprite(texture);
 
-            Sprite s = GameManager.instance.toolManager.ConvertTextureToSprite(texture);
-
-            if(s != null)
-            {
-                _imageThumbnail.sprite = s;
+                if (s != null)
+                {
+                    _imageThumbnail.sprite = s;
+                }
             }
 
             _textName.text = data.name;
@@ -69,7 +67,7 @@ public class MapInfo : MonoBehaviour
     {
         GameManager.instance.toolManager.MoveX(_rT, 1310f, 1f, false, () =>
         {
-            // thumbnail download
+            _imageThumbnail.sprite = null;
 
             _textName.text = string.Empty;
             _textDescription.text = string.Empty;

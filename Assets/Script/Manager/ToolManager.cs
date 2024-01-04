@@ -124,6 +124,11 @@ public class ToolManager : MonoBehaviour
         return _filemanager.JsonDeserialize(t, json);
     }
 
+    public UnZipMapFile UnZipFile(string path)
+    {
+        return _filemanager.UnZipFile(path);
+    }
+
     public void ImageDownload(string url, Action<Texture, bool> onResult)
     {
         _filemanager.ImageDownload(url, onResult);
