@@ -152,6 +152,8 @@ namespace Generator
 
         private bool _isBlack = false;
 
+        private int _colorCount = 0;
+
         private bool _isMakeGridDone = true;
 
         private void Start()
@@ -494,6 +496,7 @@ namespace Generator
             }
 
             GameObject newStartPosition = Instantiate(_objStartPositionPrefab, _trStartPositionParant);
+            newStartPosition.name = _startPoint + "_" + value + "_" + _colorCount;
             newStartPosition.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
 
             if (Physics.Raycast(new Vector3(_mapSize, 100f, _mapSize), Vector3.down, out RaycastHit hit, Mathf.Infinity))
@@ -504,6 +507,8 @@ namespace Generator
             if (newStartPosition.TryGetComponent(out SpriteRenderer spriteRenderer))
             {
                 spriteRenderer.color = color;
+
+                _colorCount++;
             }
             else
             {
@@ -576,6 +581,8 @@ namespace Generator
             _isBlue = false;
             _isPurple = false;
             _isBlack = false;
+
+            _colorCount = 0;
         }
 
         IEnumerator Co_Grid(int lenght, bool isGenerate)
@@ -634,8 +641,8 @@ namespace Generator
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
                 int y = Mathf.FloorToInt(objResources[i].transform.position.y);
 
-                _mapData.nodes[x, y].startPosition.playerColor = (ePlayerColor)int.Parse(objResources[i].name.Split("_")[0]);
-                _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[1]);
+                _mapData.nodes[x, y].startPosition.playerColor = (ePlayerColor)int.Parse(objResources[i].name.Split("_")[1]);
+                _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[2]);
             }
 
             yield return null;
