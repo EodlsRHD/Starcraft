@@ -25,13 +25,13 @@ public class MapGenerator : MonoBehaviour
         _isDone = false;
 
         MapData mapData = GameManager.instance.currentMapdata;
-        StartCoroutine(GenerateMeshData(mapData, (meshData) => 
+        StartCoroutine(GenerateMeshData(mapData, (map, resouecrs) => 
         {
-            _isDone = true;
+            Done(map, resouecrs);
         }));
     }
 
-    IEnumerator GenerateMeshData(MapData mapData, Action<MeshData> onCallback)
+    IEnumerator GenerateMeshData(MapData mapData, Action<GameObject, List<Game_Resources>> onCallback)
     {
         MeshData meshData = new MeshData(mapData.mapSizeX, mapData.mapSizeY);
 
@@ -60,12 +60,13 @@ public class MapGenerator : MonoBehaviour
             yield return null;
         }
 
-        DrawMesh(meshData);
-
-        onCallback?.Invoke(meshData);
+        StartCoroutine(Resoueces(mapData, (resources) => 
+        {
+            onCallback?.Invoke(DrawMesh(meshData), resources);
+        }));
     }
 
-    private void DrawMesh(MeshData meshData)
+    private GameObject DrawMesh(MeshData meshData)
     {
         GameObject obj = new GameObject();
         obj.name = "Map Object";
@@ -75,7 +76,36 @@ public class MapGenerator : MonoBehaviour
         meshFilter.sharedMesh = meshData.CreateMesh();
         meshRenderer.sharedMaterial = _matDefult;
 
-        MapManager.SetMapObject(obj);
+        return obj;
+    }
+
+    IEnumerator Resoueces(MapData mapData, Action<List<Game_Resources>> onCallback)
+    {
+        List<Game_Resources> result = new List<Game_Resources>();
+
+        for (int y = 0; y < mapData.mapSizeY; y++)
+        {
+            for (int x = 0; x < mapData.mapSizeX; x++)
+            {
+                Node node = mapData.nodes[x, y];
+
+                if (node.startPosition.playerColor != ePlayerColor.Non)
+                {
+
+                }
+            }
+
+            yield return null;
+        }
+
+        onCallback?.Invoke(result);
+    }
+
+    private void Done(GameObject map, List<Game_Resources> resources)
+    {
+        MapManager.SetMapObject(map, resources);
+
+        _isDone = true;
     }
 }
 

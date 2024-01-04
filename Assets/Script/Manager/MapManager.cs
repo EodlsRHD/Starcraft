@@ -12,9 +12,12 @@ public class MapManager : MonoBehaviour
 
     private static GameObject _objMap = null;
 
-    public static void SetMapObject(GameObject obj)
+    private static List<Game_Resources> _resourcesList = new List<Game_Resources>();
+
+    public static void SetMapObject(GameObject obj, List<Game_Resources> resourcesList)
     {
         _objMap = obj;
+        _resourcesList = resourcesList;
         DontDestroyOnLoad(_objMap);
     }
 
@@ -33,6 +36,8 @@ public class MapManager : MonoBehaviour
 
     public void InstantiateMap()
     {
+        Debug.Log(_resourcesList.Count);
+
         _objMap.transform.SetParent(_mapParant);
         _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f);
     }

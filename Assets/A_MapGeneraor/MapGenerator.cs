@@ -245,13 +245,16 @@ namespace Generator
             {
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
-                    if(_selectObject.tag.Equals(_startPoint))
+                    int x = Mathf.FloorToInt(hit.point.x);
+                    int z = Mathf.FloorToInt(hit.point.z);
+
+                    if (_selectObject.tag.Equals(_startPoint))
                     {
-                        _selectObject.transform.position = new Vector3(hit.point.x, hit.point.y + 1f, hit.point.z);
+                        _selectObject.transform.position = new Vector3(x, hit.point.y + 1f, z);
                     }
                     else
                     {
-                        _selectObject.transform.position = hit.point;
+                        _selectObject.transform.position = new Vector3(x, hit.point.y, z);
                     }
                 }
             }
@@ -260,13 +263,16 @@ namespace Generator
             {
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
+                    int x = Mathf.FloorToInt(hit.point.x);
+                    int z = Mathf.FloorToInt(hit.point.z);
+
                     if (_selectObject.tag.Equals(_startPoint))
                     {
-                        _selectObject.transform.position = new Vector3(hit.point.x, hit.point.y + 1f, hit.point.z);
+                        _selectObject.transform.position = new Vector3(x, hit.point.y + 1f, z);
                     }
                     else
                     {
-                        _selectObject.transform.position = hit.point;
+                        _selectObject.transform.position = new Vector3(x, hit.point.y, z);
                     }
 
                     _selectObject = null;
@@ -401,7 +407,10 @@ namespace Generator
 
             if (Physics.Raycast(new Vector3(_mapSizeHalf, 100f, _mapSizeHalf), Vector3.down, out RaycastHit hit, Mathf.Infinity))
             {
-                newObj.transform.position = new Vector3(hit.point.x, hit.point.y + (newObj.transform.localScale.y * 0.5f), hit.point.z);
+                int x = Mathf.FloorToInt(hit.point.x);
+                int z = Mathf.FloorToInt(hit.point.z);
+
+                newObj.transform.position = new Vector3(x, hit.point.y + (newObj.transform.localScale.y * 0.5f), z);
             }
         }
 
@@ -502,7 +511,10 @@ namespace Generator
 
             if (Physics.Raycast(new Vector3(_mapSize, 100f, _mapSize), Vector3.down, out RaycastHit hit, Mathf.Infinity))
             {
-                newStartPosition.transform.position = new Vector3(hit.point.x, hit.point.y + (newStartPosition.transform.localScale.y * 0.5f), hit.point.z);
+                int x = Mathf.FloorToInt(hit.point.x);
+                int z = Mathf.FloorToInt(hit.point.z);
+
+                newStartPosition.transform.position = new Vector3(x, hit.point.y + (newStartPosition.transform.localScale.y * 0.5f), z);
             }
 
             if (newStartPosition.TryGetComponent(out SpriteRenderer spriteRenderer))
@@ -630,7 +642,7 @@ namespace Generator
             for (int i = 0; i < objResources.Length; i++)
             {
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
-                int y = Mathf.FloorToInt(objResources[i].transform.position.y);
+                int y = Mathf.FloorToInt(objResources[i].transform.position.z);
 
                 _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[2]);
@@ -640,7 +652,7 @@ namespace Generator
             for (int i = 0; i < objStartColor.Length; i++)
             {
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
-                int y = Mathf.FloorToInt(objResources[i].transform.position.y);
+                int y = Mathf.FloorToInt(objResources[i].transform.position.z);
 
                 _mapData.nodes[x, y].startPosition.playerColor = (ePlayerColor)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[2]);
