@@ -690,12 +690,12 @@ namespace Generator
             //var objfile = File.CreateText(objFilePath);
             //objfile.Close();
 
-            var guids = AssetDatabase.FindAssets(_terrainFild.terrainData.name, new[] { "Assets" });
-            string assetPath = AssetDatabase.GUIDToAssetPath(guids[0]);
-            assetPath = Application.dataPath + "/" + assetPath.Split("/")[1];
-            objFilePath = directory + "/" + _terrainFild.terrainData.name + ".asset";
+            //var guids = AssetDatabase.FindAssets(_terrainFild.terrainData.name, new[] { "Assets" });
+            //string assetPath = AssetDatabase.GUIDToAssetPath(guids[0]);
+            //assetPath = Application.dataPath + "/" + assetPath.Split("/")[1];
+            //objFilePath = directory + "/" + _terrainFild.terrainData.name + ".asset";
 
-            File.Copy(assetPath, objFilePath, true);
+            //File.Copy(assetPath, objFilePath, true);
 
             // zip
             DirectoryInfo di = new DirectoryInfo(directory + "/" + mapData.name);
@@ -704,10 +704,10 @@ namespace Generator
             {
                 di.Create();
                 File.Move(textFilePath, directory + "/" + mapData.name + "/" + mapData.name + ".txt");
-                File.Move(objFilePath, directory + "/" + mapData.name + "/" + _terrainFild.terrainData.name + ".asset");
+                //File.Move(objFilePath, directory + "/" + mapData.name + "/" + _terrainFild.terrainData.name + ".asset");
 
                 ZipFile.CreateFromDirectory(di.FullName, di.FullName + ".USC2");
-                usc2FilePath = di.FullName + "USC2";
+                usc2FilePath = di.FullName + ".USC2";
 
                 di.Delete(true);
 
