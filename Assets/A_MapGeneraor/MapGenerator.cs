@@ -524,6 +524,7 @@ namespace Generator
             DestryObjs(_trHillParant);
             DestryObjs(_trMinaralParant);
             DestryObjs(_trGanParant);
+            DestryObjs(_trStartPositionParant);
 
             _mapSize = value * 256;
 
