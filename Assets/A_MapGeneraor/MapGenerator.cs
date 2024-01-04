@@ -226,11 +226,6 @@ namespace Generator
             {
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, ~_layMask_ground))
                 {
-                    if (_selectObject == null)
-                    {
-                        return;
-                    }
-
                     _selectObject = hit.collider.gameObject;
                     _textSelectObjInfoName.text = _selectObject.name;
 
@@ -238,29 +233,40 @@ namespace Generator
                 }
             }
 
+            if (_selectObject == null)
+            {
+                return;
+            }
+
             if (Input.GetMouseButton(0))
             {
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
-                    if (_selectObject == null)
+                    if(_selectObject.tag.Equals(_startPoint))
                     {
-                        return;
+                        _selectObject.transform.position = new Vector3(hit.point.x, hit.point.y + 1f, hit.point.z);
                     }
-
-                    _selectObject.transform.position = hit.point;
+                    else
+                    {
+                        _selectObject.transform.position = hit.point;
+                    }
                 }
             }
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (_selectObject == null)
-                {
-                    return;
-                }
-
                 if (Physics.Raycast(shootRayPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, _layMask_ground))
                 {
-                    _selectObject.transform.position = hit.point;
+                    if (_selectObject.tag.Equals(_startPoint))
+                    {
+                        _selectObject.transform.position = new Vector3(hit.point.x, hit.point.y + 1f, hit.point.z);
+                    }
+                    else
+                    {
+                        _selectObject.transform.position = hit.point;
+                    }
+
+                    _selectObject = null;
                 }
             }
         }
