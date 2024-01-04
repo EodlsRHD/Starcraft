@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 5390923158739685131}
   - component: {fileID: -2661890865476202731}
   - component: {fileID: -1015801671231644426}
+  - component: {fileID: 3156635166933568804}
   m_Layer: 5
   m_Name: Canvas Loading
   m_TagString: Untagged
@@ -792,10 +793,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44b2410d3a5029499555b93c4d9e353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mapGenerator: {fileID: 3156635166933568804}
   _textTitle: {fileID: 5390923158030066821}
   _textDescription: {fileID: 5390923157096274203}
   _loadProgress: {fileID: 8989162240768590481}
   _backgroundImage: {fileID: 5390923157141640376}
+--- !u!114 &3156635166933568804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390923158739685132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b69a5e423fc5fc48b2033b5e455f3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _matDefult: {fileID: 2100000, guid: eee8500c79fbe254b9f7aa14b1078a60, type: 2}
 --- !u!1 &5390923158787288701
 GameObject:
   m_ObjectHideFlags: 0

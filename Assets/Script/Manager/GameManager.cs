@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         get { return _currentScene; }
     }
 
-    public MapData currentMapdata
+    public  MapData currentMapdata
     {
         get { return _mapdata; }
         set { _mapdata = value; }

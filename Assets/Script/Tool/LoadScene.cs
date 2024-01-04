@@ -11,6 +11,9 @@ using System.Threading;
 public class LoadScene : MonoBehaviour
 {
     [SerializeField]
+    private MapGenerator _mapGenerator = null;
+
+    [SerializeField]
     private TMP_Text _textTitle = null;
 
     [SerializeField]
@@ -33,6 +36,8 @@ public class LoadScene : MonoBehaviour
             _backgroundImage = backgroundImage;
         }
 
+        _mapGenerator.Initialize();
+
         _loadProgress.value = 0;
 
         _textTitle.text = title;
@@ -51,6 +56,7 @@ public class LoadScene : MonoBehaviour
     {
         if (GameManager.instance.TEST_MODE == true)
         {
+            _mapGenerator.Generate();
             StartCoroutine(Co_Loading(eLoadScene));
         }
         else
@@ -88,6 +94,12 @@ public class LoadScene : MonoBehaviour
             }
             else
             {
+                if(_mapGenerator.isDone == false)
+                {
+                    yield return null;
+                    continue;
+                }
+
                 _loadProgress.value = Mathf.Lerp(_loadProgress.value, 1f, timer);
                 if (_loadProgress.value == 1.0f)
                 {
@@ -105,6 +117,8 @@ public class LoadScene : MonoBehaviour
             }
 
             InfiniteLoopDetector.Run();
+
+            yield return null;
         }
     }
 

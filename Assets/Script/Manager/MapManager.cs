@@ -6,9 +6,17 @@ using System;
 public class MapManager : MonoBehaviour
 {
     [SerializeField]
-    private Transform MapParant = null;
+    private Transform _mapParant = null;
 
     private Action _onIsReadyCallback = null;
+
+    private static GameObject _objMap = null;
+
+    public static void SetMapObject(GameObject obj)
+    {
+        _objMap = obj;
+        DontDestroyOnLoad(_objMap);
+    }
 
     public void Initialize(Action onIsReadyCallback)
     {
@@ -21,12 +29,16 @@ public class MapManager : MonoBehaviour
         {
             _onIsReadyCallback?.Invoke();
         }
-
-        GenerateMap();
     }
 
-    private void GenerateMap()
+    public void InstantiateMap()
     {
+        _objMap.transform.SetParent(_mapParant);
+        _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f);
+    }
 
+    private void OnDestroy()
+    {
+        Destroy(_objMap);
     }
 }

@@ -69,7 +69,7 @@ public class InGameManager : MonoBehaviour, ISubject
     private InGameResources _inGameResources = null;
 
     [SerializeField]
-    private MapManager _mapMaker = null;
+    private MapManager _mapManager = null;
 
     [SerializeField]
     private InputManager _inputManager = null;
@@ -151,7 +151,7 @@ public class InGameManager : MonoBehaviour, ISubject
 
         _gameConsole.Initialize(Order);
         _inGameResources.Initialize();
-        _mapMaker.Initialize(IsReady);
+        _mapManager.Initialize(IsReady);
         _inputManager.Initialize();
 
         GameManager.instance.toolManager.InstantiateObjectPool();
@@ -183,6 +183,8 @@ public class InGameManager : MonoBehaviour, ISubject
     private void IsReady()
     {
         SetInput();
+
+        _mapManager.InstantiateMap();
 
         _background.SetActive(false);
 
