@@ -568,6 +568,14 @@ namespace Generator
             }
 
             parant.transform.DetachChildren();
+
+            _isRed = false;
+            _isOrange = false;
+            _isYellow = false;
+            _isGreen = false;
+            _isBlue = false;
+            _isPurple = false;
+            _isBlack = false;
         }
 
         IEnumerator Co_Grid(int lenght, bool isGenerate)
