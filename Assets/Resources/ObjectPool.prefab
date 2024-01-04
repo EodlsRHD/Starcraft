@@ -68,4 +68,6 @@ MonoBehaviour:
   - {fileID: 176883499, guid: eee60374ea1a2844cacb88941d6f22bf, type: 3}
   - {fileID: 2051059532, guid: eee60374ea1a2844cacb88941d6f22bf, type: 3}
   - {fileID: 353581561, guid: eee60374ea1a2844cacb88941d6f22bf, type: 3}
-  _originalObjList: []
+  _originalObjList:
+  - {fileID: 9171719564122868168, guid: 6cd0dcea1af615b4eb334e951707703c, type: 3}
+  - {fileID: 2444510877103001363, guid: 81d06f96fc848674e9f68955e6bc406e, type: 3}
