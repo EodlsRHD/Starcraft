@@ -3627,6 +3627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonStartGame: {fileID: 70807406}
   _buttonCancel: {fileID: 128150824}
+  _tamplate: {fileID: 2024001451}
   _templateParent: {fileID: 1178530234}
 --- !u!1 &1096875843
 GameObject:
