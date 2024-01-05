@@ -11,7 +11,7 @@ public class WaitingRoom : MonoBehaviour
     private Button _buttonStartGame = null;
 
     [SerializeField]
-    private Button _buttonCancle = null;
+    private Button _buttonCancel = null;
 
     [SerializeField]
     private Transform _templateParent = null;
@@ -19,30 +19,18 @@ public class WaitingRoom : MonoBehaviour
     private RectTransform _rT = null;
 
     private Action<Action> _onCloseCallback = null;
-    private Action _onOpenMapListCallback = null;
-    private Action _onCloseMapInfo = null;
 
     private MapData _mapData = null;
 
-    public void Initialize(Action<Action> onCloseCallback, Action onOpenMapListCallback, Action onCloseMapInfo)
+    public void Initialize(Action<Action> onCloseCallback)
     {
         if(onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
         }
 
-        if(onOpenMapListCallback != null)
-        {
-            _onOpenMapListCallback = onOpenMapListCallback;
-        }
-
-        if(onCloseMapInfo != null)
-        {
-            _onCloseMapInfo = onCloseMapInfo;
-        }
-
         _buttonStartGame.onClick.AddListener(OnGameStart);
-        _buttonCancle.onClick.AddListener(() => { OnClose(_onOpenMapListCallback); });
+        _buttonCancel.onClick.AddListener(() => { OnClose(); });
 
         _rT = this.GetComponent<RectTransform>();
 
@@ -68,7 +56,6 @@ public class WaitingRoom : MonoBehaviour
             return;
         }
 
-        _onCloseMapInfo?.Invoke();
         OnClose(() => 
         {
             GameManager.instance.currentMapdata = _mapData;

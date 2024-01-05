@@ -23,7 +23,7 @@ public class CustomPlay : MonoBehaviour
     {
         _mapList.Initialize(OpenMapInfo, OnClose);
         _mapInfo.Initialize(OpenWaitingRoom, CloseMapList);
-        _waitingRoom.Initialize(WaitingRoomClose, OpenMapList, CloseMapInfo);
+        _waitingRoom.Initialize(WaitingRoomClose);
 
         if (onCloseCallback != null)
         {
@@ -64,11 +64,6 @@ public class CustomPlay : MonoBehaviour
         _onResult?.Invoke();
     }
 
-    private void OpenMapList()
-    {
-        _mapList.Open();
-    }
-
     private void OpenMapInfo(MapData mapData)
     {
         GameManager.instance.currentMapdata = mapData;
@@ -85,13 +80,12 @@ public class CustomPlay : MonoBehaviour
         _mapList.Close(onResult);
     }
 
-    private void CloseMapInfo()
-    {
-        _mapInfo.Close();
-    }
-
     private void WaitingRoomClose(Action onResult)
     {
-        _waitingRoom.Close(onResult);
+        _mapInfo.Close();
+        _waitingRoom.Close(() => 
+        {
+            _mapList.Open();
+        });
     }
 }
