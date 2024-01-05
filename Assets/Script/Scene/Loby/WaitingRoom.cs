@@ -14,6 +14,9 @@ public class WaitingRoom : MonoBehaviour
     private Button _buttonCancel = null;
 
     [SerializeField]
+    private HomeAndAwayTamplate _tamplate = null;
+
+    [SerializeField]
     private Transform _templateParent = null;
 
     private RectTransform _rT = null;
@@ -24,7 +27,9 @@ public class WaitingRoom : MonoBehaviour
 
     public void Initialize(Action<Action> onCloseCallback)
     {
-        if(onCloseCallback != null)
+        _tamplate.Initialize();
+
+        if (onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
         }
@@ -45,7 +50,27 @@ public class WaitingRoom : MonoBehaviour
 
         GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
         {
-            
+            switch(_mapData.classification)
+            {
+                case eClassification.HomeAndAway:
+                    {
+                        for (int i = 0; i < _mapData.teamNum; i++)
+                        {
+                            HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
+                            tamplate.SetHomeAndAway("Home");
+                        }
+                    }
+                    break;
+
+                case eClassification.Solo:
+                    {
+                        for (int i = 0; i < _mapData.maxPlayer; i++)
+                        {
+                            HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
+                        }
+                    }
+                    break;
+            }
         });
     }
 

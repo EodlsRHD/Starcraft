@@ -27,6 +27,13 @@ public enum ePlayerColor
     Black
 }
 
+public enum eClassification
+{
+    Non = -1,
+    HomeAndAway,
+    Solo
+}
+
 [System.Serializable]
 public class MapData
 {
@@ -37,6 +44,9 @@ public class MapData
     public string version = string.Empty;
     public string maker = string.Empty;
     public int maxPlayer = 0;
+
+    public eClassification classification = eClassification.Non;
+    public int teamNum = 0;
 
     public string thumbnailPath = string.Empty;
 
