@@ -5,6 +5,40 @@ using UnityEngine.UI;
 using System;
 using DG.Tweening;
 
+public class PoolKeyMemory
+{
+    public int Mineral = 0;
+    public int Gas = 0;
+
+    public int Building_TakeOff = 0;
+    public int Building_Landing = 0;
+
+    public int Attack_Protoss_Non_False_Non = 0;
+    public int Attack_Protoss_Non_True_Non = 0;
+    public int Defence_Protoss_Non_False_Non = 0;
+    public int Defence_Protoss_Non_True_Non = 0;
+    public int Shild_Protoss_Non_False_Non = 0;
+
+    public int Attack_Terran_Biological_False_Non = 0;
+    public int Attack_Terran_Mechanical_False_Non = 0;
+    public int Arrack_Terran_Non_True_Non = 0;
+    public int Defence_Terran_Biological_False_Non = 0;
+    public int Defence_Terran_Mechanical_False_Non = 0;
+    public int Defence_Terran_Non_True_Non = 0;
+
+    public int Arrack_Zerg_Non_False_Far = 0;
+    public int Arrack_Zerg_Non_False_Neer = 0;
+    public int Arrack_Zerg_Non_True_Non = 0;
+    public int Defence_Zerg_Non_False_Non = 0;
+    public int Defence_Zerg_Non_True_Non = 0;
+
+    public int Hold = 0;
+    public int Attack = 0;
+    public int Movw = 0;
+    public int Patrol = 0;
+    public int Stop = 0;
+}
+
 public class ToolManager : MonoBehaviour
 {
     [SerializeField]
@@ -23,11 +57,30 @@ public class ToolManager : MonoBehaviour
     private GameObject _objObjectPool = null;
 
     private ObjectPool _objectPool = null;
+    private PoolKeyMemory _memory = null;
 
     private Action<eScene> _onChangeSceneCallback = null;
 
+    public PoolKeyMemory memory
+    {
+        get 
+        { 
+            if(_memory == null)
+            {
+                _memory = new PoolKeyMemory();
+            }
+
+            return _memory;
+        }
+    }
+
     public void Initialize(Action<eScene> onChangeSceneCallback)
     {
+        if(_memory == null)
+        {
+            _memory = new PoolKeyMemory();
+        }
+
         _sceneChanger.Initialize();
         _canvasGroupScreen.Initialize();
         _uiAnimation.Initialize();
@@ -156,7 +209,7 @@ public class ToolManager : MonoBehaviour
             return;
         }
 
-        _objectPool.Request(name, type, onResult);
+        _objectPool.Request(type, name, onResult);
     }
 
     public void PutBackPool(PutBackPool value)

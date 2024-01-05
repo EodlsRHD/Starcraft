@@ -12,12 +12,14 @@ public class MapManager : MonoBehaviour
 
     private static GameObject _objMap = null;
 
-    private static List<Game_Resources> _resourcesList = new List<Game_Resources>();
+    private static List<Node> _resources = new List<Node>();
+    private static List<Node> _startPositions = new List<Node>();
 
-    public static void SetMapObject(GameObject obj, List<Game_Resources> resourcesList)
+    public static void SetMapObject(GameObject obj, List<Node> resourcesList, List<Node> startPositions)
     {
         _objMap = obj;
-        _resourcesList = resourcesList;
+        _resources = resourcesList;
+        _startPositions = startPositions;
         DontDestroyOnLoad(_objMap);
     }
 
@@ -36,10 +38,70 @@ public class MapManager : MonoBehaviour
 
     public void InstantiateMap()
     {
-        Debug.Log(_resourcesList.Count);
-
         _objMap.transform.SetParent(_mapParant);
         _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f);
+
+        for (int i = 0; i < _resources.Count; i++)
+        {
+            Node node = _resources[i];
+
+            if(node.startPosition.playerColor != ePlayerColor.Non)
+            {
+
+            }
+
+            if(node.resource.type != eResourceType.Non)
+            {
+                switch(node.resource.type)
+                {
+                    case eResourceType.Mineral:
+                        {
+                            if(GameManager.instance.poolMemory.Mineral == 0)
+                            {
+                                GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Mineral", (request) =>
+                                {
+                                    GameManager.instance.poolMemory.Mineral = request.key;
+
+                                    GameObject obj = request.GetObject();
+                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                                });
+                            }
+                            else
+                            {
+                                GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Mineral, (request) =>
+                                {
+                                    GameObject obj = request.GetObject();
+                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                                });
+                            }
+                        }
+                        break;
+
+                    case eResourceType.Gas:
+                        {
+                            if (GameManager.instance.poolMemory.Mineral == 0)
+                            {
+                                GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Gas", (request) =>
+                                {
+                                    GameManager.instance.poolMemory.Gas = request.key;
+
+                                    GameObject obj = request.GetObject();
+                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                                });
+                            }
+                            else
+                            {
+                                GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Gas, (request) =>
+                                {
+                                    GameObject obj = request.GetObject();
+                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                                });
+                            }
+                        }
+                        break;
+                }
+            }
+        }
     }
 
     private void OnDestroy()

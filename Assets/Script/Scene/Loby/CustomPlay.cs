@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class CustomPlay : MonoBehaviour
 {
     [SerializeField]
-    private SelectMap _selectMap = null;
+    private MapList _mapList = null;
 
     [SerializeField]
-    private Button _buttonStart = null;
+    private MapInfo _mapInfo = null;
 
     [SerializeField]
-    private Button _buttonClose = null;
+    private WaitingRoom _waitingRoom = null;
 
     private Action _onCloseCallback = null;
 
@@ -21,17 +21,15 @@ public class CustomPlay : MonoBehaviour
 
     public void Initialize(Action onCloseCallback)
     {
-        _selectMap.Initialize(() => { _buttonStart.gameObject.SetActive(true); });
+        _mapList.Initialize(OpenMapInfo, OnClose);
+        _mapInfo.Initialize(OpenWaitingRoom, CloseMapList);
+        _waitingRoom.Initialize(WaitingRoomClose, OpenMapList, CloseMapInfo);
 
         if (onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
         }
 
-        _buttonStart.onClick.AddListener(GameStart);
-        _buttonClose.onClick.AddListener(OnClose);
-
-        _buttonStart.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
@@ -42,14 +40,14 @@ public class CustomPlay : MonoBehaviour
             _onResult = onResult;
         }
 
-        _selectMap.Open();
+        _mapList.Open();
 
         this.gameObject.SetActive(true);
     }
 
     public void Close(Action onResult)
     {
-        _selectMap.Close(() => 
+        _mapList.Close(() => 
         {
             this.gameObject.SetActive(false);
 
@@ -61,17 +59,39 @@ public class CustomPlay : MonoBehaviour
 
     private void OnClose()
     {
+        _mapInfo.Close();
         _onCloseCallback?.Invoke();
         _onResult?.Invoke();
     }
 
-    private void GameStart()
+    private void OpenMapList()
     {
-        if (GameManager.instance.currentMapdata == null)
-        {
-            return;
-        }
+        _mapList.Open();
+    }
 
-        GameManager.instance.toolManager.ChangeScene("Game", GameManager.instance.currentMapdata.name, eScene.Game);
+    private void OpenMapInfo(MapData mapData)
+    {
+        GameManager.instance.currentMapdata = mapData;
+        _mapInfo.Open(mapData);
+    }
+
+    private void OpenWaitingRoom(MapData mapData)
+    {
+        _waitingRoom.Open(mapData);
+    }
+
+    private void CloseMapList(Action onResult)
+    {
+        _mapList.Close(onResult);
+    }
+
+    private void CloseMapInfo()
+    {
+        _mapInfo.Close();
+    }
+
+    private void WaitingRoomClose(Action onResult)
+    {
+        _waitingRoom.Close(onResult);
     }
 }

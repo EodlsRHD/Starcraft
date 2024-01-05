@@ -25,10 +25,30 @@ public class MapInfo : MonoBehaviour
     [SerializeField]
     private TMP_Text _textMaker = null;
 
+    [SerializeField]
+    private Button _buttonSelectMap = null;
+
     private RectTransform _rT = null;
 
-    public void Initialize()
+    private Action<MapData> _onOpenWaitingRoomCallback = null;
+    private Action<Action> _onCloseMapListCallback = null;
+
+    private MapData _mapData = null;
+
+    public void Initialize(Action<MapData> onOpenWaitingRoomCallback, Action<Action> onCloseMapListCallback)
     {
+        if(onOpenWaitingRoomCallback != null)
+        {
+            _onOpenWaitingRoomCallback = onOpenWaitingRoomCallback;
+        }
+
+        if(onCloseMapListCallback != null)
+        {
+            _onCloseMapListCallback = onCloseMapListCallback;
+        }
+
+        _buttonSelectMap.onClick.AddListener(OnSelectMap);
+
         _rT = this.GetComponent<RectTransform>();
 
         this.gameObject.SetActive(false);
@@ -36,9 +56,32 @@ public class MapInfo : MonoBehaviour
 
     public void Open(MapData data)
     {
-        GameManager.instance.toolManager.ImageDownload(data.thumbnailPath, (texture, result) => 
+        if(_mapData != null)
         {
-            if(result == true)
+            if (data.id == _mapData.id)
+            {
+                return;
+            }
+        }
+
+        if(this.gameObject.activeSelf == true)
+        {
+            Close(() => 
+            {
+                OpenData(data);
+            });
+        }
+
+        OpenData(data);
+    }
+
+    private void OpenData(MapData data)
+    {
+        GameManager.instance.toolManager.ImageDownload(data.thumbnailPath, (texture, result) =>
+        {
+            _mapData = data;
+
+            if (result == true)
             {
                 Sprite s = GameManager.instance.toolManager.ConvertTextureToSprite(texture);
 
@@ -63,10 +106,17 @@ public class MapInfo : MonoBehaviour
         });
     }
 
-    public void Close()
+    public void Close(Action onResult = null)
     {
-        GameManager.instance.toolManager.MoveX(_rT, 1310f, 1f, false, () =>
+        if(this.gameObject.activeSelf == false)
         {
+            return;
+        }
+
+        GameManager.instance.toolManager.MoveX(_rT, 1310f, 0.5f, false, () =>
+        {
+            _mapData = null;
+
             _imageThumbnail.sprite = null;
 
             _textName.text = string.Empty;
@@ -75,6 +125,13 @@ public class MapInfo : MonoBehaviour
             _textMaker.text = string.Empty;
 
             this.gameObject.SetActive(false);
+
+            onResult?.Invoke();
         });
+    }
+
+    private void OnSelectMap()
+    {
+        _onCloseMapListCallback(() => { _onOpenWaitingRoomCallback?.Invoke(_mapData); });
     }
 }

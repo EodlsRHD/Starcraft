@@ -19,11 +19,26 @@ public struct UnZipMapFile
 public class FileManager : MonoBehaviour
 {
     private readonly string _txtFileExtension = ".txt";
-    private readonly string _assetFileExtension = ".asset";
 
     public void Initialize()
     {
-        
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string gamePath = path + @"/Unity_StarCraft2";
+
+        DirectoryInfo diGame = new DirectoryInfo(gamePath);
+
+        if (diGame.Exists == false)
+        {
+            diGame.Create();
+
+            string mapsPath = path + @"/Unity_StarCraft2/maps";
+            DirectoryInfo diMaps = new DirectoryInfo(mapsPath);
+
+            if (diMaps.Exists == false)
+            {
+                diMaps.Create();
+            }
+        }
     }
 
     public bool FileCheck(string path)

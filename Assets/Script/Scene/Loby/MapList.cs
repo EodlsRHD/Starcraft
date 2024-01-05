@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
+#region Mapdata
+
 public enum eResourceType
 {
     Non = -1,
@@ -28,6 +30,8 @@ public enum ePlayerColor
 [System.Serializable]
 public class MapData
 {
+    public long id = 0;
+
     public string name = string.Empty;
     public string description = string.Empty;
     public string version = string.Empty;
@@ -75,11 +79,10 @@ public class Resource
     public int quantity = 0;
 }
 
-public class SelectMap : MonoBehaviour
-{
-    [SerializeField]
-    private MapInfo _mapInfo = null;
+#endregion
 
+public class MapList : MonoBehaviour
+{
     [SerializeField]
     private MapTemplate _mapTamplate = null;
 
@@ -89,18 +92,21 @@ public class SelectMap : MonoBehaviour
     [SerializeField]
     private TMP_Text _textPath = null;
 
+    [SerializeField]
+    private Button _buttonClose = null;
+
     private RectTransform _rT = null;
 
-    private Action _onStartButtonActiveCallback = null;
+    private Action<MapData> _onOpenMapInfo = null;
 
-    public void Initialize(Action onStartButtonActiveCallback)
+    public void Initialize(Action<MapData> onOpenMapInfo, Action onCloseCallback)
     {
-        _mapInfo.Initialize();
-
-        if(onStartButtonActiveCallback != null)
+        if(onOpenMapInfo != null)
         {
-            _onStartButtonActiveCallback = onStartButtonActiveCallback;
+            _onOpenMapInfo = onOpenMapInfo;
         }
+
+        _buttonClose.onClick.AddListener(() => { onCloseCallback?.Invoke(); });
 
         _rT = this.GetComponent<RectTransform>();
 
@@ -132,9 +138,7 @@ public class SelectMap : MonoBehaviour
 
     public void Close(Action onResult)
     {
-        _mapInfo.Close();
-
-        GameManager.instance.toolManager.MoveX(_rT, -1310f, 1f, false, () => 
+        GameManager.instance.toolManager.MoveX(_rT, -1310f, 0.5f, false, () => 
         {
             this.gameObject.SetActive(false);
 
@@ -161,9 +165,6 @@ public class SelectMap : MonoBehaviour
 
     private void OpenMapInfo(MapData data)
     {
-        _mapInfo.Open(data);
-
-        GameManager.instance.currentMapdata = data;
-        _onStartButtonActiveCallback?.Invoke();
+        _onOpenMapInfo?.Invoke(data);
     }
 }
