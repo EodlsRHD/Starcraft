@@ -97,7 +97,7 @@ public class ControlPanel : MonoBehaviour
                     {
                         if (_buildingTakeOff_Key == 0)
                         {
-                            GameManager.instance.toolManager.RequestPool("Building_TakeOff", ePoolType.Image, (result) =>
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Building_TakeOff", (result) =>
                             {
                                 _buildingTakeOff_Key = result.key;
                                 _buttonCustom_4.image.sprite = result.GetSprite();
@@ -116,7 +116,7 @@ public class ControlPanel : MonoBehaviour
                     {
                         if (_buildingLanding_key == 0)
                         {
-                            GameManager.instance.toolManager.RequestPool("Building_Landing", ePoolType.Image, (result) =>
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Building_Landing", (result) =>
                             {
                                 _buildingLanding_key = result.key;
                                 _buttonCustom_4.image.sprite = result.GetSprite();

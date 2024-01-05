@@ -149,7 +149,7 @@ public class ToolManager : MonoBehaviour
         _objectPool.Request(type, key, onResult);
     }
 
-    public void RequestPool(string name, ePoolType type, Action<RequestPool> onResult)
+    public void RequestPool(ePoolType type, string name, Action<RequestPool> onResult)
     {
         if (_objectPool == null)
         {

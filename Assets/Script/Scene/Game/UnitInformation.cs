@@ -101,7 +101,7 @@ public class UnitInformation : MonoBehaviour
 
             if (_data.metaData.HpKey == 0)
             {
-                GameManager.instance.toolManager.RequestPool("Hp_" + _data.name, ePoolType.Image, (result) =>
+                GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Hp_" + _data.name, (result) =>
                 {
                     _data.metaData.HpKey = result.key;
                     _imageHP.sprite = result.GetSprite();
@@ -119,7 +119,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.attackKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool("Attack_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, ePoolType.Image, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Attack_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.attackKey = result.key;
                         _imageAttack.sprite = result.GetSprite();
@@ -148,7 +148,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.defenceKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool("Defence_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, ePoolType.Image, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Defence_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.defenceKey = result.key;
                         _imageDefence.sprite = result.GetSprite();
@@ -175,7 +175,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.shildKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool("Shild_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, ePoolType.Image, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Shild_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.shildKey = result.key;
                         _imageShild.sprite = result.GetSprite();
@@ -218,7 +218,7 @@ public class UnitInformation : MonoBehaviour
 
                 if (_datas[i].data.GetData().metaData.HpKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool("Hp_" + _datas[i].data.GetData().name, ePoolType.Image, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Hp_" + _datas[i].data.GetData().name, (result) =>
                     {
                         _datas[i].data.GetData().metaData.HpKey = result.key;
                         image.sprite = result.GetSprite();

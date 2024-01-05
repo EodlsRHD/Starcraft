@@ -10,6 +10,10 @@ public class MapGenerator : MonoBehaviour
 
     private bool _isDone = false;
 
+    private int _mineralPoolKey = 0;
+
+    private int _gasPoolKey = 0;
+
     public bool isDone
     {
         get { return _isDone; }
@@ -33,6 +37,7 @@ public class MapGenerator : MonoBehaviour
 
     IEnumerator GenerateMeshData(MapData mapData, Action<GameObject, List<Game_Resources>> onCallback)
     {
+        List<Game_Resources> resources = new List<Game_Resources>();
         MeshData meshData = new MeshData(mapData.mapSizeX, mapData.mapSizeY);
 
         float topLeftX = (mapData.mapSizeX - 1) * (-0.5f);
@@ -44,6 +49,34 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < mapData.mapSizeX; x++)
             {
                 Node node = mapData.nodes[x, y];
+
+                if(node.startPosition.playerColor != ePlayerColor.Non)
+                {
+
+                }
+
+                if(node.resource.type != eResourceType.Non)
+                {
+                    if(node.resource.type == eResourceType.Mineral)
+                    {
+                        GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Gas", (request) =>
+                        {
+                            _gasPoolKey = request.key;
+                            GameObject o = Instantiate(request.GetObject());
+                            o.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                        });
+                    }
+
+                    if(node.resource.type == eResourceType.Gas)
+                    {
+                        GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Mineral", (request) =>
+                        {
+                            _mineralPoolKey = request.key;
+                            GameObject o = Instantiate(request.GetObject());
+                            o.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+                        });
+                    }
+                }
 
                 meshData.vertices[vertexIndex] = new Vector3(topLeftX + x, node.topographic.height, topLeftZ - y);
                 meshData.uvs[vertexIndex] = new Vector2(x / mapData.mapSizeX, y / mapData.mapSizeY);
@@ -60,10 +93,7 @@ public class MapGenerator : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(Resoueces(mapData, (resources) => 
-        {
-            onCallback?.Invoke(DrawMesh(meshData), resources);
-        }));
+        onCallback?.Invoke(DrawMesh(meshData), resources);
     }
 
     private GameObject DrawMesh(MeshData meshData)
@@ -77,28 +107,6 @@ public class MapGenerator : MonoBehaviour
         meshRenderer.sharedMaterial = _matDefult;
 
         return obj;
-    }
-
-    IEnumerator Resoueces(MapData mapData, Action<List<Game_Resources>> onCallback)
-    {
-        List<Game_Resources> result = new List<Game_Resources>();
-
-        for (int y = 0; y < mapData.mapSizeY; y++)
-        {
-            for (int x = 0; x < mapData.mapSizeX; x++)
-            {
-                Node node = mapData.nodes[x, y];
-
-                if (node.startPosition.playerColor != ePlayerColor.Non)
-                {
-
-                }
-            }
-
-            yield return null;
-        }
-
-        onCallback?.Invoke(result);
     }
 
     private void Done(GameObject map, List<Game_Resources> resources)
