@@ -139,14 +139,24 @@ public class ObjectPool : MonoBehaviour
         requestQueue.Enqueue(p);
     }
 
-    public void Request(string name, ePoolType type, Action<RequestPool> onResult)
+    public void Request(ePoolType type, string name, Action<RequestPool> onResult)
     {
         if(name.Contains("Hp_")) // test code
         {
             return;
         }
 
-        string convertName = ConvertName(name);
+        string convertName = string.Empty;
+
+        if (type == ePoolType.Image)
+        {
+            convertName = ConvertName(name);
+        }
+        else
+        {
+            convertName = name;
+        }
+
         RequestPool p = new RequestPool();
 
         switch (type)
@@ -283,6 +293,12 @@ public class ObjectPool : MonoBehaviour
                                 _dictionaryImagePool[p.key].Push(Instantiate(result));
                             }
 
+                            if (_dictionaryImagePool[p.key].Count == 0)
+                            {
+                                var result = Find(p.key, _originalImageList);
+                                _dictionaryImagePool[p.key].Push(Instantiate(result));
+                            }
+
                             Sprite s = _dictionaryImagePool[p.key].Pop();
                             p.SetRequest(s);
                         }
@@ -294,6 +310,12 @@ public class ObjectPool : MonoBehaviour
                             {
                                 var result = Find(p.key, _originalObjList);
                                 _dictionaryObjectPool.Add(p.key, new Stack<GameObject>());
+                                _dictionaryObjectPool[p.key].Push(Instantiate(result));
+                            }
+
+                            if (_dictionaryObjectPool[p.key].Count == 0)
+                            {
+                                var result = Find(p.key, _originalObjList);
                                 _dictionaryObjectPool[p.key].Push(Instantiate(result));
                             }
 

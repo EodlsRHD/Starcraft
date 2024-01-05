@@ -9,6 +9,7 @@ using System.IO.Compression;
 using UnityEditor;
 using UnityEngine.EventSystems;
 using System.Runtime.Serialization.Formatters.Binary;
+using System;
 
 namespace Generator
 {
@@ -658,6 +659,8 @@ namespace Generator
                 _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[2]);
             }
 
+            Debug.LogError("objResources count : " + objResources.Length + "                       objStartColor count : " + objStartColor.Length);
+
             yield return null;
 
             FileGenerate(_mapData);
@@ -683,7 +686,6 @@ namespace Generator
 
             string usc2FilePath = string.Empty;
             string textFilePath = directory + "/" + mapData.name + ".txt";
-            string objFilePath = directory + "/" + "MapData" + ".txt";
 
             // text file
             var textfile = File.CreateText(textFilePath);
@@ -697,18 +699,6 @@ namespace Generator
                 sw.Close();
             }
 
-            // terrain Data file
-
-            //var objfile = File.CreateText(objFilePath);
-            //objfile.Close();
-
-            //var guids = AssetDatabase.FindAssets(_terrainFild.terrainData.name, new[] { "Assets" });
-            //string assetPath = AssetDatabase.GUIDToAssetPath(guids[0]);
-            //assetPath = Application.dataPath + "/" + assetPath.Split("/")[1];
-            //objFilePath = directory + "/" + _terrainFild.terrainData.name + ".asset";
-
-            //File.Copy(assetPath, objFilePath, true);
-
             // zip
             DirectoryInfo di = new DirectoryInfo(directory + "/" + mapData.name);
 
@@ -716,7 +706,6 @@ namespace Generator
             {
                 di.Create();
                 File.Move(textFilePath, directory + "/" + mapData.name + "/" + mapData.name + ".txt");
-                //File.Move(objFilePath, directory + "/" + mapData.name + "/" + _terrainFild.terrainData.name + ".asset");
 
                 ZipFile.CreateFromDirectory(di.FullName, di.FullName + ".USC2");
                 usc2FilePath = di.FullName + ".USC2";
@@ -745,8 +734,6 @@ namespace Generator
             {
                 if(isGenerate == true)
                 {
-                    node.topographic.height = hit.point.y;
-
                     if (hit.collider.gameObject.tag.Equals(_resources))
                     {
                         detected = true;
@@ -760,18 +747,22 @@ namespace Generator
                     if (detected == true)
                     {
                         node.topographic.isWalkable = false;
-                        return;
                     }
+
+                    node.topographic.height = hit.point.y;
                 }
 
-                if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 0.5f, NavMesh.AllAreas))
+                if (Physics.Raycast(pos, Vector3.down, out RaycastHit hit2, Mathf.Infinity, _layMask_ground))
                 {
-                    node.topographic.isWalkable = true;
-                    node.topographic.height = navHit.position.y;
-
-                    if(navHit.position.y >= 1f)
+                    if (NavMesh.SamplePosition(hit2.point, out NavMeshHit navHit, 0.5f, NavMesh.AllAreas))
                     {
-                        node.topographic.isHill = true;
+                        node.topographic.isWalkable = true;
+                        node.topographic.height = navHit.position.y;
+
+                        if (navHit.position.y >= 1f)
+                        {
+                            node.topographic.isHill = true;
+                        }
                     }
                 }
             }
@@ -805,6 +796,7 @@ namespace Generator
                 return;
             }
 
+            _mapData.id = DateTime.Now.Ticks;
             _mapData.name = _inputName.text;
             _mapData.description = _inputDescription.text;
             _mapData.maker = _inputMaker.text;

@@ -166,7 +166,9 @@ public class InGameManager : MonoBehaviour, ISubject
 
         _rttBox.gameObject.SetActive(false);
 
-        if(GameManager.instance.TEST_MODE == true)
+        _mapManager.InstantiateMap();
+
+        if (GameManager.instance.TEST_MODE == true)
         {
             foreach (var item in _testBuildingObjs)
             {
@@ -183,8 +185,6 @@ public class InGameManager : MonoBehaviour, ISubject
     private void IsReady()
     {
         SetInput();
-
-        _mapManager.InstantiateMap();
 
         _background.SetActive(false);
 

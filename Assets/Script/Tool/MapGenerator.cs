@@ -10,10 +10,6 @@ public class MapGenerator : MonoBehaviour
 
     private bool _isDone = false;
 
-    private int _mineralPoolKey = 0;
-
-    private int _gasPoolKey = 0;
-
     public bool isDone
     {
         get { return _isDone; }
@@ -29,15 +25,16 @@ public class MapGenerator : MonoBehaviour
         _isDone = false;
 
         MapData mapData = GameManager.instance.currentMapdata;
-        StartCoroutine(GenerateMeshData(mapData, (map, resouecrs) => 
+        StartCoroutine(GenerateMeshData(mapData, (map, resouecrs, startPositions) => 
         {
-            Done(map, resouecrs);
+            Done(map, resouecrs, startPositions);
         }));
     }
 
-    IEnumerator GenerateMeshData(MapData mapData, Action<GameObject, List<Game_Resources>> onCallback)
+    IEnumerator GenerateMeshData(MapData mapData, Action<GameObject, List<Node>, List<Node>> onCallback)
     {
-        List<Game_Resources> resources = new List<Game_Resources>();
+        List<Node> startPositions = new List<Node>();
+        List<Node> resources = new List<Node>();
         MeshData meshData = new MeshData(mapData.mapSizeX, mapData.mapSizeY);
 
         float topLeftX = (mapData.mapSizeX - 1) * (-0.5f);
@@ -52,29 +49,19 @@ public class MapGenerator : MonoBehaviour
 
                 if(node.startPosition.playerColor != ePlayerColor.Non)
                 {
-
+                    startPositions.Add(node);
                 }
 
                 if(node.resource.type != eResourceType.Non)
                 {
-                    if(node.resource.type == eResourceType.Mineral)
-                    {
-                        GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Gas", (request) =>
-                        {
-                            _gasPoolKey = request.key;
-                            GameObject o = Instantiate(request.GetObject());
-                            o.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-                        });
-                    }
-
                     if(node.resource.type == eResourceType.Gas)
                     {
-                        GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Mineral", (request) =>
-                        {
-                            _mineralPoolKey = request.key;
-                            GameObject o = Instantiate(request.GetObject());
-                            o.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-                        });
+                        resources.Add(node);
+                    }
+
+                    if(node.resource.type == eResourceType.Mineral)
+                    {
+                        resources.Add(node);
                     }
                 }
 
@@ -93,7 +80,7 @@ public class MapGenerator : MonoBehaviour
             yield return null;
         }
 
-        onCallback?.Invoke(DrawMesh(meshData), resources);
+        onCallback?.Invoke(DrawMesh(meshData), resources, startPositions);
     }
 
     private GameObject DrawMesh(MeshData meshData)
@@ -109,9 +96,9 @@ public class MapGenerator : MonoBehaviour
         return obj;
     }
 
-    private void Done(GameObject map, List<Game_Resources> resources)
+    private void Done(GameObject map, List<Node> resources, List<Node> startPositions)
     {
-        MapManager.SetMapObject(map, resources);
+        MapManager.SetMapObject(map, resources, startPositions);
 
         _isDone = true;
     }

@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.SceneManagement;
-using System;
 
 // RULE
 
@@ -43,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     private MapData _mapdata = null;
 
+    private ePlayerColor _currentplayerColor = ePlayerColor.Non;
+
     #region Get Set
 
     public static GameManager instance
@@ -63,6 +62,11 @@ public class GameManager : MonoBehaviour
         get { return _toolManager; }
     }
 
+    public PoolKeyMemory poolMemory
+    {
+        get { return _toolManager.memory; }
+    }
+
     public bool isLobyFirstLoadDone
     {
         get { return _isLobyFirstLoadDone; }
@@ -78,6 +82,12 @@ public class GameManager : MonoBehaviour
     {
         get { return _mapdata; }
         set { _mapdata = value; }
+    }
+
+    public ePlayerColor currentPlayerColor
+    {
+        get { return _currentplayerColor; }
+        set { _currentplayerColor = value; }
     }
 
     public bool TEST_MODE
