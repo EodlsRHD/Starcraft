@@ -45,6 +45,12 @@ namespace Generator
         [SerializeField]
         private TMP_InputField _inputMaxPlayer = null;
 
+        [SerializeField]
+        private TMP_Dropdown _dropDownClassification = null;
+
+        [SerializeField]
+        private TMP_InputField _InputFieldMemberCount = null;
+
         [Header("Map Size")]
 
         [SerializeField]
@@ -796,12 +802,30 @@ namespace Generator
                 return;
             }
 
+            if (_dropDownClassification.value == 0)
+            {
+                if (int.Parse(_inputMaxPlayer.text) < 2)
+                {
+                    Debug.Log("The maximum number of people must be 2 or more");
+                    return;
+                }
+            }
+
             _mapData.id = DateTime.Now.Ticks;
             _mapData.name = _inputName.text;
             _mapData.description = _inputDescription.text;
             _mapData.maker = _inputMaker.text;
             _mapData.version = _inputVersion.text;
             _mapData.maxPlayer = int.Parse(_inputMaxPlayer.text);
+
+            _mapData.classification = (eClassification)_dropDownClassification.value;
+
+            if (_dropDownClassification.value == 0)
+            {
+                _mapData.teamNum = _mapData.maxPlayer / int.Parse(_InputFieldMemberCount.text);
+            }
+
+            _mapData.classification = (eClassification)_dropDownClassification.value;
 
             _mapData.mapSizeX = (int)_mapSize;
             _mapData.mapSizeY = (int)_mapSize;
