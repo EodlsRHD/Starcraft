@@ -38,25 +38,35 @@ public class MapManager : MonoBehaviour
 
     public void InstantiateMap()
     {
+        Map();
+        Resources();
+        Player();
+    }
+
+    private void Map()
+    {
         _objMap.transform.SetParent(_mapParant);
         _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f);
+    }
 
+    private void Resources()
+    {
         for (int i = 0; i < _resources.Count; i++)
         {
             Node node = _resources[i];
 
-            if(node.startPosition.playerColor != ePlayerColor.Non)
+            if (node.startPosition.playerColor != ePlayerColor.Non)
             {
 
             }
 
-            if(node.resource.type != eResourceType.Non)
+            if (node.resource.type != eResourceType.Non)
             {
-                switch(node.resource.type)
+                switch (node.resource.type)
                 {
                     case eResourceType.Mineral:
                         {
-                            if(GameManager.instance.poolMemory.Mineral == 0)
+                            if (GameManager.instance.poolMemory.Mineral == 0)
                             {
                                 GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Mineral", (request) =>
                                 {
@@ -101,6 +111,16 @@ public class MapManager : MonoBehaviour
                         break;
                 }
             }
+        }
+    }
+
+    private void Player()
+    {
+        MapData mapData = GameManager.instance.currentMapdata;
+
+        for (int i = 0; i < _startPositions.Count; i++)
+        {
+            Node node = _startPositions[i];
         }
     }
 
