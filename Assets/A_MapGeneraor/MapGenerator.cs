@@ -726,7 +726,10 @@ namespace Generator
 
         private void CheckNode(ref Node node, bool isGenerate)
         {
-            bool detected = false;
+            if(isGenerate == false)
+            {
+                return;
+            }
 
             node.resource = new Resource();
             node.startPosition = new StartPosition();
@@ -734,40 +737,22 @@ namespace Generator
 
             Vector3 pos = new Vector3(node.x, 100f, node.y);
 
-            if (Physics.Raycast(pos, Vector3.down, out RaycastHit hit, Mathf.Infinity))
+            if (Physics.Raycast(pos, Vector3.down, out RaycastHit hit2, Mathf.Infinity, _layMask_ground))
             {
-                if(isGenerate == true)
+                node.topographic.height = hit2.point.y;
+
+                if (NavMesh.SamplePosition(hit2.point, out NavMeshHit navHit, 0.5f, NavMesh.AllAreas))
                 {
-                    if (hit.collider.gameObject.tag.Equals(_resources))
-                    {
-                        detected = true;
-                    }
+                    node.topographic.isWalkable = true;
 
-                    if (hit.collider.gameObject.tag.Equals(_startPoint))
+                    if (navHit.position.y >= 1f)
                     {
-                        detected = true;
+                        node.topographic.isHill = true;
                     }
-
-                    if (detected == true)
-                    {
-                        node.topographic.isWalkable = false;
-                    }
-
-                    node.topographic.height = hit.point.y;
                 }
-
-                if (Physics.Raycast(pos, Vector3.down, out RaycastHit hit2, Mathf.Infinity, _layMask_ground))
+                else
                 {
-                    if (NavMesh.SamplePosition(hit2.point, out NavMeshHit navHit, 0.5f, NavMesh.AllAreas))
-                    {
-                        node.topographic.isWalkable = true;
-                        node.topographic.height = navHit.position.y;
-
-                        if (navHit.position.y >= 1f)
-                        {
-                            node.topographic.isHill = true;
-                        }
-                    }
+                    node.topographic.isWalkable = false;
                 }
             }
         }
