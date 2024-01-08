@@ -119,7 +119,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.attackKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Attack_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Attack_" + _data.raceType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.attackKey = result.key;
                         _imageAttack.sprite = result.GetSprite();
@@ -148,7 +148,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.defenceKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Defence_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Defence_" + _data.raceType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.defenceKey = result.key;
                         _imageDefence.sprite = result.GetSprite();
@@ -175,7 +175,7 @@ public class UnitInformation : MonoBehaviour
             {
                 if (_data.metaData.shildKey == 0)
                 {
-                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Shild_" + _data.broodType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
+                    GameManager.instance.toolManager.RequestPool(ePoolType.Image, "Shild_" + _data.raceType + "_" + _data.unitType + "_" + _data.isAir + "_" + _data.farAndNeer, (result) =>
                     {
                         _data.metaData.shildKey = result.key;
                         _imageShild.sprite = result.GetSprite();

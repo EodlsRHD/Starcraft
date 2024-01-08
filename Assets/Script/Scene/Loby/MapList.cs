@@ -46,7 +46,10 @@ public class MapData
     public int maxPlayer = 0;
 
     public eClassification classification = eClassification.Non;
-    public int teamNum = 0;
+    public int teamCount = 0;
+
+    public string ownerID = string.Empty;
+    public PlayerInfo[] members;
 
     public string thumbnailPath = string.Empty;
 
@@ -109,6 +112,8 @@ public class MapList : MonoBehaviour
 
     private Action<MapData> _onOpenMapInfo = null;
 
+    private List<MapTemplate> _tamplates = new List<MapTemplate>();
+
     public void Initialize(Action<MapData> onOpenMapInfo, Action onCloseCallback)
     {
         if(onOpenMapInfo != null)
@@ -142,6 +147,8 @@ public class MapList : MonoBehaviour
             {
                 MapTemplate tam = Instantiate(_mapTamplate, _templateParent);
                 tam.Initialize(infos[i].Name, mapsPath + infos[i].Name, OpenMapInfo);
+
+                _tamplates.Add(tam);
             }
         });
     }
@@ -175,6 +182,16 @@ public class MapList : MonoBehaviour
 
     private void OpenMapInfo(MapData data)
     {
+        CloseInfo();
+
         _onOpenMapInfo?.Invoke(data);
+    }
+
+    private void CloseInfo()
+    {
+        foreach (var tam in _tamplates)
+        {
+            tam.CloseInfo();
+        }
     }
 }

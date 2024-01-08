@@ -50,9 +50,9 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
         return _data;
     }
 
-    public eBrood BroodType()
+    public eRace BroodType()
     {
-        return _data.broodType;
+        return _data.raceType;
     }
 
     public eUnitType UnitType()

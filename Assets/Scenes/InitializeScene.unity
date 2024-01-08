@@ -762,6 +762,12 @@ MonoBehaviour:
   _toolManager: {fileID: 1435689062}
   _cursorManager: {fileID: 763140720}
   test_mode: 1
+  _playerInfo:
+    id: admin
+    nickName: admin
+    brood: -1
+    win: 0
+    lose: 0
 --- !u!1 &1893675481
 GameObject:
   m_ObjectHideFlags: 0

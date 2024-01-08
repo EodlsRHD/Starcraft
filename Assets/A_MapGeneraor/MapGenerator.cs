@@ -49,7 +49,7 @@ namespace Generator
         private TMP_Dropdown _dropDownClassification = null;
 
         [SerializeField]
-        private TMP_InputField _InputFieldMemberCount = null;
+        private TMP_InputField _InputFieldTeamNum = null;
 
         [Header("Map Size")]
 
@@ -665,8 +665,6 @@ namespace Generator
                 _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[2]);
             }
 
-            Debug.LogError("objResources count : " + objResources.Length + "                       objStartColor count : " + objStartColor.Length);
-
             yield return null;
 
             FileGenerate(_mapData);
@@ -820,9 +818,20 @@ namespace Generator
 
             _mapData.classification = (eClassification)_dropDownClassification.value;
 
-            if (_dropDownClassification.value == 0)
+            if((eClassification)_dropDownClassification.value == eClassification.HomeAndAway)
             {
-                _mapData.teamNum = _mapData.maxPlayer / int.Parse(_InputFieldMemberCount.text);
+                if(_InputFieldTeamNum.text.Length == 0)
+                {
+                    _mapData.teamCount = 2;
+                }
+                else
+                {
+                    _mapData.teamCount = int.Parse(_InputFieldTeamNum.text);
+                }
+            }
+            else
+            {
+                _mapData.teamCount = 0;
             }
 
             _mapData.classification = (eClassification)_dropDownClassification.value;

@@ -22,16 +22,24 @@ public class WaitingRoom : MonoBehaviour
     private RectTransform _rT = null;
 
     private Action<Action> _onCloseCallback = null;
+    private Action<MapData> _onGameStartonCallback = null;
 
     private MapData _mapData = null;
 
-    public void Initialize(Action<Action> onCloseCallback)
+    private List<HomeAndAwayTamplate> _tamplates = new List<HomeAndAwayTamplate>();
+
+    public void Initialize(Action<Action> onCloseCallback, Action<MapData> onGameStartonCallback)
     {
         _tamplate.Initialize();
 
         if (onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
+        }
+
+        if(onGameStartonCallback != null)
+        {
+            _onGameStartonCallback = onGameStartonCallback;
         }
 
         _buttonStartGame.onClick.AddListener(OnGameStart);
@@ -48,16 +56,59 @@ public class WaitingRoom : MonoBehaviour
 
         _mapData = data;
 
+        if(_mapData.members == null)
+        {
+            _mapData.members = new PlayerInfo[_mapData.maxPlayer];
+            _mapData.members[0] = GameManager.instance.playerInfo;
+            _mapData.ownerID = GameManager.instance.playerInfo.id;
+        }
+
         GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
         {
             switch(_mapData.classification)
             {
                 case eClassification.HomeAndAway:
                     {
-                        for (int i = 0; i < _mapData.teamNum; i++)
+                        int playerCount = 0;
+
+                        for (int i = 0; i < _mapData.teamCount; i++)
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
-                            tamplate.SetHomeAndAway("Home");
+
+                            if(i == 0)
+                            {
+                                tamplate.SetHomeAndAway("Home");
+                            }
+                            else if(i == 1)
+                            {
+                                tamplate.SetHomeAndAway("Away");
+                            }
+
+                            for (int p = 0; p < (_mapData.maxPlayer / _mapData.teamCount); p++)
+                            {
+                                HomeAndAwayTamplate playerTamplate = Instantiate(_tamplate, _templateParent);
+
+                                if (_mapData.ownerID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                                {
+                                    if (playerCount + p == 0)
+                                    {
+                                        playerTamplate.SetPlayer(GameManager.instance.playerInfo.id, GameManager.instance.playerInfo.nickName, true);
+                                        _mapData.members[playerCount + p] = GameManager.instance.playerInfo;
+                                    }
+                                    else
+                                    {
+                                        playerTamplate.SetPlayer(string.Empty,  "Empty", false);
+                                    }
+                                }
+                                else
+                                {
+
+                                }
+
+                                _tamplates.Add(playerTamplate);
+
+                                playerCount++;
+                            }
                         }
                     }
                     break;
@@ -67,28 +118,80 @@ public class WaitingRoom : MonoBehaviour
                         for (int i = 0; i < _mapData.maxPlayer; i++)
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
+
+                            if (_mapData.ownerID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                            {
+                                if (i == 0)
+                                {
+                                    tamplate.SetPlayer(GameManager.instance.playerInfo.id, GameManager.instance.playerInfo.nickName, true);
+                                    _mapData.members[i] = GameManager.instance.playerInfo;
+                                }
+                                else
+                                {
+                                    tamplate.SetPlayer(string.Empty, "Empty", false);
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
+                            _tamplates.Add(tamplate);
                         }
                     }
                     break;
             }
         });
+
+        GameManager.instance.currentMapdata = _mapData;
     }
 
     private void OnGameStart()
     {
-        if (GameManager.instance.currentMapdata == null)
+        for (int i = 0; i < GameManager.instance.currentMapdata.members.Length; i++)
         {
-            return;
+            if (GameManager.instance.currentMapdata.members[i] == null)
+            {
+                continue;
+            }
+
+            foreach (var tam in _tamplates)
+            {
+                if(tam.isPlayer == false)
+                {
+                    continue;
+                }
+
+                eRace b = tam.GetRaceValue(out string id);
+
+                if ((int)b == 4) // Non
+                {
+                    InterfaceManager.instance.OpenOneButton(_mapData.name, "All users must choose the race.", () =>
+                    {
+                        InterfaceManager.instance.ClosePopUp();
+                    }, "Ok");
+
+                    return;
+                }
+
+                if (id.Equals(GameManager.instance.currentMapdata.members[i].id, StringComparison.Ordinal))
+                {
+                    GameManager.instance.currentMapdata.members[i].brood = b;
+
+                    if(id.Equals(GameManager.instance.playerInfo.id))
+                    {
+                        GameManager.instance.playerInfo.brood = b;
+                    }
+
+                    break;
+                }
+            }
         }
 
-        OnClose(() => 
-        {
-            GameManager.instance.currentMapdata = _mapData;
-            GameManager.instance.toolManager.ChangeScene("Game", GameManager.instance.currentMapdata.name, eScene.Game);
-        });
+        _onGameStartonCallback?.Invoke(_mapData);
     }
 
-    public void Close(Action onResult)
+    public void Close(Action onResult = null)
     {
         GameManager.instance.toolManager.MoveX(_rT, -1310f, 0.5f, false, () =>
         {
@@ -116,6 +219,8 @@ public class WaitingRoom : MonoBehaviour
                 Destroy(iter.gameObject);
             }
         }
+
+        _tamplates.Clear();
 
         _templateParent.transform.DetachChildren();
     }

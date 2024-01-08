@@ -14,7 +14,7 @@ public enum eUpgrade
 public struct Upgrade
 {
     public eUpgrade upgrade;
-    public eBrood brood;
+    public eRace brood;
     public eUnitType unitType;
     public eUnitSizeType unitSizeType;
 }

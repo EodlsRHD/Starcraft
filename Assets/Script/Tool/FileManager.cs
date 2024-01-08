@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.IO.Compression;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Cysharp.Threading.Tasks;
 
 public struct UnZipMapFile
 {

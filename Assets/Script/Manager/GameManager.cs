@@ -21,6 +21,18 @@ using UnityEngine;
 //
 //      }
 
+[System.Serializable]
+public class PlayerInfo
+{
+    public string id = string.Empty;
+
+    public string nickName = string.Empty;
+    public eRace brood = eRace.Non;
+
+    public int win = 0;
+    public int lose = 0;
+}
+
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance = null;
@@ -38,9 +50,13 @@ public class GameManager : MonoBehaviour
 
     private eScene _currentScene = eScene.Non;
 
+    private ePlayerColor _currentplayerColor = ePlayerColor.Non;
+
+    [SerializeField] // test
     private MapData _mapdata = null;
 
-    private ePlayerColor _currentplayerColor = ePlayerColor.Non;
+    [SerializeField] // test
+    private PlayerInfo _playerInfo = null;
 
     #region Get Set
 
@@ -78,16 +94,22 @@ public class GameManager : MonoBehaviour
         get { return _currentScene; }
     }
 
-    public  MapData currentMapdata
+    public ePlayerColor currentPlayerColor
+    {
+        get { return _currentplayerColor; }
+        set { _currentplayerColor = value; }
+    }
+
+    public MapData currentMapdata
     {
         get { return _mapdata; }
         set { _mapdata = value; }
     }
 
-    public ePlayerColor currentPlayerColor
+    public PlayerInfo playerInfo
     {
-        get { return _currentplayerColor; }
-        set { _currentplayerColor = value; }
+        get { return _playerInfo; }
+        set { _playerInfo = value; }
     }
 
     public bool TEST_MODE

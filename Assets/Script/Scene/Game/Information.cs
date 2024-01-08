@@ -14,7 +14,7 @@ public interface ISubject
 public interface IObserver
 {
     public void UpdateData(ObjectData data);
-    public eBrood BroodType();
+    public eRace BroodType();
     public eUnitType UnitType();
     public eUnitSizeType UnitSizeType();
     public void SetUpgrade(eUpgrade type);
@@ -28,7 +28,7 @@ public enum eObject
     Unit
 }
 
-public enum eBrood
+public enum eRace
 {
     Non = -1,
     Terran,
@@ -73,7 +73,7 @@ public class ObjectData
     public int key = 0;
 
     public eObject objType = eObject.Non;
-    public eBrood broodType = eBrood.Non;
+    public eRace raceType = eRace.Non;
     public eUnitType unitType = eUnitType.Non;
     public eUnitSizeType unitSizeType = eUnitSizeType.Non;
     public eUnitAttackType unitAttackType = eUnitAttackType.Non;

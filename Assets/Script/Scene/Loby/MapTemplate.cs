@@ -17,6 +17,8 @@ public class MapTemplate : MonoBehaviour
 
     private Action<MapData> _onMapInfoCallback = null;
 
+    private bool _isOpen = false;
+
     public void Initialize(string name, string path, Action<MapData> onMapInfoCallback)
     {
         if (onMapInfoCallback != null)
@@ -34,8 +36,19 @@ public class MapTemplate : MonoBehaviour
 
     private void OnOpenMapData()
     {
+        if(_isOpen == true)
+        {
+            return;
+        }
+
         UnZipMapFile file = GameManager.instance.toolManager.UnZipFile(_dataPath);
 
         _onMapInfoCallback?.Invoke(file.mapData);
+        _isOpen = true;
+    }
+
+    public void CloseInfo()
+    {
+        _isOpen = false;
     }
 }

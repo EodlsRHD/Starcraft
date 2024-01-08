@@ -4598,7 +4598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 300.00003}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &702510463
@@ -8884,7 +8884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter Quantity
+  m_text: Enter TeamCount
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10268,7 +10268,7 @@ MonoBehaviour:
   _inputVersion: {fileID: 426186202}
   _inputMaxPlayer: {fileID: 1044977528}
   _dropDownClassification: {fileID: 1296346691}
-  _InputFieldMemberCount: {fileID: 2021345615}
+  _InputFieldTeamNum: {fileID: 2021345615}
   _buttonGenerate: {fileID: 985667804}
   _scrollBarMapSize: {fileID: 1356833253}
   _buttonChangeMapSize: {fileID: 1861542303}
@@ -11200,7 +11200,7 @@ GameObject:
   - component: {fileID: 2021345616}
   - component: {fileID: 2021345615}
   m_Layer: 5
-  m_Name: InputField MemberCount
+  m_Name: InputField TeamCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

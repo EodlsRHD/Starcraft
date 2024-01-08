@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class HomeAndAwayTamplate : MonoBehaviour
 {
@@ -17,6 +18,20 @@ public class HomeAndAwayTamplate : MonoBehaviour
     [SerializeField]
     private TMP_Text _textPlayerNickName = null;
 
+    private bool _isPlayer = false;
+
+    [Space(10f)]
+
+    [SerializeField]
+    private TMP_Dropdown _dropDownRace = null;
+
+    private string _playerID = string.Empty;
+
+    public bool isPlayer
+    {
+        get { return _isPlayer; }
+    }
+
     public void Initialize()
     {
         _objHomeAndAway.gameObject.SetActive(false);
@@ -25,19 +40,32 @@ public class HomeAndAwayTamplate : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void SetHomeAndAway(string label)
+    public eRace GetRaceValue(out string id)
     {
-        _textHomeAndAwayLabel.text = label;
+        id = _playerID;
 
-        this.gameObject.SetActive(true);
-        _objHomeAndAway.gameObject.SetActive(true);
+        return (eRace)_dropDownRace.value;
     }
 
-    public void SetPlayer(string label)
+    public void SetHomeAndAway(string label)
     {
+        _isPlayer = false;
+
+        _textHomeAndAwayLabel.text = label;
+
+        _objHomeAndAway.gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
+    }
+
+    public void SetPlayer(string playerID, string label, bool isMe)
+    {
+        _isPlayer = true;
+
+        _playerID = playerID;
         _textPlayerNickName.text = label;
 
-        this.gameObject.SetActive(true);
         _objPlayer.gameObject.SetActive(true);
+        _dropDownRace.gameObject.SetActive(isMe);
+        this.gameObject.SetActive(true);
     }
 }

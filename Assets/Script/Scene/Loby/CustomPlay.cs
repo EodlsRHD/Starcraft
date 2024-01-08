@@ -23,7 +23,7 @@ public class CustomPlay : MonoBehaviour
     {
         _mapList.Initialize(OpenMapInfo, OnClose);
         _mapInfo.Initialize(OpenWaitingRoom, CloseMapList);
-        _waitingRoom.Initialize(WaitingRoomClose);
+        _waitingRoom.Initialize(WaitingRoomClose, GameStart);
 
         if (onCloseCallback != null)
         {
@@ -64,9 +64,18 @@ public class CustomPlay : MonoBehaviour
         _onResult?.Invoke();
     }
 
+    private void GameStart(MapData mapData)
+    {
+        _waitingRoom.Close();
+        _mapInfo.Close(() => 
+        {
+            GameManager.instance.currentMapdata = mapData;
+            GameManager.instance.toolManager.ChangeScene("Game", GameManager.instance.currentMapdata.name, eScene.Game);
+        });
+    }
+
     private void OpenMapInfo(MapData mapData)
     {
-        GameManager.instance.currentMapdata = mapData;
         _mapInfo.Open(mapData);
     }
 

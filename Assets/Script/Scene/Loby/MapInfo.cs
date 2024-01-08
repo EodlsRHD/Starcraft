@@ -71,8 +71,10 @@ public class MapInfo : MonoBehaviour
                 OpenData(data);
             });
         }
-
-        OpenData(data);
+        else
+        {
+            OpenData(data);
+        }
     }
 
     private void OpenData(MapData data)
