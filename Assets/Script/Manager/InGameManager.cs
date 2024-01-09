@@ -174,7 +174,7 @@ public class InGameManager : MonoBehaviour, ISubject
 
         _rttBox.gameObject.SetActive(false);
 
-        _mapManager.InstantiateMap();
+        _mapManager.SetUp();
 
         if (GameManager.instance.TEST_MODE == true)
         {
@@ -195,7 +195,6 @@ public class InGameManager : MonoBehaviour, ISubject
         SetInput();
 
         _background.SetActive(false);
-
         _isStart = true;
     }
 
@@ -221,7 +220,22 @@ public class InGameManager : MonoBehaviour, ISubject
             {
                 if(hit.collider.gameObject.TryGetComponent(out ObjectTamplate tamplate))
                 {
-                    if(_inputManager.isPress_L_Ctrl == true)
+                    if (tamplate.GetData().objType == eObject.Resources)
+                    {
+                        foreach (var item in _selectObjects)
+                        {
+                            item.SetSelection(false);
+                        }
+
+                        _selectObjects.Clear();
+
+                        _selectObjects.Add(tamplate);
+                        tamplate.SetSelection(true);
+
+                        return;
+                    }
+
+                    if (_inputManager.isPress_L_Ctrl == true)
                     {
                         _rectSelectionBox = new Rect();
 
@@ -261,8 +275,23 @@ public class InGameManager : MonoBehaviour, ISubject
                             }
                         }
                     }
-                    else if(_inputManager.isPress_L_Shift == false)
+                    else if(_inputManager.isPress_L_Shift == true)
                     {
+                        if (_selectObjects.Count > 16)
+                        {
+                            return;
+                        }
+
+                        _selectObjects.Add(tamplate);
+                        tamplate.SetSelection(true);
+                    }
+                    else if(_inputManager.isPress_L_Ctrl == false && _inputManager.isPress_L_Shift == false)
+                    {
+                        if (_selectObjects.Count > 16)
+                        {
+                            return;
+                        }
+
                         foreach (var item in _selectObjects)
                         {
                             item.SetSelection(false);
@@ -387,15 +416,9 @@ public class InGameManager : MonoBehaviour, ISubject
             _gameConsole.Order(eOrder.Hold);
         });
 
-        _inputManager.SetKeyboardKey(KeyCode.LeftShift, eClickType.Down, eOrder.Non, () =>
-        {
+        _inputManager.SetKeyboardKey(KeyCode.LeftShift, eClickType.Down, eOrder.Non, () => { });
 
-        });
-
-        _inputManager.SetKeyboardKey(KeyCode.LeftControl, eClickType.Down, eOrder.Non, () =>
-        {
-            
-        });
+        _inputManager.SetKeyboardKey(KeyCode.LeftControl, eClickType.Down, eOrder.Non, () => { });
 
         _inputManager.SetMove(eDirection.Up, () => { _objCameraArm.transform.position += Vector3.forward * _cameraMoveSpeed; });
 

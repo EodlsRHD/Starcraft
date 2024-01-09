@@ -29,18 +29,15 @@ public class MapManager : MonoBehaviour
         {
             _onIsReadyCallback = onIsReadyCallback;
         }
-
-        if(GameManager.instance.TEST_MODE == true)
-        {
-            _onIsReadyCallback?.Invoke();
-        }
     }
 
-    public void InstantiateMap()
+    public void SetUp()
     {
         Map();
         Resources();
         Player();
+
+        _onIsReadyCallback?.Invoke();
     }
 
     private void Map()
@@ -113,7 +110,7 @@ public class MapManager : MonoBehaviour
     private void InstantiateResources(ref RequestPool request, ref Node node)
     {
         GameObject obj = request.GetObject();
-        obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+        obj.transform.position = new Vector3(node.x, node.topographic.height + (obj.transform.localScale.y * 0.5f), node.y);
         obj.tag = GameManager.instance.tagMemory.resources;
 
         if (obj.TryGetComponent(out Game_Resources component) == false)
