@@ -148,6 +148,14 @@ public class GameManager : MonoBehaviour
         _currentScene = scene;
     }
 
+    public void UpdatePlayerInfo(PlayerInfo info)
+    {
+        _playerInfo.team = info.team;
+        _playerInfo.color = info.color;
+        _playerInfo.x = info.x;
+        _playerInfo.z = info.z;
+    }
+
     public void ChangeCursorParant(Transform tr)
     {
         _cursorManager.ChangeParant(tr);
