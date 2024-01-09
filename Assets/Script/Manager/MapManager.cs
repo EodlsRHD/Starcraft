@@ -72,30 +72,14 @@ public class MapManager : MonoBehaviour
                                 {
                                     GameManager.instance.poolMemory.Mineral = request.key;
 
-                                    GameObject obj = request.GetObject();
-                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-
-                                    if(obj.TryGetComponent(out Game_Resources component) == false)
-                                    {
-                                        component = obj.AddComponent<Game_Resources>();
-                                    }
-
-                                    component.Initialize(node.resource);
+                                    InstantiateResources(ref request, ref node);
                                 });
                             }
                             else
                             {
                                 GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Mineral, (request) =>
                                 {
-                                    GameObject obj = request.GetObject();
-                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-
-                                    if (obj.TryGetComponent(out Game_Resources component) == false)
-                                    {
-                                        component = obj.AddComponent<Game_Resources>();
-                                    }
-
-                                    component.Initialize(node.resource);
+                                    InstantiateResources(ref request, ref node);
                                 });
                             }
                         }
@@ -109,30 +93,14 @@ public class MapManager : MonoBehaviour
                                 {
                                     GameManager.instance.poolMemory.Gas = request.key;
 
-                                    GameObject obj = request.GetObject();
-                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-
-                                    if (obj.TryGetComponent(out Game_Resources component) == false)
-                                    {
-                                        component = obj.AddComponent<Game_Resources>();
-                                    }
-
-                                    component.Initialize(node.resource);
+                                    InstantiateResources(ref request, ref node);
                                 });
                             }
                             else
                             {
                                 GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Gas, (request) =>
                                 {
-                                    GameObject obj = request.GetObject();
-                                    obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
-
-                                    if (obj.TryGetComponent(out Game_Resources component) == false)
-                                    {
-                                        component = obj.AddComponent<Game_Resources>();
-                                    }
-
-                                    component.Initialize(node.resource);
+                                    InstantiateResources(ref request, ref node);
                                 });
                             }
                         }
@@ -140,6 +108,20 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void InstantiateResources(ref RequestPool request, ref Node node)
+    {
+        GameObject obj = request.GetObject();
+        obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+        obj.tag = GameManager.instance.tagMemory.resources;
+
+        if (obj.TryGetComponent(out Game_Resources component) == false)
+        {
+            component = obj.AddComponent<Game_Resources>();
+        }
+
+        component.Initialize(node.resource);
     }
 
     private void Player()
@@ -169,6 +151,7 @@ public class MapManager : MonoBehaviour
             if(players[i].id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
             {
                 InGameManager.instance.cameraArm = new Vector2(players[i].x, players[i].z);
+                GameManager.instance.UpdatePlayerInfo(players[i]);
             }
         }
     }
