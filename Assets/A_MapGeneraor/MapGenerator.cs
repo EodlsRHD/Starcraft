@@ -791,9 +791,15 @@ namespace Generator
             {
                 if (int.Parse(_inputMaxPlayer.text) < 2)
                 {
-                    Debug.Log("The maximum number of people must be 2 or more");
+                    Debug.Log("The maximum number of people must be 2 or more.");
                     return;
                 }
+            }
+
+            if(_colorCount != int.Parse(_inputMaxPlayer.text))
+            {
+                Debug.Log("The total number of players and starting points must be the same. \n There are currently " + _inputMaxPlayer.text + " players, and there are " + _colorCount + " starting points.");
+                return;
             }
 
             _mapData.id = DateTime.Now.Ticks;
