@@ -46,7 +46,7 @@ public class MapManager : MonoBehaviour
     private void Map()
     {
         _objMap.transform.SetParent(_mapParant);
-        _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f);
+        _objMap.transform.position = new Vector3(GameManager.instance.currentMapdata.mapSizeX * 0.5f - 0.5f, 0f, GameManager.instance.currentMapdata.mapSizeY * 0.5f - 0.5f);
     }
 
     private void Resources()
