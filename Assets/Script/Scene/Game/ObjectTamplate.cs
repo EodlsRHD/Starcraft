@@ -34,15 +34,17 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
     {
         _data = data;
 
+        if(_data.objType == eObject.Resources)
+        {
+            return;
+        }
+
         _agnet.speed = data.moveSpeed;
 
         if (onUpdaeInformation != null)
         {
             _onUpdaeInformation = onUpdaeInformation;
         }
-
-        Mesh mesh = new Mesh();
-
     }
 
     public ObjectData GetData()
@@ -110,6 +112,11 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
 
     private void Update()
     {
+        if (_data.objType == eObject.Resources)
+        {
+            return;
+        }
+
         Vector3 pos = this.transform.position;
 
         Action(pos);

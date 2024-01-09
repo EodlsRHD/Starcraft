@@ -25,7 +25,8 @@ public enum eObject
 {
     Non = -1,
     Building,
-    Unit
+    Unit,
+    Resources
 }
 
 public enum eRace
