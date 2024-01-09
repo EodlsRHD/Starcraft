@@ -462,6 +462,11 @@ public class InGameManager : MonoBehaviour, ISubject
 
     private void SelectUnit()
     {
+        if(_objects.Count == 0)
+        {
+            return;
+        }
+
         List<ObjectTamplate> select = new List<ObjectTamplate>();
 
         bool isUnit = false;
@@ -481,6 +486,11 @@ public class InGameManager : MonoBehaviour, ISubject
                     if (i > _objects[eObject.Unit].Count - 1)
                     {
                         break;
+                    }
+
+                    if(_objects[eObject.Unit][i] == null)
+                    {
+                        continue;
                     }
 
                     if (_rectSelectionBox.Contains(_mainCamera.WorldToScreenPoint(_objects[eObject.Unit][i].transform.position)))
@@ -505,6 +515,11 @@ public class InGameManager : MonoBehaviour, ISubject
                 if (i > _objects[eObject.Unit].Count - 1)
                 {
                     break;
+                }
+
+                if (_objects[eObject.Unit][i] == null)
+                {
+                    continue;
                 }
 
                 if (_rectSelectionBox.Contains(_mainCamera.WorldToScreenPoint(_objects[eObject.Unit][i].transform.position)))
