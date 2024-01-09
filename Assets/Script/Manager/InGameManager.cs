@@ -121,6 +121,14 @@ public class InGameManager : MonoBehaviour, ISubject
         get { return _mainCamera; }
     }
 
+    public Vector2 cameraArm
+    {
+        set 
+        {
+            _objCameraArm.transform.position = new Vector3(value.x, _objCameraArm.transform.position.y, value.y);
+        }
+    }
+
     public bool isStart
     {
         get { return _isStart; }
