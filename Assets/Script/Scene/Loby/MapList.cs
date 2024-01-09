@@ -48,7 +48,7 @@ public class MapData
     public eClassification classification = eClassification.Non;
     public int teamCount = 0;
 
-    public string ownerID = string.Empty;
+    public string roomHostID = string.Empty;
     public PlayerInfo[] members;
 
     public string thumbnailPath = string.Empty;
