@@ -651,8 +651,6 @@ namespace Generator
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
                 int y = Mathf.FloorToInt(objResources[i].transform.position.z);
 
-                Debug.Log("Obj resoueces | Type  :  " + _mapData.nodes[x, y].resource.type + "           Coordinate  :  " + x + " , " +  y);
-
                 _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[2]);
 
@@ -660,8 +658,8 @@ namespace Generator
 
             for (int i = 0; i < objStartColor.Length; i++)
             {
-                int x = Mathf.FloorToInt(objResources[i].transform.position.x);
-                int y = Mathf.FloorToInt(objResources[i].transform.position.z);
+                int x = Mathf.FloorToInt(objStartColor[i].transform.position.x);
+                int y = Mathf.FloorToInt(objStartColor[i].transform.position.z);
 
                 _mapData.nodes[x, y].startPosition.playerColor = (ePlayerColor)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].startPosition.team = int.Parse(objResources[i].name.Split("_")[2]);
