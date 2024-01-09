@@ -60,7 +60,7 @@ public class WaitingRoom : MonoBehaviour
         {
             _mapData.members = new PlayerInfo[_mapData.maxPlayer];
             _mapData.members[0] = GameManager.instance.playerInfo;
-            _mapData.ownerID = GameManager.instance.playerInfo.id;
+            _mapData.roomHostID = GameManager.instance.playerInfo.id;
         }
 
         GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
@@ -88,7 +88,7 @@ public class WaitingRoom : MonoBehaviour
                             {
                                 HomeAndAwayTamplate playerTamplate = Instantiate(_tamplate, _templateParent);
 
-                                if (_mapData.ownerID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                                if (_mapData.roomHostID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
                                 {
                                     if (playerCount + p == 0)
                                     {
@@ -119,7 +119,7 @@ public class WaitingRoom : MonoBehaviour
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
 
-                            if (_mapData.ownerID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                            if (_mapData.roomHostID.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
                             {
                                 if (i == 0)
                                 {
