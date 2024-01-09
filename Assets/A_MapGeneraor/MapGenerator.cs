@@ -651,6 +651,8 @@ namespace Generator
                 int x = Mathf.FloorToInt(objResources[i].transform.position.x);
                 int y = Mathf.FloorToInt(objResources[i].transform.position.z);
 
+                Debug.Log("Obj resoueces | Type  :  " + _mapData.nodes[x, y].resource.type + "           Coordinate  :  " + x + " , " +  y);
+
                 _mapData.nodes[x, y].resource.type = (eResourceType)int.Parse(objResources[i].name.Split("_")[1]);
                 _mapData.nodes[x, y].resource.quantity = int.Parse(objResources[i].name.Split("_")[2]);
 
