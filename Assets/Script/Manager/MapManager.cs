@@ -74,6 +74,13 @@ public class MapManager : MonoBehaviour
 
                                     GameObject obj = request.GetObject();
                                     obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+
+                                    if(obj.TryGetComponent(out Game_Resources component) == false)
+                                    {
+                                        component = obj.AddComponent<Game_Resources>();
+                                    }
+
+                                    component.Initialize(node.resource);
                                 });
                             }
                             else
@@ -82,6 +89,13 @@ public class MapManager : MonoBehaviour
                                 {
                                     GameObject obj = request.GetObject();
                                     obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+
+                                    if (obj.TryGetComponent(out Game_Resources component) == false)
+                                    {
+                                        component = obj.AddComponent<Game_Resources>();
+                                    }
+
+                                    component.Initialize(node.resource);
                                 });
                             }
                         }
@@ -97,6 +111,13 @@ public class MapManager : MonoBehaviour
 
                                     GameObject obj = request.GetObject();
                                     obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+
+                                    if (obj.TryGetComponent(out Game_Resources component) == false)
+                                    {
+                                        component = obj.AddComponent<Game_Resources>();
+                                    }
+
+                                    component.Initialize(node.resource);
                                 });
                             }
                             else
@@ -105,6 +126,13 @@ public class MapManager : MonoBehaviour
                                 {
                                     GameObject obj = request.GetObject();
                                     obj.transform.position = new Vector3(node.x, node.topographic.height, node.y);
+
+                                    if (obj.TryGetComponent(out Game_Resources component) == false)
+                                    {
+                                        component = obj.AddComponent<Game_Resources>();
+                                    }
+
+                                    component.Initialize(node.resource);
                                 });
                             }
                         }
@@ -117,11 +145,18 @@ public class MapManager : MonoBehaviour
     private void Player()
     {
         MapData mapData = GameManager.instance.currentMapdata;
+        PlayerInfo[] players = mapData.members;
 
-        for (int i = 0; i < _startPositions.Count; i++)
+        for (int i = 0; i < players.Length; i++)
         {
             Node node = _startPositions[i];
+            players[i].x = node.x;
+            players[i].z = node.y;
+            players[i].color = node.startPosition.playerColor;
+            players[i].team = node.startPosition.team;
         }
+
+
     }
 
     private void OnDestroy()
