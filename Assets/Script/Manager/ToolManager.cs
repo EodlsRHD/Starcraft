@@ -5,6 +5,15 @@ using UnityEngine.UI;
 using System;
 using DG.Tweening;
 
+public class TagMemory
+{
+    public readonly string startPoint = "StartPoint";
+    public readonly string resources = "Resources";
+    public readonly string ground = "Ground";
+    public readonly string building = "Building";
+    public readonly string unit = "Unit";
+}
+
 public class PoolKeyMemory
 {
     public int Mineral = 0;
@@ -57,28 +66,47 @@ public class ToolManager : MonoBehaviour
     private GameObject _objObjectPool = null;
 
     private ObjectPool _objectPool = null;
-    private PoolKeyMemory _memory = null;
+    private PoolKeyMemory _poolKeyMemory = null;
+    private TagMemory _tagMemory = null;
 
     private Action<eScene> _onChangeSceneCallback = null;
 
-    public PoolKeyMemory memory
+    public PoolKeyMemory poolKeyMemory
     {
         get 
         { 
-            if(_memory == null)
+            if(_poolKeyMemory == null)
             {
-                _memory = new PoolKeyMemory();
+                _poolKeyMemory = new PoolKeyMemory();
             }
 
-            return _memory;
+            return _poolKeyMemory;
+        }
+    }
+
+    public TagMemory tagMemory
+    {
+        get
+        {
+            if (_tagMemory == null)
+            {
+                _tagMemory = new TagMemory();
+            }
+
+            return _tagMemory;
         }
     }
 
     public void Initialize(Action<eScene> onChangeSceneCallback)
     {
-        if(_memory == null)
+        if(_poolKeyMemory == null)
         {
-            _memory = new PoolKeyMemory();
+            _poolKeyMemory = new PoolKeyMemory();
+        }
+
+        if (_tagMemory == null)
+        {
+            _tagMemory = new TagMemory();
         }
 
         _sceneChanger.Initialize();

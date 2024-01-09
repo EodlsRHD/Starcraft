@@ -23,9 +23,6 @@ public enum eMouseInput
 
 public class InputManager : MonoBehaviour
 {
-    private const string _tagBuilding = "Building";
-    private const string _tagUnit = "Unit";
-
     private Vector2 _mousePosition;
 
     public bool isOrder_Move = false;
@@ -428,19 +425,26 @@ public class InputManager : MonoBehaviour
 
         Key();
         
-        if (hit.collider.gameObject.tag.Equals(_tagBuilding) || hit.collider.gameObject.tag.Equals(_tagUnit))
+        if (hit.collider.gameObject.tag.Equals(GameManager.instance.tagMemory.building) || hit.collider.gameObject.tag.Equals(GameManager.instance.tagMemory.unit) || hit.collider.gameObject.tag.Equals(GameManager.instance.tagMemory.resources))
         {
-            if (isOrder_Patrol == true)
+            if(hit.collider.gameObject.tag.Equals(GameManager.instance.tagMemory.resources) == false)
             {
-                GameManager.instance.ChangeCursor(eCursorType.Point, tamplate.friendIdentificationType);
-            }
-            else if (isOrder_Attack == true)
-            {
-                GameManager.instance.ChangeCursor(eCursorType.PointAttack, tamplate.friendIdentificationType);
+                if (isOrder_Patrol == true)
+                {
+                    GameManager.instance.ChangeCursor(eCursorType.Point, tamplate.friendIdentificationType);
+                }
+                else if (isOrder_Attack == true)
+                {
+                    GameManager.instance.ChangeCursor(eCursorType.PointAttack, tamplate.friendIdentificationType);
+                }
+                else
+                {
+                    GameManager.instance.ChangeCursor(eCursorType.BuildingSelect, tamplate.friendIdentificationType);
+                }
             }
             else
             {
-                GameManager.instance.ChangeCursor(eCursorType.BuildingSelect, tamplate.friendIdentificationType);
+                GameManager.instance.ChangeCursor(eCursorType.BuildingSelect, eFriendIdentification.Alliance);
             }
         }
         else

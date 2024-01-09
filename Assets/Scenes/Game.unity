@@ -1850,8 +1850,7 @@ MonoBehaviour:
   _inGameResources: {fileID: 1537256018}
   _mapManager: {fileID: 404849789}
   _inputManager: {fileID: 619948455}
-  _testUnitObjs:
-  - {fileID: 0}
+  _testUnitObjs: []
   _testBuildingObjs: []
   _selectObjects: []
 --- !u!1 &587295840

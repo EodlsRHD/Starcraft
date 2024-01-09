@@ -86,7 +86,12 @@ public class GameManager : MonoBehaviour
 
     public PoolKeyMemory poolMemory
     {
-        get { return _toolManager.memory; }
+        get { return _toolManager.poolKeyMemory; }
+    }
+
+    public TagMemory tagMemory
+    {
+        get { return _toolManager.tagMemory; }
     }
 
     public bool isLobyFirstLoadDone
