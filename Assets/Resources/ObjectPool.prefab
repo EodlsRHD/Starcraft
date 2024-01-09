@@ -71,3 +71,6 @@ MonoBehaviour:
   _originalObjList:
   - {fileID: 9171719564122868168, guid: 6cd0dcea1af615b4eb334e951707703c, type: 3}
   - {fileID: 2444510877103001363, guid: 81d06f96fc848674e9f68955e6bc406e, type: 3}
+  - {fileID: 8408017815343578253, guid: f35e1ea0444de884d9ba8bd4341ad04d, type: 3}
+  - {fileID: 8408017815343578253, guid: 5dc588b19dc1a7b4993ec9ecc6b8c0de, type: 3}
+  - {fileID: 8408017815343578253, guid: 3432d210ec1294247abc8c732af63300, type: 3}
