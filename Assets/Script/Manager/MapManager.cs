@@ -149,11 +149,29 @@ public class MapManager : MonoBehaviour
 
         for (int i = 0; i < players.Length; i++)
         {
+            if(_startPositions.Count <= i)
+            {
+                break;
+            }
+
+            if(players[i] == null)
+            {
+                continue;
+            }
+
             Node node = _startPositions[i];
+
+            Debug.LogError(node.x + "  a  " + node.y);
+
             players[i].x = node.x;
             players[i].z = node.y;
             players[i].color = node.startPosition.playerColor;
             players[i].team = node.startPosition.team;
+
+            if(players[i].id.Equals(mapData.roomHostID, StringComparison.Ordinal))
+            {
+                InGameManager.instance.cameraArm = new Vector2(players[i].x, players[i].z);
+            }
         }
 
 
