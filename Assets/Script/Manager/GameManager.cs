@@ -29,6 +29,12 @@ public class PlayerInfo
     public string nickName = string.Empty;
     public eRace brood = eRace.Non;
 
+    public int team = -1;
+    public ePlayerColor color = ePlayerColor.Non;
+
+    public float x = 0f;
+    public float z = 0f;
+
     public int win = 0;
     public int lose = 0;
 }
