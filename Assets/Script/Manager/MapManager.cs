@@ -15,6 +15,8 @@ public class MapManager : MonoBehaviour
     private static List<Node> _resources = new List<Node>();
     private static List<Node> _startPositions = new List<Node>();
 
+    private Action<IObserver> _onUpdateInformationCallback = null;
+
     public static void SetMapObject(GameObject obj, List<Node> resourcesList, List<Node> startPositions)
     {
         _objMap = obj;
@@ -23,11 +25,16 @@ public class MapManager : MonoBehaviour
         DontDestroyOnLoad(_objMap);
     }
 
-    public void Initialize(Action onIsReadyCallback)
+    public void Initialize(Action onIsReadyCallback, Action<IObserver> onUpdateInformationCallback)
     {
         if(onIsReadyCallback != null)
         {
             _onIsReadyCallback = onIsReadyCallback;
+        }
+
+        if(onUpdateInformationCallback != null)
+        {
+            _onUpdateInformationCallback = onUpdateInformationCallback;
         }
     }
 
@@ -36,6 +43,7 @@ public class MapManager : MonoBehaviour
         Map();
         Resources();
         Player();
+        SetFirstObject();
 
         _onIsReadyCallback?.Invoke();
     }
@@ -107,24 +115,9 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void InstantiateResources(ref RequestPool request, ref Node node)
-    {
-        GameObject obj = request.GetObject();
-        obj.transform.position = new Vector3(node.x, node.topographic.height + (obj.transform.localScale.y * 0.5f), node.y);
-        obj.tag = GameManager.instance.tagMemory.resources;
-
-        if (obj.TryGetComponent(out Game_Resources component) == false)
-        {
-            component = obj.AddComponent<Game_Resources>();
-        }
-
-        component.Initialize(node.resource);
-    }
-
     private void Player()
     {
-        MapData mapData = GameManager.instance.currentMapdata;
-        PlayerInfo[] players = mapData.members;
+        PlayerInfo[] players = GameManager.instance.currentMapdata.members;
 
         for (int i = 0; i < players.Length; i++)
         {
@@ -151,6 +144,122 @@ public class MapManager : MonoBehaviour
                 GameManager.instance.UpdatePlayerInfo(players[i]);
             }
         }
+    }
+
+    private void SetFirstObject()
+    {
+        PlayerInfo[] players = GameManager.instance.currentMapdata.members;
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (_startPositions.Count <= i)
+            {
+                break;
+            }
+
+            if (players[i] == null)
+            {
+                continue;
+            }
+
+            Node node = _startPositions[i];
+
+            switch(players[i].brood)
+            {
+                case eRace.Terran:
+                    {
+                        if (GameManager.instance.poolMemory.CommandCenter == 0)
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, players[i], "CommandCenter", (request) => 
+                            {
+                                GameManager.instance.poolMemory.CommandCenter = request.key;
+
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                        else
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.CommandCenter, (request) =>
+                            {
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                    }
+                    break;
+
+                case eRace.Protoss:
+                    {
+                        if (GameManager.instance.poolMemory.Nexus == 0)
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Nexus", (request) =>
+                            {
+                                GameManager.instance.poolMemory.Nexus = request.key;
+
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                        else
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Nexus, (request) =>
+                            {
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                    }
+                    break;
+
+                case eRace.Zerg:
+                    {
+                        if (GameManager.instance.poolMemory.Hatchery == 0)
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Hatchery", (request) =>
+                            {
+                                GameManager.instance.poolMemory.Hatchery = request.key;
+
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                        else
+                        {
+                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Hatchery, (request) =>
+                            {
+                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
+                            });
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    private void InstantiateResources(ref RequestPool request, ref Node node)
+    {
+        GameObject obj = request.GetObject();
+        obj.transform.position = new Vector3(node.x, node.topographic.height + (obj.transform.localScale.y * 0.5f), node.y);
+        obj.tag = GameManager.instance.tagMemory.resources;
+
+        if (obj.TryGetComponent(out Game_Resources component) == false)
+        {
+            component = obj.AddComponent<Game_Resources>();
+        }
+
+        component.Initialize(node.resource);
+    }
+
+    private void InstantiateObject(ref RequestPool request, ref Node node, ref int key, string tag)
+    {
+        GameObject obj = request.GetObject();
+        obj.transform.position = new Vector3(node.x, node.topographic.height + (obj.transform.localScale.y * 0.5f), node.y);
+        obj.tag = tag;
+
+        var tamplate = obj.GetComponent<ObjectTamplate>();
+
+        GameManager.instance.toolManager.RequestData(key, (requst) =>
+        {
+            tamplate.Initialize(requst.GetData(), _onUpdateInformationCallback);
+        });
+
+        InGameManager.instance.Add(eObject.Building, tamplate);
     }
 
     private void OnDestroy()

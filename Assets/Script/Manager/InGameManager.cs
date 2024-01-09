@@ -159,7 +159,7 @@ public class InGameManager : MonoBehaviour, ISubject
 
         _gameConsole.Initialize(Order);
         _inGameResources.Initialize();
-        _mapManager.Initialize(IsReady);
+        _mapManager.Initialize(IsReady, _gameConsole.Upgrade);
         _inputManager.Initialize();
 
         GameManager.instance.toolManager.InstantiateObjectPool();
@@ -193,6 +193,8 @@ public class InGameManager : MonoBehaviour, ISubject
     private void IsReady()
     {
         SetInput();
+
+        _gameConsole.GameStart();
 
         _background.SetActive(false);
         _isStart = true;
@@ -955,14 +957,14 @@ public class InGameManager : MonoBehaviour, ISubject
         }
     }
 
-    public void Add(eObject type, IObserver data)
+    public void Add(eObject type, ObjectTamplate data)
     {
-        //_objects[type].Add(data);
+        _objects[type].Add(data);
     }
 
-    public void Remove(eObject type, IObserver data)
+    public void Remove(eObject type, ObjectTamplate data)
     {
-        //_objects[type].Remove(data);
+        _objects[type].Remove(data);
     }
 
     public void Notify(eObject type)

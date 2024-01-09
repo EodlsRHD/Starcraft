@@ -8,7 +8,8 @@ public enum ePoolType
 {
     Non = -1,
     Image,
-    Prefab
+    Prefab,
+    Data
 }
 
 public struct RequestPool
@@ -19,6 +20,7 @@ public struct RequestPool
 
     private Sprite _s;
     private GameObject _o;
+    private ObjectData _data;
 
     public void SetPool(ePoolType type, int key, Action<RequestPool> onResult)
     {
@@ -37,6 +39,11 @@ public struct RequestPool
         _s = s;
     }
 
+    public void SetRequset(ObjectData data)
+    {
+        _data = data;
+    }
+
     public Sprite GetSprite()
     {
         return _s;
@@ -45,6 +52,11 @@ public struct RequestPool
     public GameObject GetObject()
     {
         return _o;
+    }
+
+    public ObjectData GetData()
+    {
+        return _data;
     }
 }
 
@@ -88,7 +100,7 @@ public class ObjectPool : MonoBehaviour
     private Stack<Sprite> _stackImage = null;
     private Stack<GameObject> _stackObject = null;
 
-    private Queue<RequestPool> requestQueue = new Queue<RequestPool>();
+    private Queue<RequestPool> _requestQueue = new Queue<RequestPool>();
 
     private Queue<PutBackPool> _destroyQueue = new Queue<PutBackPool>();
     private Coroutine _coDestroy = null;
@@ -136,7 +148,7 @@ public class ObjectPool : MonoBehaviour
         RequestPool p = new RequestPool();
         p.SetPool(type, key, onResult);
 
-        requestQueue.Enqueue(p);
+        _requestQueue.Enqueue(p);
     }
 
     public void Request(ePoolType type, string name, Action<RequestPool> onResult)
@@ -190,7 +202,7 @@ public class ObjectPool : MonoBehaviour
                 break;
         }
 
-        requestQueue.Enqueue(p);
+        _requestQueue.Enqueue(p);
     }
 
     private string ConvertName(string name)
@@ -276,11 +288,11 @@ public class ObjectPool : MonoBehaviour
 
     private void Update()
     {
-        if(requestQueue.Count > 0)
+        if(_requestQueue.Count > 0)
         {
-            for (int i = 0; i < requestQueue.Count; i++)
+            for (int i = 0; i < _requestQueue.Count; i++)
             {
-                RequestPool p = requestQueue.Dequeue();
+                RequestPool p = _requestQueue.Dequeue();
 
                 switch (p.type)
                 {

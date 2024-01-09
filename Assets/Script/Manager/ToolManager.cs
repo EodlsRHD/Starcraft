@@ -19,33 +19,21 @@ public class PoolKeyMemory
     public int Mineral = 0;
     public int Gas = 0;
 
-    public int Building_TakeOff = 0;
-    public int Building_Landing = 0;
-
-    public int Attack_Protoss_Non_False_Non = 0;
-    public int Attack_Protoss_Non_True_Non = 0;
-    public int Defence_Protoss_Non_False_Non = 0;
-    public int Defence_Protoss_Non_True_Non = 0;
-    public int Shild_Protoss_Non_False_Non = 0;
-
-    public int Attack_Terran_Biological_False_Non = 0;
-    public int Attack_Terran_Mechanical_False_Non = 0;
-    public int Arrack_Terran_Non_True_Non = 0;
-    public int Defence_Terran_Biological_False_Non = 0;
-    public int Defence_Terran_Mechanical_False_Non = 0;
-    public int Defence_Terran_Non_True_Non = 0;
-
-    public int Arrack_Zerg_Non_False_Far = 0;
-    public int Arrack_Zerg_Non_False_Neer = 0;
-    public int Arrack_Zerg_Non_True_Non = 0;
-    public int Defence_Zerg_Non_False_Non = 0;
-    public int Defence_Zerg_Non_True_Non = 0;
-
     public int Hold = 0;
     public int Attack = 0;
     public int Movw = 0;
     public int Patrol = 0;
     public int Stop = 0;
+
+    // terran
+    public int CommandCenter = 0;
+
+    // protoss
+    public int Nexus = 0;
+
+    // zerg
+    public int Hatchery = 0;
+
 }
 
 public class ToolManager : MonoBehaviour
@@ -61,6 +49,9 @@ public class ToolManager : MonoBehaviour
 
     [SerializeField]
     private FileManager _filemanager = null;
+
+    [SerializeField]
+    private DataManager _dataManager = null;
 
     [SerializeField]
     private GameObject _objObjectPool = null;
@@ -113,6 +104,7 @@ public class ToolManager : MonoBehaviour
         _canvasGroupScreen.Initialize();
         _uiAnimation.Initialize();
         _filemanager.Initialize();
+        _dataManager.Initialize();
 
         if (onChangeSceneCallback != null)
         {
@@ -240,8 +232,71 @@ public class ToolManager : MonoBehaviour
         _objectPool.Request(type, name, onResult);
     }
 
+    public void RequestPool(ePoolType type, PlayerInfo info, int key, Action<RequestPool> onResult)
+    {
+        if (_objectPool == null)
+        {
+            return;
+        }
+
+        _objectPool.Request(type, key, (request) => 
+        {
+            ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
+            tmp.SetColor(info.color);
+
+            if (info.id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.My);
+            }
+            else if (info.team == GameManager.instance.playerInfo.team)
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.Alliance);
+            }
+            else
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.Enemy);
+            }
+
+            onResult?.Invoke(request);
+        });
+    }
+
+    public void RequestPool(ePoolType type, PlayerInfo info, string name, Action<RequestPool> onResult)
+    {
+        if (_objectPool == null)
+        {
+            return;
+        }
+
+        _objectPool.Request(type, name, (request) =>
+        {
+            ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
+            tmp.SetColor(info.color);
+            
+            if(info.id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.My);
+            }
+            else if(info.team == GameManager.instance.playerInfo.team)
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.Alliance);
+            }
+            else
+            {
+                tmp.SetFriendIdentificationType(eFriendIdentification.Enemy);
+            }
+
+            onResult?.Invoke(request);
+        });
+    }
+
     public void PutBackPool(PutBackPool value)
     {
         _objectPool.PutBack(value);
+    }
+
+    public void RequestData(int key, Action<RequestPool> onResult)
+    {
+        _dataManager.RequestData(key, onResult);
     }
 }

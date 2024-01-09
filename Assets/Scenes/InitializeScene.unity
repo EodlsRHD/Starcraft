@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 86293196}
   - component: {fileID: 86293197}
   - component: {fileID: 86293198}
+  - component: {fileID: 86293199}
   m_Layer: 0
   m_Name: Tool
   m_TagString: Untagged
@@ -207,6 +208,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554c5b000e4e0b54e83ece7b0ca755e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &86293199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86293193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8ecb2cada2d9e44a058ca898e7cfd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingPath: 
+  _UnitPath: 
 --- !u!1 &341689242
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +761,7 @@ MonoBehaviour:
   _canvasGroupScreen: {fileID: 86293196}
   _uiAnimation: {fileID: 86293197}
   _filemanager: {fileID: 86293198}
+  _dataManager: {fileID: 86293199}
   _objObjectPool: {fileID: 8898736555965434268, guid: c07f068e9ea7ddf4ebbd00f1cd42882a, type: 3}
 --- !u!114 &1435689063
 MonoBehaviour:
@@ -762,10 +778,28 @@ MonoBehaviour:
   _toolManager: {fileID: 1435689062}
   _cursorManager: {fileID: 763140720}
   test_mode: 1
+  _mapdata:
+    id: 0
+    name: 
+    description: 
+    version: 
+    maker: 
+    maxPlayer: 0
+    classification: -1
+    teamCount: 0
+    roomHostID: 
+    members: []
+    thumbnailPath: 
+    mapSizeX: 0
+    mapSizeY: 0
   _playerInfo:
     id: admin
     nickName: admin
     brood: -1
+    team: -1
+    color: -1
+    x: 0
+    z: 0
     win: 0
     lose: 0
 --- !u!1 &1893675481

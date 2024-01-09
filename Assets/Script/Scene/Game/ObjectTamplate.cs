@@ -9,8 +9,8 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
     [SerializeField]
     private NavMeshAgent _agnet = null;
 
-    [SerializeField]
-    private eFriendIdentification _friendIdentificationType = eFriendIdentification.My;
+    [SerializeField] // test
+    private eFriendIdentification _friendIdentificationType = eFriendIdentification.Non;
 
     [SerializeField]
     private ObjectData _data = null;
@@ -23,20 +23,25 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
 
     private GameObject _objectTamplateTarget = null;
 
-    private Action<ObjectData> _onUpdaeInformation = null;
+    private Action<IObserver> _onUpdaeInformation = null;
 
     public eFriendIdentification friendIdentificationType
     {
         get { return _friendIdentificationType; }
     }
 
-    public void Initialize(ObjectData data, Action<ObjectData> onUpdaeInformation)
+    public void Initialize(ObjectData data, Action<IObserver> onUpdaeInformation)
     {
         _data = data;
 
         if(_data.objType == eObject.Resources)
         {
             return;
+        }
+
+        if(_agnet == null)
+        {
+            _agnet = this.GetComponent<NavMeshAgent>();
         }
 
         _agnet.speed = data.moveSpeed;
@@ -65,6 +70,19 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
     public eUnitSizeType UnitSizeType()
     {
         return _data.unitSizeType;
+    }
+
+    public void SetFriendIdentificationType(eFriendIdentification eFriendIdentification)
+    {
+        _friendIdentificationType = eFriendIdentification;
+    }
+
+    public void SetColor(ePlayerColor color)
+    {
+        GameManager.instance.toolManager.RequestPool(ePoolType.Image, _data.name + "_" + color, (request) => 
+        {
+            this.gameObject.GetComponent<MeshRenderer>().sharedMaterial.SetTexture("Team_Color", request.GetSprite().texture);
+        });
     }
 
     public void SetSelection(bool isSelect)
@@ -103,6 +121,8 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
                 _data.metaData.upgradeAttack += 1;
                 break;
         }
+
+        UpdateInformation();
     }
 
     public void UpdateData(ObjectData data)
@@ -265,5 +285,10 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
     public void Custom_4()
     {
         _handel = eOrder.Custom_4;
+    }
+
+    private void UpdateInformation()
+    {
+        _onUpdaeInformation?.Invoke(this);
     }
 }

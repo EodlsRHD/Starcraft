@@ -38,14 +38,9 @@ public class DataManager : MonoBehaviour
             {
                 RequestPool p = _requestQueue.Dequeue();
 
-                Debug.LogError(nameof(p.key));
-
-                if (_datas[p.key] == null)
+                if (_datas.ContainsKey(p.key))
                 {
-                //    var fields = GameManager.instance.poolMemory.GetType().GetFields().ToList();
-                //    var field = fields.Find(x => x.GetValue(x).GetType().GetField() == p.key);
 
-                //    var d = _dataList.Find(x => x.name.Equals())
                 }
                 else
                 {

@@ -6,8 +6,6 @@ using System;
 
 public interface ISubject
 {
-    public void Add(eObject type, IObserver data);
-    public void Remove(eObject type, IObserver data);
     public void Notify(eObject type);
 }
 
