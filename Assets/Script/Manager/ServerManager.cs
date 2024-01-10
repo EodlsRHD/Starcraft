@@ -14,6 +14,7 @@ using MongoDB.Bson;
 [System.Serializable]
 public class ObjectData
 {
+    public ObjectId _id { get; set; }
     public int key { get; set; }
 
     public byte objType { get; set; }
@@ -89,8 +90,10 @@ public class ObjectMatadata
 [System.Serializable]
 public class PlayerInfo
 {
-    public string id { get; set; }
-    public string pw { get; set; }
+    public ObjectId _id { get; set; }
+
+    public string ID { get; set; }
+    public string PW { get; set; }
 
     public string nickName { get; set; }
     public byte brood { get; set; }
@@ -112,6 +115,8 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
     private static ServerManager _instance;
 
     const string _connectionUri = "mongodb+srv://eodls0810:shjin5405@starcraft.lxxbebz.mongodb.net/?retryWrites=true&w=majority";
+    const string _userCollection = "User";
+
     private string token = string.Empty;
     private string refreshToken = string.Empty;
 
@@ -156,25 +161,45 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         Uni_GetPlayerInfo(ID, PW, onResult).Forget();
     }
 
+    public void GetObjectData(Action<List<ObjectData>> onResult)
+    {
+        Uni_GetObjectData(onResult).Forget();
+    }
+
     private async UniTaskVoid Uni_SetPlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
     {
         PlayerInfo result = new PlayerInfo();
-        result.id = ID;
-        result.pw = ID;
+        result.ID = ID;
+        result.PW = ID;
         result.nickName = nickName;
 
-        var collection = _mongoDB.GetCollection<PlayerInfo>("User");
-        await collection.InsertOneAsync(result);
+        try
+        {
+            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+            await collection.InsertOneAsync(result);
 
-        onResult?.Invoke(result);
+            onResult?.Invoke(result);
+        }
+        catch
+        {
+            onResult?.Invoke(null);
+        }
     }
 
     private async UniTaskVoid Uni_GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
-    {
-        var collection = _mongoDB.GetCollection<PlayerInfo>("User");
-        var document = await collection.Find(x => x.id.Equals(ID) && x.pw.Equals(PW)).ToListAsync();
+    { 
+        var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+        var document = await collection.Find(x => x.ID.Equals(ID) && x.PW.Equals(PW)).ToListAsync();
 
         onResult?.Invoke(document[0]);
+    }
+
+    private async UniTaskVoid Uni_GetObjectData(Action<List<ObjectData>> onResult)
+    {
+        var collection = _mongoDB.GetCollection<ObjectData>("ObjectData");
+        var document = await collection.Find(_ => true).ToListAsync();
+
+        onResult?.Invoke(document);
     }
 
     private void Server_SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)

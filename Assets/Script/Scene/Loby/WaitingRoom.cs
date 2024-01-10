@@ -60,7 +60,7 @@ public class WaitingRoom : MonoBehaviour
         {
             _mapData.members = new PlayerInfo[_mapData.maxPlayer];
             _mapData.members[0] = GameManager.instance.playerInfo;
-            _mapData.roomHostID = GameManager.instance.playerInfo.id;
+            _mapData.roomHostID = GameManager.instance.playerInfo.ID;
         }
 
         GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, (Action)(() =>
@@ -88,11 +88,11 @@ public class WaitingRoom : MonoBehaviour
                             {
                                 HomeAndAwayTamplate playerTamplate = Instantiate(_tamplate, _templateParent);
 
-                                if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                                if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
                                 {
                                     if (playerCount + p == 0)
                                     {
-                                        playerTamplate.SetPlayer((string)GameManager.instance.playerInfo.id, GameManager.instance.playerInfo.nickName, true);
+                                        playerTamplate.SetPlayer((string)GameManager.instance.playerInfo.ID, GameManager.instance.playerInfo.nickName, true);
                                         _mapData.members[playerCount + p] = GameManager.instance.playerInfo;
                                     }
                                     else
@@ -119,11 +119,11 @@ public class WaitingRoom : MonoBehaviour
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
 
-                            if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+                            if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
                             {
                                 if (i == 0)
                                 {
-                                    tamplate.SetPlayer((string)GameManager.instance.playerInfo.id, GameManager.instance.playerInfo.nickName, true);
+                                    tamplate.SetPlayer((string)GameManager.instance.playerInfo.ID, GameManager.instance.playerInfo.nickName, true);
                                     _mapData.members[i] = GameManager.instance.playerInfo;
                                 }
                                 else
@@ -174,11 +174,11 @@ public class WaitingRoom : MonoBehaviour
                     return;
                 }
 
-                if (id.Equals(GameManager.instance.currentMapdata.members[i].id, StringComparison.Ordinal))
+                if (id.Equals(GameManager.instance.currentMapdata.members[i].ID, StringComparison.Ordinal))
                 {
                     GameManager.instance.currentMapdata.members[i].brood = (byte)b;
 
-                    if(id.Equals(GameManager.instance.playerInfo.id))
+                    if(id.Equals(GameManager.instance.playerInfo.ID))
                     {
                         GameManager.instance.playerInfo.brood = (byte)b;
                     }

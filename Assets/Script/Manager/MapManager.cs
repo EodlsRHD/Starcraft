@@ -138,7 +138,7 @@ public class MapManager : MonoBehaviour
             players[i].color = (byte)node.startPosition.playerColor;
             players[i].team = node.startPosition.team;
 
-            if(players[i].id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+            if(players[i].ID.Equals(GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
             {
                 InGameManager.instance.cameraArm = new Vector2(players[i].x, players[i].z);
                 GameManager.instance.UpdatePlayerInfo(players[i]);
