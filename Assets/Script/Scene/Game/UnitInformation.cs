@@ -144,7 +144,7 @@ public class UnitInformation : MonoBehaviour
                 _imageAttack.gameObject.SetActive(false);
             }
 
-            if (_data.objType == eObject.Unit)
+            if ((eObject)_data.objType == eObject.Unit)
             {
                 if (_data.metaData.defenceKey == 0)
                 {
@@ -244,7 +244,7 @@ public class UnitInformation : MonoBehaviour
     {
         for (int i = _datas.Count - 1; i >= 0; i--)
         {
-            if(_datas[i].data.GetData()._id.Equals(data.GetData()._id, StringComparison.Ordinal) == false)
+            if((_datas[i].data.GetData().key == data.GetData().key) == false)
             {
                 continue;
             }

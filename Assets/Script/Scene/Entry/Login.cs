@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Cysharp.Threading.Tasks;
+using System;
 
 public class Login : MonoBehaviour
 {
@@ -13,11 +15,31 @@ public class Login : MonoBehaviour
     private TMP_InputField _inputFieldPassword = null;
 
     [SerializeField]
-    private Button _buttonLogin = null;
+    private Button _buttonSignIn = null;
+
+    [SerializeField]
+    private Button _buttonSignUp = null;
+
+    [SerializeField]
+    private Button _buttonForgetPassword = null;
+
+    [SerializeField]
+    private GameObject _objPlayerInfoSettings = null;
+
+    [SerializeField]
+    private TMP_InputField _inputFieldNickName = null;
+
+    [SerializeField]
+    private Button _buttonSignUpAccept = null;
 
     public void Initilaize()
     {
-        _buttonLogin.onClick.AddListener(OnLogin);
+        _buttonSignIn.onClick.AddListener(OnSignIn);
+        _buttonSignUp.onClick.AddListener(OnSignUp);
+        _buttonForgetPassword.onClick.AddListener(OnForgetPassword);
+        _buttonSignUpAccept.onClick.AddListener(OnSignUpAccept);
+
+        _objPlayerInfoSettings.gameObject.SetActive(false);
     }
 
     public void Open()
@@ -28,13 +50,72 @@ public class Login : MonoBehaviour
         this.gameObject.SetActive(true);
     }
 
-    private void OnLogin()
+    private void OnSignIn()
     {
-        // social login
+        if(GameManager.instance.TEST_MODE == true)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
+            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
-        Debug.Log("TEST Login");
-        UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
-        UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
-        //GameManager.instance.toolManager.ChangeScene("Loby", "...", eScene.Loby);
+            return;
+        }
+
+        if(_inputFieldId.text.Length == 0 || _inputFieldPassword.text.Length == 0)
+        {
+            InterfaceManager.instance.OpenOneButton("Sign In", "ID or password cannot be empty.", () =>
+            {
+                InterfaceManager.instance.ClosePopUp();
+            }, "Okay");
+
+            return;
+        }
+
+        ServerManager.instance.GetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, (result) =>
+        {
+            GameManager.instance.playerInfo = result;
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
+            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        });
+    }
+
+    private void OnSignUp()
+    {
+        if (_inputFieldId.text.Length == 0 || _inputFieldPassword.text.Length == 0)
+        {
+            InterfaceManager.instance.OpenOneButton("Sign In", "ID or password cannot be empty.", () =>
+            {
+                InterfaceManager.instance.ClosePopUp();
+            }, "Okay");
+
+            return;
+        }
+
+        _objPlayerInfoSettings.gameObject.SetActive(true);
+    }
+
+    private void OnSignUpAccept()
+    {
+        if (_inputFieldId.text.Length == 0 || _inputFieldPassword.text.Length == 0)
+        {
+            InterfaceManager.instance.OpenOneButton("Sign In", "ID or password cannot be empty.", () =>
+            {
+                InterfaceManager.instance.ClosePopUp();
+            }, "Okay");
+
+            return;
+        }
+
+        ServerManager.instance.SetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
+        {
+            GameManager.instance.playerInfo = result;
+
+            _objPlayerInfoSettings.gameObject.SetActive(false);
+        });
+    }
+
+    private void OnForgetPassword()
+    {
+
     }
 }

@@ -203,7 +203,7 @@ public class InGameManager : MonoBehaviour, ISubject
     private void SetInput()
     {
         // Mouse
-        _inputManager.SetMouseKey(eMouseInput.Left, eClickType.Down, () =>
+        _inputManager.SetMouseKey(eMouseInput.Left, eClickType.Down, (Action)(() =>
         {
             if (_inputManager.isOrder_Patrol == true || _inputManager.isOrder_Attack == true)
             {
@@ -222,7 +222,7 @@ public class InGameManager : MonoBehaviour, ISubject
             {
                 if(hit.collider.gameObject.TryGetComponent(out ObjectTamplate tamplate))
                 {
-                    if (tamplate.GetData().objType == eObject.Resources)
+                    if ((eObject)tamplate.GetData().objType == eObject.Resources)
                     {
                         foreach (var item in _selectObjects)
                         {
@@ -268,7 +268,7 @@ public class InGameManager : MonoBehaviour, ISubject
                             {
                                 if (_objects[eObject.Unit][i].friendIdentificationType == eFriendIdentification.My)
                                 {
-                                    if(tamplate.GetData().key.Equals(_objects[eObject.Unit][i].GetData().key))
+                                    if(tamplate.GetData().key.Equals((int)_objects[eObject.Unit][i].GetData().key))
                                     {
                                         _selectObjects.Add(_objects[eObject.Unit][i]);
                                         _objects[eObject.Unit][i].SetSelection(true);
@@ -307,7 +307,7 @@ public class InGameManager : MonoBehaviour, ISubject
 
                 }
             }
-        });
+        }));
 
         _inputManager.SetMouseKey(eMouseInput.Left, eClickType.Hold, () =>
         {
@@ -642,14 +642,14 @@ public class InGameManager : MonoBehaviour, ISubject
 
     private void ObjectTamplateUpdateKey(ObjectData data)
     {
-        if(data.objType == eObject.Non)
+        if((eObject)data.objType == eObject.Non)
         {
             return;
         }
 
-        foreach (var one in _objects[data.objType])
+        foreach (var one in _objects[(eObject)data.objType])
         {
-            if(data._id.Equals(one.GetData()._id))
+            if(data.key.Equals(one.GetData().key))
             {
                 one.UpdateData(data);
             }
@@ -815,7 +815,7 @@ public class InGameManager : MonoBehaviour, ISubject
 
     public void SelectAdd(ObjectTamplate tamplate)
     {
-        if (tamplate.GetData().objType == eObject.Building)
+        if ((eObject)tamplate.GetData().objType == eObject.Building)
         {
             _selectObjects.Clear();
             _selectObjects.Add(tamplate);

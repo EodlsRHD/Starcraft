@@ -135,7 +135,7 @@ public class MapManager : MonoBehaviour
 
             players[i].x = node.x;
             players[i].z = node.y;
-            players[i].color = node.startPosition.playerColor;
+            players[i].color = (byte)node.startPosition.playerColor;
             players[i].team = node.startPosition.team;
 
             if(players[i].id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
@@ -164,7 +164,7 @@ public class MapManager : MonoBehaviour
 
             Node node = _startPositions[i];
 
-            switch(players[i].brood)
+            switch((eRace)players[i].brood)
             {
                 case eRace.Terran:
                     {

@@ -89,7 +89,7 @@ public class ControlPanel : MonoBehaviour
             return;
         }
 
-        switch(datas[0].GetData().objType)
+        switch((eObject)datas[0].GetData().objType)
         {
             case eObject.Building:
                 {

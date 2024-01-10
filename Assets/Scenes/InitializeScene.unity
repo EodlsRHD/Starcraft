@@ -720,6 +720,7 @@ GameObject:
   - component: {fileID: 1435689061}
   - component: {fileID: 1435689063}
   - component: {fileID: 1435689062}
+  - component: {fileID: 1435689064}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -777,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toolManager: {fileID: 1435689062}
   _cursorManager: {fileID: 763140720}
+  _serverManager: {fileID: 1435689064}
   test_mode: 1
   _mapdata:
     id: 0
@@ -788,20 +790,21 @@ MonoBehaviour:
     classification: -1
     teamCount: 0
     roomHostID: 
-    members: []
     thumbnailPath: 
     mapSizeX: 0
     mapSizeY: 0
-  _playerInfo:
-    id: admin
-    nickName: admin
-    brood: -1
-    team: -1
-    color: -1
-    x: 0
-    z: 0
-    win: 0
-    lose: 0
+--- !u!114 &1435689064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435689060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aec29d58d086b446a4fe6743c93f1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893675481
 GameObject:
   m_ObjectHideFlags: 0

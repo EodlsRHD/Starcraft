@@ -34,7 +34,7 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
     {
         _data = data;
 
-        if(_data.objType == eObject.Resources)
+        if((eObject)_data.objType == eObject.Resources)
         {
             return;
         }
@@ -59,17 +59,17 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
 
     public eRace BroodType()
     {
-        return _data.raceType;
+        return (eRace)_data.raceType;
     }
 
     public eUnitType UnitType()
     {
-        return _data.unitType;
+        return (eUnitType)_data.unitType;
     }
 
     public eUnitSizeType UnitSizeType()
     {
-        return _data.unitSizeType;
+        return (eUnitSizeType)_data.unitSizeType;
     }
 
     public void SetFriendIdentificationType(eFriendIdentification eFriendIdentification)
@@ -132,7 +132,7 @@ public class ObjectTamplate : MonoBehaviour, IObserver, IUnit
 
     private void Update()
     {
-        if (_data.objType == eObject.Resources)
+        if ((eObject)_data.objType == eObject.Resources)
         {
             return;
         }

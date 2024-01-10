@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
 
 public class DataManager : MonoBehaviour
 {
+    [Header("Path")]
+
     [SerializeField]
     private string _buildingPath = string.Empty;
 
@@ -19,7 +20,7 @@ public class DataManager : MonoBehaviour
 
     public void Initialize()
     {
-
+        ReadData();
     }
 
     public void RequestData(int key, Action<RequestPool> onResult)

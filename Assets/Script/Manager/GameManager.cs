@@ -21,24 +21,6 @@ using UnityEngine;
 //
 //      }
 
-[System.Serializable]
-public class PlayerInfo
-{
-    public string id = string.Empty;
-
-    public string nickName = string.Empty;
-    public eRace brood = eRace.Non;
-
-    public int team = -1;
-    public ePlayerColor color = ePlayerColor.Non;
-
-    public float x = 0f;
-    public float z = 0f;
-
-    public int win = 0;
-    public int lose = 0;
-}
-
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance = null;
@@ -48,6 +30,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private CursorManager _cursorManager = null;
+
+    [SerializeField]
+    private ServerManager _serverManager = null;
 
     [SerializeField, Header("TEST MODE")]
     private bool test_mode = false;
@@ -136,11 +121,16 @@ public class GameManager : MonoBehaviour
 
         _toolManager.Initialize(ChangeScene);
         _cursorManager.Initialize();
+        _serverManager.Initialize();
 
         DontDestroyOnLoad(this.gameObject);
 
         //Debug.unityLogger.logEnabled = false;
+        //Application.targetFrameRate = 60;
+        //Application.runInBackground = true;
+
         UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Entry);
+        UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
     }
 
     private void ChangeScene(eScene scene)

@@ -62,6 +62,8 @@ public class ToolManager : MonoBehaviour
 
     private Action<eScene> _onChangeSceneCallback = null;
 
+    #region GetSet
+
     public PoolKeyMemory poolKeyMemory
     {
         get 
@@ -87,6 +89,8 @@ public class ToolManager : MonoBehaviour
             return _tagMemory;
         }
     }
+
+    #endregion
 
     public void Initialize(Action<eScene> onChangeSceneCallback)
     {
@@ -239,12 +243,12 @@ public class ToolManager : MonoBehaviour
             return;
         }
 
-        _objectPool.Request(type, key, (request) => 
+        _objectPool.Request(type, key, (Action<RequestPool>)((request) => 
         {
             ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
-            tmp.SetColor(info.color);
+            tmp.SetColor((ePlayerColor)info.color);
 
-            if (info.id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+            if (info.id.Equals((string)GameManager.instance.playerInfo.id, StringComparison.Ordinal))
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.My);
             }
@@ -258,7 +262,7 @@ public class ToolManager : MonoBehaviour
             }
 
             onResult?.Invoke(request);
-        });
+        }));
     }
 
     public void RequestPool(ePoolType type, PlayerInfo info, string name, Action<RequestPool> onResult)
@@ -268,12 +272,12 @@ public class ToolManager : MonoBehaviour
             return;
         }
 
-        _objectPool.Request(type, name, (request) =>
+        _objectPool.Request(type, name, (Action<RequestPool>)((request) =>
         {
             ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
-            tmp.SetColor(info.color);
+            tmp.SetColor((ePlayerColor)info.color);
             
-            if(info.id.Equals(GameManager.instance.playerInfo.id, StringComparison.Ordinal))
+            if(info.id.Equals((string)GameManager.instance.playerInfo.id, StringComparison.Ordinal))
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.My);
             }
@@ -287,7 +291,7 @@ public class ToolManager : MonoBehaviour
             }
 
             onResult?.Invoke(request);
-        });
+        }));
     }
 
     public void PutBackPool(PutBackPool value)
