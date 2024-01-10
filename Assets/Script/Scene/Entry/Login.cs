@@ -64,6 +64,16 @@ public class Login : MonoBehaviour
 
         ServerManager.instance.GetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, (result) =>
         {
+            if(result == null)
+            {
+                InterfaceManager.instance.OpenOneButton("Sign In", "I don't have any member information.", () =>
+                {
+                    InterfaceManager.instance.ClosePopUp();
+                });
+
+                return;
+            }
+
             GameManager.instance.playerInfo = result;
 
             UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
@@ -98,7 +108,7 @@ public class Login : MonoBehaviour
             return;
         }
 
-        ServerManager.instance.SetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
+        ServerManager.instance.CreatePlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
         {
             if(result != null)
             {
@@ -110,7 +120,7 @@ public class Login : MonoBehaviour
                 return;
             }
 
-            ServerManager.instance.SetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
+            ServerManager.instance.CreatePlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
             {
                 GameManager.instance.playerInfo = result;
 

@@ -151,9 +151,9 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         _mongoDB = _client.GetDatabase("Starcraft");
     }
 
-    public void SetPlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
+    public void CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
     {
-        Uni_SetPlayerInfo(ID, PW, nickName, onResult).Forget();
+        Uni_CreatePlayerInfo(ID, PW, nickName, onResult).Forget();
     }
 
     public void GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
@@ -161,12 +161,22 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         Uni_GetPlayerInfo(ID, PW, onResult).Forget();
     }
 
-    public void GetObjectData(Action<List<ObjectData>> onResult)
+    public void GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
     {
-        Uni_GetObjectData(onResult).Forget();
+        Uni_GetPlayerInfo(_id, onResult).Forget();
     }
 
-    private async UniTaskVoid Uni_SetPlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
+    public void UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
+    {
+        Uni_UpdatePlayerInfo(_id, newInfo, onResult).Forget();
+    }
+
+    public void GetObjectDatas(Action<List<ObjectData>> onResult)
+    {
+         Uni_GetObjectDatas(onResult).Forget();
+    }
+
+    private async UniTaskVoid Uni_CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
     {
         PlayerInfo result = new PlayerInfo();
         result.ID = ID;
@@ -187,14 +197,38 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
     }
 
     private async UniTaskVoid Uni_GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
-    { 
+    {
+        try
+        {
+            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+            var document = await collection.Find(x => x.ID.Equals(ID) && x.PW.Equals(PW)).ToListAsync();
+
+            onResult?.Invoke(document[0]);
+        }
+        catch
+        {
+            onResult?.Invoke(null);
+        }
+    }
+
+    private async UniTaskVoid Uni_GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
+    {
         var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-        var document = await collection.Find(x => x.ID.Equals(ID) && x.PW.Equals(PW)).ToListAsync();
+        var document = await collection.Find(x => x._id.Equals(_id)).ToListAsync();
 
         onResult?.Invoke(document[0]);
     }
 
-    private async UniTaskVoid Uni_GetObjectData(Action<List<ObjectData>> onResult)
+    private async UniTaskVoid Uni_UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
+    {
+        var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+        var filter = Builders<PlayerInfo>.Filter.Eq(x => x._id, _id);
+        var document = await collection.ReplaceOneAsync(filter, newInfo);
+
+        onResult?.Invoke(newInfo);
+    }
+
+    private async UniTaskVoid Uni_GetObjectDatas(Action<List<ObjectData>> onResult)
     {
         var collection = _mongoDB.GetCollection<ObjectData>("ObjectData");
         var document = await collection.Find(_ => true).ToListAsync();
