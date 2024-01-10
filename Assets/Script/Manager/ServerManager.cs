@@ -192,6 +192,8 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         }
         catch
         {
+            Debug.LogError("Uni_CreatePlayerInfo false");
+
             onResult?.Invoke(null);
         }
     }
@@ -207,33 +209,62 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         }
         catch
         {
+            Debug.LogError("Uni_GetPlayerInfo false");
+
             onResult?.Invoke(null);
         }
     }
 
     private async UniTaskVoid Uni_GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
     {
-        var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-        var document = await collection.Find(x => x._id.Equals(_id)).ToListAsync();
+        try
+        {
+            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+            var document = await collection.Find(x => x._id.Equals(_id)).ToListAsync();
 
-        onResult?.Invoke(document[0]);
+            onResult?.Invoke(document[0]);
+        }
+        catch
+        {
+            Debug.LogError("Uni_GetPlayerInfo false");
+
+            onResult?.Invoke(null);
+        }
     }
 
     private async UniTaskVoid Uni_UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
     {
-        var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-        var filter = Builders<PlayerInfo>.Filter.Eq(x => x._id, _id);
-        var document = await collection.ReplaceOneAsync(filter, newInfo);
+        try
+        {
+            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
+            var filter = Builders<PlayerInfo>.Filter.Eq(x => x._id, _id);
+            var document = await collection.ReplaceOneAsync(filter, newInfo);
 
-        onResult?.Invoke(newInfo);
+            onResult?.Invoke(newInfo);
+        }
+        catch
+        {
+            Debug.LogError("Uni_UpdatePlayerInfo false");
+
+            onResult?.Invoke(null);
+        }
     }
 
     private async UniTaskVoid Uni_GetObjectDatas(Action<List<ObjectData>> onResult)
     {
-        var collection = _mongoDB.GetCollection<ObjectData>("ObjectData");
-        var document = await collection.Find(_ => true).ToListAsync();
+        try
+        {
+            var collection = _mongoDB.GetCollection<ObjectData>("ObjectData");
+            var document = await collection.Find(_ => true).ToListAsync();
 
-        onResult?.Invoke(document);
+            onResult?.Invoke(document);
+        }
+        catch
+        {
+            Debug.LogError("Uni_GetObjectDatas false");
+
+            onResult?.Invoke(null);
+        }
     }
 
     private void Server_SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)
