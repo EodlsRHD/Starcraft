@@ -9,6 +9,7 @@
  * See: https://docs.colyseus.io/server/api/#constructor-options
  */
 import { listen } from "@colyseus/tools";
+import Arena from "@colyseus/arena";
 
 // Import Colyseus config
 import app from "./app.config";

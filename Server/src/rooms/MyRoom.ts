@@ -1,4 +1,5 @@
 import { Room, Client } from "@colyseus/core";
+import { MongoManager } from "../DB/MongoManager";
 import { MyRoomState } from "./schema/MyRoomState";
 
 export class MyRoom extends Room<MyRoomState> {

@@ -1,6 +1,20 @@
+import Arena from "@colyseus/arena";
 import config from "@colyseus/tools";
 import { monitor } from "@colyseus/monitor";
 import { playground } from "@colyseus/playground";
+
+import { LocalDriver, matchMaker, MongooseDriver } from "colyseus";
+
+import userRouter from "./routers/userRouter";
+import roomRouter from "./routers/roomRouter";
+import { MongoManager } from "./DB/MongoManager";
+
+import formData from "express-form-data";
+import cors from "cors";
+import express from "express";
+import path from "path";
+
+//mongodb+srv://eodls0810:shjin5405@starcraft.lxxbebz.mongodb.net/?retryWrites=true&w=majority
 
 /**
  * Import your Room files
@@ -9,21 +23,44 @@ import { MyRoom } from "./rooms/MyRoom";
 
 export default config({
 
+    getId: () => "Startcraft Server",
+
+    options : {
+        driver : new MongooseDriver("") // server IP
+    },
+    
     initializeGameServer: (gameServer) => {
         /**
          * Define your room handlers:
          */
-        gameServer.define('my_room', MyRoom);
+        gameServer.define('my_room', MyRoom).filterBy(["worldNumber" , "roomOwner"]);
 
     },
 
-    initializeExpress: (app) => {
+    initializeExpress: async(app) => {
         /**
          * Bind your custom express routes here:
          * Read more: https://expressjs.com/en/starter/basic-routing.html
          */
-        app.get("/hello_world", (req, res) => {
+
+        app.use(cors());
+        app.use(formData.format());
+        app.use(formData.union());
+
+
+        app.get("/hello", (req, res) => {
             res.send("It's time to kick ass and chew bubblegum!");
+        });
+
+        app.use("/user", userRouter);
+        app.use("/room", roomRouter);
+
+        app.post("/refreshGlobalValue", async(req, res) =>{
+            let globalValue = await MongoManager.Instance().GetGlobalValue(true).catch((reason) =>{
+                console.log(reason);
+            });
+            
+            res.send(globalValue);
         });
 
         /**
@@ -40,6 +77,7 @@ export default config({
          * Read more: https://docs.colyseus.io/tools/monitor/#restrict-access-to-the-panel-using-a-password
          */
         app.use("/colyseus", monitor());
+        app.use("/", express.static(path.join(__dirname, "static")));
     },
 
 
