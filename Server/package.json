@@ -39,6 +39,7 @@
     "@colyseus/tools": "^0.15.0",
     "@types/cors": "^2.8.17",
     "@types/express-form-data": "^2.0.5",
+    "@types/uuid": "^9.0.7",
     "colyseus": "^0.15.0",
     "colyseus-monitor": "^0.4.4",
     "cors": "^2.8.5",

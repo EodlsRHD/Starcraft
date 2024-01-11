@@ -54,15 +54,19 @@ public class ObjectCustom
 {
     public bool hasCustom_1 { get; set; }
     public int custom_1_key { get; set; }
+    public string custom_1_id { get; set; }
 
     public bool hasCustom_2 { get; set; }
     public int custom_2_key { get; set; }
+    public string custom_2_id { get; set; }
 
     public bool hasCustom_3 { get; set; }
     public int custom_3_key { get; set; }
+    public string custom_3_id { get; set; }
 
     public bool hasCustom_4 { get; set; }
     public int custom_4_key { get; set; }
+    public string custom_4_id { get; set; }
 }
 
 [System.Serializable]
@@ -153,131 +157,189 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
 
     public void CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
     {
-        Uni_CreatePlayerInfo(ID, PW, nickName, onResult).Forget();
+        var req = new
+        {
+            ID = ID,
+            PW = PW,
+            nickName = nickName
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            playerInfo = new PlayerInfo()
+        };
+
+        SendPostRequestAsync("user/signUp", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            if (result.resultCode == 0)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            onResult?.Invoke(res.playerInfo);
+        });
     }
 
     public void GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
     {
-        Uni_GetPlayerInfo(ID, PW, onResult).Forget();
+        var req = new
+        {
+            ID = ID,
+            PW = PW
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            playerInfo = new PlayerInfo()
+        };
+
+        SendPostRequestAsync("user/getPlayerInfo", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            if (result.resultCode == 0)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            onResult?.Invoke(res.playerInfo);
+        });
     }
 
     public void GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
     {
-        Uni_GetPlayerInfo(_id, onResult).Forget();
+        var req = new
+        {
+            _id = _id
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            playerInfo = new PlayerInfo()
+        };
+
+        SendPostRequestAsync("user/getPlayerInfo_ObjectID", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            if (result.resultCode == 0)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            onResult?.Invoke(res.playerInfo);
+        });
     }
 
     public void UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
     {
-        Uni_UpdatePlayerInfo(_id, newInfo, onResult).Forget();
+        var req = new
+        {
+            _id = _id,
+            newInfo = newInfo
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            playerInfo = new PlayerInfo()
+        };
+
+        SendPostRequestAsync("user/updatePlayerInfo", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if(result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            if (result.resultCode == 0)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            onResult?.Invoke(res.playerInfo);
+        });
     }
 
     public void GetObjectDatas(Action<List<ObjectData>> onResult)
     {
-         Uni_GetObjectDatas(onResult).Forget();
-    }
-
-    private async UniTaskVoid Uni_CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
-    {
-        PlayerInfo result = new PlayerInfo();
-        result.ID = ID;
-        result.PW = ID;
-        result.nickName = nickName;
-
-        try
+        var req = new
         {
-            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-            await collection.InsertOneAsync(result);
 
-            onResult?.Invoke(result);
-        }
-        catch
+        };
+
+        var res = new
         {
-            Debug.LogError("Uni_CreatePlayerInfo false");
+            resultCode = 0,
+            message = string.Empty,
+            objectDatas = new List<ObjectData>()
+        };
 
-            onResult?.Invoke(null);
-        }
-    }
-
-    private async UniTaskVoid Uni_GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
-    {
-        try
+        SendPostRequestAsync("user/getObjectDatas", req, (resultJson, resultCode) =>
         {
-            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-            var document = await collection.Find(x => x.ID.Equals(ID) && x.PW.Equals(PW)).ToListAsync();
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
 
-            onResult?.Invoke(document[0]);
-        }
-        catch
-        {
-            Debug.LogError("Uni_GetPlayerInfo false");
+            if (result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
 
-            onResult?.Invoke(null);
-        }
-    }
+            if (result.resultCode == 0)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
 
-    private async UniTaskVoid Uni_GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
-    {
-        try
-        {
-            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-            var document = await collection.Find(x => x._id.Equals(_id)).ToListAsync();
-
-            onResult?.Invoke(document[0]);
-        }
-        catch
-        {
-            Debug.LogError("Uni_GetPlayerInfo false");
-
-            onResult?.Invoke(null);
-        }
-    }
-
-    private async UniTaskVoid Uni_UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
-    {
-        try
-        {
-            var collection = _mongoDB.GetCollection<PlayerInfo>(_userCollection);
-            var filter = Builders<PlayerInfo>.Filter.Eq(x => x._id, _id);
-            var document = await collection.ReplaceOneAsync(filter, newInfo);
-
-            onResult?.Invoke(newInfo);
-        }
-        catch
-        {
-            Debug.LogError("Uni_UpdatePlayerInfo false");
-
-            onResult?.Invoke(null);
-        }
-    }
-
-    private async UniTaskVoid Uni_GetObjectDatas(Action<List<ObjectData>> onResult)
-    {
-        try
-        {
-            var collection = _mongoDB.GetCollection<ObjectData>("ObjectData");
-            var document = await collection.Find(_ => true).ToListAsync();
-
-            onResult?.Invoke(document);
-        }
-        catch
-        {
-            Debug.LogError("Uni_GetObjectDatas false");
-
-            onResult?.Invoke(null);
-        }
+            onResult?.Invoke(result.objectDatas);
+        });
     }
 
     private void Server_SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)
     {
-        SendPostRequestAsync(endpoint, body, onResult).Forget();
+        SendPostRequestAsync(endpoint, body, onResult);
     }
 
     private void Server_SendPostRequestFormData(string endpoint, string filename, object body, byte[] bytes, Action<string, long> onResult)
     {
-        SendPostRequestFormData(endpoint, filename, body, bytes, onResult).Forget();
+        SendPostRequestFormData(endpoint, filename, body, bytes, onResult);
     }
 
-    private async UniTaskVoid SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)
+    private async void SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)
     {
         string json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
         Debug.Log(json);
@@ -335,7 +397,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         }
     }
 
-    private async UniTaskVoid SendPostRequestFormData(string endpoint, string filename, object body, byte[] bytes, Action<string, long> onResult)
+    private async void SendPostRequestFormData(string endpoint, string filename, object body, byte[] bytes, Action<string, long> onResult)
     {
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
         if (bytes != null)

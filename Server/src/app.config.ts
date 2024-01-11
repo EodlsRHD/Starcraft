@@ -3,11 +3,7 @@ import config from "@colyseus/tools";
 import { monitor } from "@colyseus/monitor";
 import { playground } from "@colyseus/playground";
 
-import { LocalDriver, matchMaker, MongooseDriver } from "colyseus";
-
-import userRouter from "./routers/userRouter";
-import roomRouter from "./routers/roomRouter";
-import { MongoManager } from "./DB/MongoManager";
+import { Server, LocalDriver, matchMaker, MongooseDriver } from "colyseus";
 
 import formData from "express-form-data";
 import cors from "cors";
@@ -21,20 +17,21 @@ import path from "path";
  */
 import { MyRoom } from "./rooms/MyRoom";
 
-export default config({
+import userRouter from "./routers/userRouter";
+import roomRouter from "./routers/roomRouter";
+import { MongoManager } from "./DB/MongoManager";
 
-    getId: () => "Startcraft Server",
+export default Arena({
 
     options : {
-        driver : new MongooseDriver("") // server IP
+        driver : new MongooseDriver("mongodb+srv://eodls0810:shjin5405@starcraft.lxxbebz.mongodb.net/?retryWrites=true&w=majority")
     },
     
     initializeGameServer: (gameServer) => {
         /**
          * Define your room handlers:
          */
-        gameServer.define('my_room', MyRoom).filterBy(["worldNumber" , "roomOwner"]);
-
+        gameServer.define('my_room', MyRoom).filterBy(["worldNumber", "roomOwner"]);
     },
 
     initializeExpress: async(app) => {
@@ -54,14 +51,6 @@ export default config({
 
         app.use("/user", userRouter);
         app.use("/room", roomRouter);
-
-        app.post("/refreshGlobalValue", async(req, res) =>{
-            let globalValue = await MongoManager.Instance().GetGlobalValue(true).catch((reason) =>{
-                console.log(reason);
-            });
-            
-            res.send(globalValue);
-        });
 
         /**
          * Use @colyseus/playground
