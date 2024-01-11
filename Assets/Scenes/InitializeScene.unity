@@ -790,6 +790,7 @@ MonoBehaviour:
     classification: -1
     teamCount: 0
     roomHostID: 
+    members: []
     thumbnailPath: 
     mapSizeX: 0
     mapSizeY: 0
@@ -805,6 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aec29d58d086b446a4fe6743c93f1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colyseusSettings: {fileID: 11400000, guid: 2f801e7765b0bf84395385d2391942b0, type: 2}
 --- !u!1 &1893675481
 GameObject:
   m_ObjectHideFlags: 0
