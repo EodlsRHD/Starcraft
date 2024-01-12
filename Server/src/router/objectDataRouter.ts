@@ -25,4 +25,23 @@ router.post("/getObjectDatas", async(req : Request, res : Response) => {
     res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
 });
 
+router.post("/setObjectDatas", async(req : Request, res : Response) => {
+    let objectDatas = req.body.objectDatas;
+
+    let isError = false;
+
+    let result = await MongoManager.Instance().SetObjectDatas(objectDatas).catch((reason) => {
+        console.log(reason);
+        isError = true;
+    });
+
+    if(isError != false)
+    {
+        res.send({ resultCode : eResultCode.FAIL, message : "/getObjectDatas Error"});
+        return;
+    }
+
+    res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
+});
+
 export default router;
