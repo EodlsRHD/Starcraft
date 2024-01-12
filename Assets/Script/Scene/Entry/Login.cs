@@ -62,22 +62,34 @@ public class Login : MonoBehaviour
             return;
         }
 
-        ServerManager.instance.GetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, (result) =>
+        ServerManager.instance.SignInPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, (result) =>
         {
-            if(result == null)
+            if(result == false)
             {
-                InterfaceManager.instance.OpenOneButton("Sign In", "I don't have any member information.", () =>
+                InterfaceManager.instance.OpenOneButton("Sign In", "Member information not found.", () =>
                 {
                     InterfaceManager.instance.ClosePopUp();
-                });
-
+                }, "Okay");
                 return;
             }
 
-            GameManager.instance.playerInfo = result;
+            ServerManager.instance.GetPlayerInfo(_inputFieldId.text, _inputFieldPassword.text, (result) =>
+            {
+                if (result == null)
+                {
+                    InterfaceManager.instance.OpenOneButton("Sign In", "I don't have any member information.", () =>
+                    {
+                        InterfaceManager.instance.ClosePopUp();
+                    });
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
-            UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+                    return;
+                }
+
+                GameManager.instance.playerInfo = result;
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+            });
         });
     }
 
@@ -120,20 +132,17 @@ public class Login : MonoBehaviour
                 return;
             }
 
-            ServerManager.instance.CreatePlayerInfo(_inputFieldId.text, _inputFieldPassword.text, _inputFieldNickName.text, (result) =>
+            GameManager.instance.playerInfo = result;
+
+            InterfaceManager.instance.OpenOneButton("Sign Up", "Success.", () =>
             {
-                GameManager.instance.playerInfo = result;
+                InterfaceManager.instance.ClosePopUp();
 
-                InterfaceManager.instance.OpenOneButton("Sign Up", "Success.", () =>
-                {
-                    InterfaceManager.instance.ClosePopUp();
+                _objPlayerInfoSettings.gameObject.SetActive(false);
 
-                    _objPlayerInfoSettings.gameObject.SetActive(false);
-
-                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
-                    UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
-                }, "Okay");
-            });
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
+                UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+            }, "Okay");
         });
     }
 

@@ -9,10 +9,10 @@
  * See: https://docs.colyseus.io/server/api/#constructor-options
  */
 import { listen } from "@colyseus/tools";
-import Arena from "@colyseus/arena";
+//import Arena from "@colyseus/arena";
 
 // Import Colyseus config
 import app from "./app.config";
 
 // Create and listen on 2567 (or PORT environment variable.)
-listen(app);
+listen(app, 8885);

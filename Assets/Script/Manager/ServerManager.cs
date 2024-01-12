@@ -6,15 +6,13 @@ using UnityEngine.Networking;
 using System;
 using System.Text;
 using Cysharp.Threading.Tasks;
-using MongoDB.Driver;
-using MongoDB.Bson;
 
 #region data
 
 [System.Serializable]
 public class ObjectData
 {
-    public ObjectId _id { get; set; }
+    public string _id { get; set; }
     public int key { get; set; }
 
     public byte objType { get; set; }
@@ -94,7 +92,7 @@ public class ObjectMatadata
 [System.Serializable]
 public class PlayerInfo
 {
-    public ObjectId _id { get; set; }
+    public string _id { get; set; }
 
     public string ID { get; set; }
     public string PW { get; set; }
@@ -118,15 +116,8 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
 {
     private static ServerManager _instance;
 
-    const string _connectionUri = "mongodb+srv://eodls0810:shjin5405@starcraft.lxxbebz.mongodb.net/?retryWrites=true&w=majority";
-    const string _userCollection = "User";
-
     private string token = string.Empty;
     private string refreshToken = string.Empty;
-
-    private MongoClient _client = null;
-
-    private IMongoDatabase _mongoDB = null;
 
     public static ServerManager instance
     {
@@ -150,9 +141,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
 
     public void Initialize()
     {
-        var settings = MongoClientSettings.FromConnectionString(_connectionUri);
-        _client = new MongoClient(settings);
-        _mongoDB = _client.GetDatabase("Starcraft");
+
     }
 
     public void CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
@@ -191,6 +180,41 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         });
     }
 
+    public void SignInPlayerInfo(string ID, string PW, Action<bool> onResult)
+    {
+        var req = new
+        {
+            ID = ID,
+            PW = PW
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            isFound = false
+        };
+
+        SendPostRequestAsync("user/signIn", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            if (result.resultCode == -1)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            onResult?.Invoke(result.isFound);
+        });
+    }
+
     public void GetPlayerInfo(string ID, string PW, Action<PlayerInfo> onResult)
     {
         var req = new
@@ -216,7 +240,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
                 return;
             }
 
-            if (result.resultCode == 0)
+            if (result.resultCode == -1)
             {
                 onResult?.Invoke(null);
                 return;
@@ -226,7 +250,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         });
     }
 
-    public void GetPlayerInfo(ObjectId _id, Action<PlayerInfo> onResult)
+    public void GetPlayerInfo(string _id, Action<PlayerInfo> onResult)
     {
         var req = new
         {
@@ -250,7 +274,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
                 return;
             }
 
-            if (result.resultCode == 0)
+            if (result.resultCode == -1)
             {
                 onResult?.Invoke(null);
                 return;
@@ -260,7 +284,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
         });
     }
 
-    public void UpdatePlayerInfo(ObjectId _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
+    public void UpdatePlayerInfo(string _id, PlayerInfo newInfo, Action<PlayerInfo> onResult)
     {
         var req = new
         {
@@ -285,7 +309,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
                 return;
             }
 
-            if (result.resultCode == 0)
+            if (result.resultCode == -1)
             {
                 onResult?.Invoke(null);
                 return;
@@ -309,7 +333,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
             objectDatas = new List<ObjectData>()
         };
 
-        SendPostRequestAsync("user/getObjectDatas", req, (resultJson, resultCode) =>
+        SendPostRequestAsync("objectData/getObjectDatas", req, (resultJson, resultCode) =>
         {
             var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
 
@@ -319,7 +343,7 @@ public class ServerManager : Colyseus.ColyseusManager<ServerManager>
                 return;
             }
 
-            if (result.resultCode == 0)
+            if (result.resultCode == -1)
             {
                 onResult?.Invoke(null);
                 return;

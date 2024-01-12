@@ -1,10 +1,9 @@
 import { Schema, model, connect, ObjectId, Model, Types, Document } from "mongoose";
-import { Interface } from "readline";
 import { v4 as uuidv4 } from 'uuid';
 
 export interface ObjectData{
     _id : string,
-    key : number,
+    key: number,
 
     objType : number,
     raceType : number,
@@ -36,40 +35,21 @@ export interface ObjectData{
 
     custom : {
         hasCustom_1 : boolean,
-        custom_1_key : number,
-        custom_1_id : number,
+        custom_1_id : string,
 
         hasCustom_2 : boolean,
-        custom_2_key : number,
-        custom_2_id : number,
+        custom_2_id : string,
 
         hasCustom_3 : boolean,
-        custom_3_key : number,
-        custom_3_id : number,
+        custom_3_id : string,
 
         hasCustom_4 : boolean,
-        custom_4_key : number,
-        custom_4_id : number,
-    }
+        custom_4_id : string
+    },
 
-    metaData : {
-        killCount : number,
-
-        HpKey :number, 
-        attackKey : number, 
-        defenceKey : number, 
-        shildKey : number, 
-    
-        currentHp : number, 
-        currentShild : number, 
-        currentEnergy : number, 
-    
-        upgradeAttack : number, 
-        upgradedDefence : number, 
-        upgradeShild : number, 
-    
-        isProduction :boolean, 
-        productionUnitIDs : []
+    mataData : {
+        isProduction : boolean,
+        productionUnitIDs : [string]
     }
 }
 
@@ -80,119 +60,87 @@ export interface PlayerInfo{
     PW : string,
 
     nickName : string,
-    brood : number,
-
-    team : number,
-    color : number,
-
-    x : number,
-    z : number,
-
+    
     win : number,
     lose : number
 }
 
-export class MongoSchemas {
-    private readonly ObjectDataSchema = new Schema<ObjectData>({
-        _id : { type : String ,default: ()=> uuidv4() },
-        key : { type : Number },
+export class MongoSchemas{
 
-        objType : { type : Number },
-        raceType : { type : Number },
-        unitType : { type : Number },
-        unitSizeType : { type : Number },
-        unitAttackType : { type : Number },
-        farAndNeer : { type : Number },
+    private readonly objectDataSchema = new Schema<ObjectData>({
+        _id : {type : String ,default: ()=> uuidv4()},
 
-        name : { type : String },
-        productionCode : { type : Number },
+        objType :{type : Number, required : true}, 
+        raceType :{type : Number, required : true}, 
+        unitType :{type : Number, required : true}, 
+        unitSizeType :{type : Number, required : true}, 
+        unitAttackType :{type : Number, required : true}, 
+        farAndNeer :{type : Number, required : true}, 
 
-        isAir : { type : Boolean },
-        maxHp : { type : Number },
+        name :{type : String, required : false}, 
+        productionCode :{type : Number, required : false}, 
 
-        hasShild : { type : Boolean },
-        maxShild : { type : Number },
+        isAir :{type : Boolean, required : false}, 
+        maxHp :{type : Number, required : false}, 
 
-        hasEnergy : { type : Boolean },
-        maxEnergy : { type : Number },
+        hasShild :{type : Boolean, required : false}, 
+        maxShild :{type : Number, required : false}, 
 
-        hasAttack : { type : Boolean },
-        hasAirAttack : { type : Boolean },
-        attack : { type : Number },
-        attackRate : { type : Number },
-        attackRange : { type : Number },
+        hasEnergy :{type : Boolean, required : false}, 
+        maxEnergy :{type : Number, required : false}, 
 
-        defence : { type : Number },
-        moveSpeed : { type : Number },
+        hasAttack :{type : Boolean, required : false}, 
+        hasAirAttack :{type : Boolean, required : false}, 
+        attack :{type : Number, required : false}, 
+        attackRate :{type : Number, required : false}, 
+        attackRange :{type : Number, required : false}, 
 
-        custom : {
-            hasCustom_1 : { type : Boolean },
-            custom_1_key : { type : Number },
-            custom_1_id : { type : String },
+        defence :{type : Number, required : false}, 
+        moveSpeed :{type : Number, required : false}, 
 
-            hasCustom_2 : { type : Boolean },
-            custom_2_key : { type : Number },
-            custom_2_id : { type : String },
+        custom : { type : {
+            hasCustom_1 :{type : Boolean, required : false}, 
+            custom_1_id :{type : String, required : false},
 
-            hasCustom_3 : { type : Boolean },
-            custom_3_key : { type : Number },
-            custom_3_id : { type : String },
+            hasCustom_2 :{type : Boolean, required : false}, 
+            custom_2_id :{type : String, required : false},
 
-            hasCustom_4 : { type : Boolean },
-            custom_4_key : { type : Number },
-            custom_4_id : { type : String },
-        },
+            hasCustom_3 :{type : Boolean, required : false}, 
+            custom_3_id :{type : String, required : false},
 
-        metaData : {
-            custom_1_key : { type : Number },
+            hasCustom_4 :{type : Boolean, required : false}, 
+            custom_4_id :{type : String, required : false},
+        }, required : false},
 
-            HpKey : { type : Number },
-            attackKey : { type : Number },
-            defenceKey : { type : Number },
-            shildKey : { type : Number },
+        mataData : { type : {
+            isProduction :{type : Boolean, required : false}, 
+            productionUnitIDs :{type : [String], required : false},
+        }, required : false}
 
-            currentHp : { type : Number },
-            currentShild : { type : Number },
-            currentEnergy : { type : Number },
-
-            upgradeAttack : { type : Number },
-            upgradedDefence : { type : Number },
-            upgradeShild : { type : Number },
-
-            isProduction : { type : Boolean },
-            productionUnitIDs : { type : [String] },
-        }
     }, {
-        versionKey: false 
+        versionKey : false
     });
 
-    private readonly PlayerInfoSchma = new Schema<PlayerInfo>({
-        _id : { type : String ,default: ()=> uuidv4() },
+    private readonly playerInfoSchema = new Schema<PlayerInfo>({
+        _id : {type : String ,default: ()=> uuidv4()},
 
-        ID : { type : String },
-        PW : { type : String },
+        ID :{type : String, required : false},
+        PW :{type : String, required : false},
 
-        nickName : { type : String },
-        brood : { type : Number },
+        nickName :{type : String, required : false},
 
-        team : { type : Number },
-        color : { type : Number },
-
-        x : { type : Number },
-        z : { type : Number },
-
-        win : { type : Number },
-        lose : { type : Number },
+        win :{type : Number, required : false}, 
+        lose :{type : Number, required : false}, 
     }, {
-        versionKey: false 
+        versionKey : false
     });
 
-    public getObjectData() : Model<ObjectData, {}, {}> {
-        return model<ObjectData>('ObjectData', this.ObjectDataSchema);
+    public getObjectDataModel() : Model<ObjectData, {}, {}> {
+        return model<ObjectData>('ObjectData', this.objectDataSchema);
     }
-
-    public getPlayerInfo() : Model<PlayerInfo, {}, {}> {
-        return model<PlayerInfo>('PlayerInfo', this.PlayerInfoSchma);
+    
+    public getPlayerInfoModel() : Model<PlayerInfo, {}, {}> {
+        return model<PlayerInfo>('User', this.playerInfoSchema);
     }
 }
 

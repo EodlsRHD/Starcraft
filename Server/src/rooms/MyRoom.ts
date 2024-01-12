@@ -1,9 +1,5 @@
 import { Room, Client } from "@colyseus/core";
-
-import { MongoManager } from "../DB/MongoManager";
 import { MyRoomState } from "./schema/MyRoomState";
-
-import { IncomingMessage } from "http";
 
 export class MyRoom extends Room<MyRoomState> {
   maxClients = 6;
@@ -16,10 +12,6 @@ export class MyRoom extends Room<MyRoomState> {
       // handle "type" message
       //
     });
-  }
-
-  onAuth(client: Client, options: any, requset?: IncomingMessage){
-    
   }
 
   onJoin (client: Client, options: any) {
