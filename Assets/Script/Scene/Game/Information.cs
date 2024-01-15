@@ -19,52 +19,6 @@ public interface IObserver
     public ObjectData GetData();
 }
 
-public enum eObject
-{
-    Non = -1,
-    Building,
-    Unit,
-    Resources
-}
-
-public enum eRace
-{
-    Non = -1,
-    Terran,
-    Protoss,
-    Zerg
-}
-
-public enum eUnitType
-{
-    Non = -1,
-    Biological,
-    Mechanical
-}
-
-public enum eUnitSizeType
-{
-    Non = -1,
-    Large,
-    Middle,
-    Small
-}
-
-public enum eUnitAttackType
-{
-    Non = -1,
-    Common,
-    Concussive,
-    Explosive
-}
-
-public enum eFarAndNeer
-{
-    Non = -1,
-    Far,
-    Neer
-}
-
 public class Information : MonoBehaviour
 {
     [SerializeField]

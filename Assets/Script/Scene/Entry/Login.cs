@@ -85,7 +85,7 @@ public class Login : MonoBehaviour
                     return;
                 }
 
-                GameManager.instance.playerInfo = result;
+                GameManager.instance.currentPlayerInfo = result;
 
                 UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Loby);
                 UnityEngine.SceneManagement.SceneManager.LoadScene((int)eScene.Interface, UnityEngine.SceneManagement.LoadSceneMode.Additive);
@@ -132,7 +132,7 @@ public class Login : MonoBehaviour
                 return;
             }
 
-            GameManager.instance.playerInfo = result;
+            GameManager.instance.currentPlayerInfo = result;
 
             InterfaceManager.instance.OpenOneButton("Sign Up", "Success.", () =>
             {

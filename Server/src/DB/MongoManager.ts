@@ -1,4 +1,4 @@
-import MongoSchemas, { ObjectData, PlayerInfo } from "./MongoSchemas";
+import MongoSchemas, { ObjectData, PlayerInfo, customData } from "./MongoSchemas";
 
 export class MongoManager{
     private static instance : MongoManager = null;
@@ -19,12 +19,15 @@ export class MongoManager{
         let promise = new Promise<PlayerInfo>(async(res, rej) => {
             let model = this.schemas.getPlayerInfoModel();
 
-            console.log("CreatePlayerInfo");
-
             let result = new model();
-            result.ID = id;
-            result.PW = pw;
+            result.userID = id;
+            result.userPW = pw;
             result.nickName = nickName;
+            result.brood = 0;
+            result.team = 0;
+            result.color = 0;
+            result.x = 0;
+            result.z = 0;
             result.win = 0;
             result.lose = 0;
 
@@ -40,18 +43,18 @@ export class MongoManager{
         let promise = new Promise<boolean>(async(res, rej) => {
             let model = this.schemas.getPlayerInfoModel();
 
-            console.log("SignInPlayerInfo");
-
             let isFound = true;
 
-            let result = await model.findOne({ID : id, PW : pw}).catch((reason) => 
+            let result = await model.findOne({userID : id, userPW : pw});
+
+            console.log("Sign In     " + result);
+
+            if(result == null)
             {
-                console.log("SignInPlayerInfo    " +  reason);
                 isFound = false;
-            });
-
-            console.log(isFound);
-
+                res(isFound);
+            }
+            
             res(isFound);
         });
 
@@ -61,10 +64,8 @@ export class MongoManager{
     public async GetPlayerInfo(id : string, pw : string) : Promise<PlayerInfo>{
         let promise = new Promise<PlayerInfo>(async(res, rej) => {
             let model = this.schemas.getPlayerInfoModel();
-            let result = await model.findOne({ID : id, PW : pw});
-
-            console.log("GetPlayerInfo");
-
+            let result = await model.findOne({userID : id, userPW : pw});
+            
             res(result);
         });
 
@@ -75,8 +76,6 @@ export class MongoManager{
         let promise = new Promise<PlayerInfo>(async(res, rej) => {
             let model = this.schemas.getPlayerInfoModel();
             let result = await model.findOne({_id : id});
-
-            console.log("GetPlayerInfo_ObjectID");
 
             res(result);
         });
@@ -91,13 +90,11 @@ export class MongoManager{
 
             result = newInfo;
 
-            result.ID = newInfo.ID;
-            result.PW = newInfo.PW;
+            result.userID = newInfo.ID;
+            result.userPW = newInfo.PW;
             result.nickName = newInfo.nickName;
             result.win = newInfo.win;
             result.lose = newInfo.lose;
-
-            console.log("UpdatePlayerInfo");
 
             await result.save();
 
@@ -118,10 +115,34 @@ export class MongoManager{
         return promise;
     }
 
-    public async SetObjectDatas(objectDatas : ObjectData[]) : Promise<void>{
+    public async SetObjectDatas(datas : ObjectData[]) : Promise<void>{
         let promise = new Promise<void>(async(res, rej) => {
             let model = this.schemas.getObjectDataModel();
-            model.updateMany(objectDatas);
+            model.updateMany(datas);
+            
+            console.log(datas.length);
+
+            res();
+        });
+
+        return promise;
+    }
+
+    public async getCustomDatas() : Promise<customData[]>{
+        let promise = new Promise<customData[]>(async(res, rej) => {
+            let model = this.schemas.getCustomData();
+            let result = await model.find();
+
+            res(result);
+        });
+
+        return promise;
+    }
+
+    public async SetCustomDatas(datas : customData[]) : Promise<void>{
+        let promise = new Promise<void>(async(res, rej) => {
+            let model = this.schemas.getCustomData();
+            model.updateMany(datas);
             
             res();
         });

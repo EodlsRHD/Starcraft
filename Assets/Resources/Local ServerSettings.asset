@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ed729989615d4b4db072e1e8c41076c, type: 3}
-  m_Name: MyServerSettings
+  m_Name: Local ServerSettings
   m_EditorClassIdentifier: 
   colyseusServerAddress: localhost
   colyseusServerPort: 8885

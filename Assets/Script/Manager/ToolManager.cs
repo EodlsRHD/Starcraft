@@ -248,11 +248,11 @@ public class ToolManager : MonoBehaviour
             ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
             tmp.SetColor((ePlayerColor)info.color);
 
-            if (info.ID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
+            if (info.userID.Equals((string)GameManager.instance.currentPlayerInfo.userID, StringComparison.Ordinal))
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.My);
             }
-            else if (info.team == GameManager.instance.playerInfo.team)
+            else if (info.team == GameManager.instance.currentPlayerInfo.team)
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.Alliance);
             }
@@ -277,11 +277,11 @@ public class ToolManager : MonoBehaviour
             ObjectTamplate tmp = request.GetObject().GetComponent<ObjectTamplate>();
             tmp.SetColor((ePlayerColor)info.color);
             
-            if(info.ID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
+            if(info.userID.Equals((string)GameManager.instance.currentPlayerInfo.userID, StringComparison.Ordinal))
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.My);
             }
-            else if(info.team == GameManager.instance.playerInfo.team)
+            else if(info.team == GameManager.instance.currentPlayerInfo.team)
             {
                 tmp.SetFriendIdentificationType(eFriendIdentification.Alliance);
             }

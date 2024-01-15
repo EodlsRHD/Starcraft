@@ -28,6 +28,8 @@ public class WaitingRoom : MonoBehaviour
 
     private List<HomeAndAwayTamplate> _tamplates = new List<HomeAndAwayTamplate>();
 
+    private bool _isHost = false;
+
     public void Initialize(Action<Action> onCloseCallback, Action<MapData> onGameStartonCallback)
     {
         _tamplate.Initialize();
@@ -59,8 +61,10 @@ public class WaitingRoom : MonoBehaviour
         if(_mapData.members == null)
         {
             _mapData.members = new PlayerInfo[_mapData.maxPlayer];
-            _mapData.members[0] = GameManager.instance.playerInfo;
-            _mapData.roomHostID = GameManager.instance.playerInfo.ID;
+            _mapData.members[0] = GameManager.instance.currentPlayerInfo;
+            _mapData.roomHostUuid = GameManager.instance.currentPlayerInfo._id;
+
+            _isHost = true;
         }
 
         GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, (Action)(() =>
@@ -88,21 +92,13 @@ public class WaitingRoom : MonoBehaviour
                             {
                                 HomeAndAwayTamplate playerTamplate = Instantiate(_tamplate, _templateParent);
 
-                                if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
+                                if (_mapData.members[i] != null)
                                 {
-                                    if (playerCount + p == 0)
-                                    {
-                                        playerTamplate.SetPlayer((string)GameManager.instance.playerInfo.ID, GameManager.instance.playerInfo.nickName, true);
-                                        _mapData.members[playerCount + p] = GameManager.instance.playerInfo;
-                                    }
-                                    else
-                                    {
-                                        playerTamplate.SetPlayer(string.Empty,  "Empty", false);
-                                    }
+                                    tamplate.SetPlayer(_mapData.members[i].userID, _mapData.members[i].nickName, true);
                                 }
                                 else
                                 {
-
+                                    tamplate.SetPlayer(string.Empty, "Empty", false);
                                 }
 
                                 _tamplates.Add(playerTamplate);
@@ -119,21 +115,13 @@ public class WaitingRoom : MonoBehaviour
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
 
-                            if (_mapData.roomHostID.Equals((string)GameManager.instance.playerInfo.ID, StringComparison.Ordinal))
+                            if(_mapData.members[i] != null)
                             {
-                                if (i == 0)
-                                {
-                                    tamplate.SetPlayer((string)GameManager.instance.playerInfo.ID, GameManager.instance.playerInfo.nickName, true);
-                                    _mapData.members[i] = GameManager.instance.playerInfo;
-                                }
-                                else
-                                {
-                                    tamplate.SetPlayer(string.Empty, "Empty", false);
-                                }
+                                tamplate.SetPlayer(_mapData.members[i].userID, _mapData.members[i].nickName, true);
                             }
                             else
                             {
-
+                                tamplate.SetPlayer(string.Empty, "Empty", false);
                             }
 
                             _tamplates.Add(tamplate);
@@ -174,13 +162,13 @@ public class WaitingRoom : MonoBehaviour
                     return;
                 }
 
-                if (id.Equals(GameManager.instance.currentMapdata.members[i].ID, StringComparison.Ordinal))
+                if (id.Equals(GameManager.instance.currentMapdata.members[i].userID, StringComparison.Ordinal))
                 {
                     GameManager.instance.currentMapdata.members[i].brood = (byte)b;
 
-                    if(id.Equals(GameManager.instance.playerInfo.ID))
+                    if(id.Equals(GameManager.instance.currentPlayerInfo.userID))
                     {
-                        GameManager.instance.playerInfo.brood = (byte)b;
+                        GameManager.instance.currentPlayerInfo.brood = (byte)b;
                     }
 
                     break;

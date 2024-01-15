@@ -35,19 +35,38 @@ export interface ObjectData{
 
     custom : {
         hasCustom_1 : boolean,
+        custom_1_key : number,
         custom_1_id : string,
 
         hasCustom_2 : boolean,
+        custom_2_key : number,
         custom_2_id : string,
 
         hasCustom_3 : boolean,
+        custom_3_key : number,
         custom_3_id : string,
 
         hasCustom_4 : boolean,
+        custom_4_key : number,
         custom_4_id : string
     },
 
     mataData : {
+        killCount : number,
+
+        HpKey : number,
+        attackKey : number,
+        defenceKey : number,
+        shildKey : number,
+
+        currentHp : number,
+        currentShild : number,
+        currentEnergy : number,
+
+        upgradeAttack : number,
+        upgradedDefence : number,
+        upgradeShild : number,
+
         isProduction : boolean,
         productionUnitIDs : [string]
     }
@@ -56,19 +75,34 @@ export interface ObjectData{
 export interface PlayerInfo{
     _id : string,
 
-    ID : string,
-    PW : string,
+    userID : string,
+    userPW : string,
 
     nickName : string,
+    brood : number,
+
+    team : number,
+    color : number,
+
+    x : number,
+    z : number,
     
     win : number,
     lose : number
 }
 
+export interface customData{
+    _id : string,
+    orderKey : number,
+
+    name : string,
+    description : string,
+}
+
 export class MongoSchemas{
 
     private readonly objectDataSchema = new Schema<ObjectData>({
-        _id : {type : String ,default: ()=> uuidv4()},
+        _id : {type : String, default : ()=> uuidv4()},
 
         objType :{type : Number, required : true}, 
         raceType :{type : Number, required : true}, 
@@ -100,19 +134,38 @@ export class MongoSchemas{
 
         custom : { type : {
             hasCustom_1 :{type : Boolean, required : false}, 
+            custom_1_key :{type : Number, required : false}, 
             custom_1_id :{type : String, required : false},
 
             hasCustom_2 :{type : Boolean, required : false}, 
+            custom_2_key :{type : Number, required : false}, 
             custom_2_id :{type : String, required : false},
 
             hasCustom_3 :{type : Boolean, required : false}, 
+            custom_3_key :{type : Number, required : false}, 
             custom_3_id :{type : String, required : false},
 
             hasCustom_4 :{type : Boolean, required : false}, 
+            custom_4_key :{type : Number, required : false}, 
             custom_4_id :{type : String, required : false},
         }, required : false},
 
         mataData : { type : {
+            killCount :{type : Number, required : false}, 
+
+            HpKey :{type : Number, required : false}, 
+            attackKey :{type : Number, required : false}, 
+            defenceKey :{type : Number, required : false}, 
+            shildKey :{type : Number, required : false}, 
+
+            currentHp :{type : Number, required : false}, 
+            currentShild :{type : Number, required : false}, 
+            currentEnergy :{type : Number, required : false}, 
+
+            upgradeAttack :{type : Number, required : false}, 
+            upgradedDefence :{type : Number, required : false}, 
+            upgradeShild :{type : Number, required : false}, 
+
             isProduction :{type : Boolean, required : false}, 
             productionUnitIDs :{type : [String], required : false},
         }, required : false}
@@ -122,18 +175,33 @@ export class MongoSchemas{
     });
 
     private readonly playerInfoSchema = new Schema<PlayerInfo>({
-        _id : {type : String ,default: ()=> uuidv4()},
+        _id : {type : String, default : ()=> uuidv4()},
 
-        ID :{type : String, required : false},
-        PW :{type : String, required : false},
+        userID :{type : String, required : true},
+        userPW :{type : String, required : true},
 
-        nickName :{type : String, required : false},
+        nickName :{type : String, required : true},
+        brood :{type : Number, required : false}, 
 
-        win :{type : Number, required : false}, 
-        lose :{type : Number, required : false}, 
+        team :{type : Number, required : false}, 
+        color :{type : Number, required : false}, 
+
+        x :{type : Number, required : false}, 
+        z :{type : Number, required : false}, 
+
+        win :{type : Number, required : true}, 
+        lose :{type : Number, required : true}, 
     }, {
         versionKey : false
     });
+
+    private readonly customData = new Schema<customData>({
+        _id :{type : String, default : () => uuidv4()},
+        orderKey :{type : Number, required : false}, 
+
+        name :{type : String, required : true},
+        description :{type : String, required : true},
+    })
 
     public getObjectDataModel() : Model<ObjectData, {}, {}> {
         return model<ObjectData>('ObjectData', this.objectDataSchema);
@@ -141,6 +209,10 @@ export class MongoSchemas{
     
     public getPlayerInfoModel() : Model<PlayerInfo, {}, {}> {
         return model<PlayerInfo>('User', this.playerInfoSchema);
+    }
+
+    public getCustomData() : Model<customData, {}, {}> {
+        return model<customData>('CustomData', this.customData);
     }
 }
 

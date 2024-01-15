@@ -9,13 +9,13 @@ export enum eResultCode {
 }
 
 router.post("/signUp", async(req : Request, res : Response) => {
-    let id = req.body.ID;
-    let pw = req.body.PW;
+    let id = req.body.userID;
+    let pw = req.body.userPW;
     let nickName = req.body.nickName;
 
     let isError = false;
 
-    let result = await MongoManager.Instance().CreatePlayerInfo(id, pw, nickName).catch((reason) => {
+    let playerInfo = await MongoManager.Instance().CreatePlayerInfo(id, pw, nickName).catch((reason) => {
         console.log(reason);
         isError = true;
     });
@@ -26,18 +26,18 @@ router.post("/signUp", async(req : Request, res : Response) => {
         return;
     }
 
-    res.send({ resultCode : eResultCode.SUCCESSE, playerInfo : result});
+    res.send({ resultCode : eResultCode.SUCCESSE,  message : "", playerInfo : playerInfo});
 });
 
 router.post("/signIn", async(req : Request, res : Response) => {
-    let id = req.body.ID;
-    let pw = req.body.PW;
+    let id = req.body.userID;
+    let pw = req.body.userPW;
 
     let isError = false;
 
-    let result = await MongoManager.Instance().SignInPlayerInfo(id, pw).catch((reason) => {
+    let isFound = await MongoManager.Instance().SignInPlayerInfo(id, pw).catch((reason) => {
         console.log(reason);
-
+        isError = true;
     });
 
     if(isError != false)
@@ -46,16 +46,16 @@ router.post("/signIn", async(req : Request, res : Response) => {
         return;
     }
 
-    res.send({ resultCode : eResultCode.SUCCESSE, isFound : result});
+    res.send({ resultCode : eResultCode.SUCCESSE,  message : "", isFound : isFound});
 });
 
 router.post("/getPlayerInfo", async(req : Request, res : Response) => {
-    let id = req.body.ID;
-    let pw = req.body.PW;
+    let id = req.body.userID;
+    let pw = req.body.userPW;
 
     let isError = false;
 
-    let result = await MongoManager.Instance().GetPlayerInfo(id, pw).catch((reason) => {
+    let playerInfo = await MongoManager.Instance().GetPlayerInfo(id, pw).catch((reason) => {
         console.log(reason);
         isError = true;
     });
@@ -66,7 +66,7 @@ router.post("/getPlayerInfo", async(req : Request, res : Response) => {
         return;
     }
 
-    res.send({ resultCode : eResultCode.SUCCESSE, playerInfo : result});
+    res.send({ resultCode : eResultCode.SUCCESSE, message : "", playerInfo : playerInfo});
 });
 
 router.post("/getPlayerInfo_ObjectID", async(req : Request, res : Response) => {
@@ -74,7 +74,7 @@ router.post("/getPlayerInfo_ObjectID", async(req : Request, res : Response) => {
 
     let isError = false;
 
-    let result = await MongoManager.Instance().GetPlayerInfo_ObjectID(id).catch((reason) => {
+    let playerInfo = await MongoManager.Instance().GetPlayerInfo_ObjectID(id).catch((reason) => {
         console.log(reason);
         isError = true;
     });
@@ -85,7 +85,7 @@ router.post("/getPlayerInfo_ObjectID", async(req : Request, res : Response) => {
         return;
     }
 
-    res.send({ resultCode : eResultCode.SUCCESSE, playerInfo : result});
+    res.send({ resultCode : eResultCode.SUCCESSE, message : "", playerInfo : playerInfo});
 });
 
 router.post("/updatePlayerInfo", async(req : Request, res : Response) => {
@@ -94,7 +94,7 @@ router.post("/updatePlayerInfo", async(req : Request, res : Response) => {
 
     let isError = false;
 
-    let result = await MongoManager.Instance().UpdatePlayerInfo(id, newInfo).catch((reason) => {
+    let playerInfo = await MongoManager.Instance().UpdatePlayerInfo(id, newInfo).catch((reason) => {
         console.log(reason);
         isError = true;
     });
@@ -105,7 +105,7 @@ router.post("/updatePlayerInfo", async(req : Request, res : Response) => {
         return;
     }
 
-    res.send({ resultCode : eResultCode.SUCCESSE, playerInfo : result});
+    res.send({ resultCode : eResultCode.SUCCESSE, message : "", playerInfo : playerInfo});
 });
 
 export default router;

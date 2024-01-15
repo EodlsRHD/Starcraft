@@ -44,4 +44,39 @@ router.post("/setObjectDatas", async(req : Request, res : Response) => {
     res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
 });
 
+router.post("/getCustomDatas", async(req : Request, res : Response) => {
+    let isError = false;
+
+    let result = await MongoManager.Instance().getCustomDatas().catch((reason) => {
+        console.log(reason);
+        isError = true;
+    });
+
+    if(isError != false)
+    {
+        res.send({ resultCode : eResultCode.FAIL, message : "/getCustomDatas Error"});
+        return;
+    }
+
+    res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
+});
+
+router.post("/SetCustomDatas", async(req : Request, res : Response) => {
+    let customDatas = req.body.customDatas;
+
+    let isError = false;
+
+    let result = await MongoManager.Instance().SetCustomDatas(customDatas).catch((reason) => {
+        console.log(reason);
+        isError = true;
+    });
+
+    if(isError != false)
+    {
+        res.send({ resultCode : eResultCode.FAIL, message : "/SetCustomDatas Error"});
+        return;
+    }
+
+    res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
+});
 export default router;

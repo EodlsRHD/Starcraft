@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
     private ePlayerColor _currentplayerColor = ePlayerColor.Non;
 
     [SerializeField] // test
-    private MapData _mapdata = null;
+    private PlayerInfo _playerInfo = null;
 
     [SerializeField] // test
-    private PlayerInfo _playerInfo = null;
+    private MapData _mapdata = null;
 
     #region Get Set
 
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         set { _mapdata = value; }
     }
 
-    public PlayerInfo playerInfo
+    public PlayerInfo currentPlayerInfo
     {
         get { return _playerInfo; }
         set { _playerInfo = value; }
