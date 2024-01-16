@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class CustomPlay : MonoBehaviour
+public class PlayMode : MonoBehaviour
 {
     [SerializeField]
     private MapList _mapList = null;
@@ -16,8 +16,9 @@ public class CustomPlay : MonoBehaviour
     private WaitingRoom _waitingRoom = null;
 
     private Action _onCloseCallback = null;
-
     private Action _onResult = null;
+
+    private ePlayMode _playMode = ePlayMode.Non;
 
     public void Initialize(Action onCloseCallback)
     {
@@ -33,14 +34,16 @@ public class CustomPlay : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void Open(Action onResult)
+    public void Open(ePlayMode playMode, Action onResult)
     {
         if(onResult != null)
         {
             _onResult = onResult;
         }
 
-        _mapList.Open();
+        _playMode = playMode;
+
+        _mapList.Open(_playMode);
 
         this.gameObject.SetActive(true);
     }
@@ -81,7 +84,8 @@ public class CustomPlay : MonoBehaviour
 
     private void OpenWaitingRoom(MapData mapData)
     {
-        _waitingRoom.Open(mapData);
+        _waitingRoom.Open(_playMode, mapData);
+        _mapInfo.ActiveSelectButton(true);
     }
 
     private void CloseMapList(Action onResult)
@@ -89,12 +93,13 @@ public class CustomPlay : MonoBehaviour
         _mapList.Close(onResult);
     }
 
-    private void WaitingRoomClose(Action onResult)
+    private void WaitingRoomClose(ePlayMode playerMode, Action onResult)
     {
+        _mapInfo.ActiveSelectButton(false);
         _mapInfo.Close();
         _waitingRoom.Close(() => 
         {
-            _mapList.Open();
+            _mapList.Open(playerMode);
         });
     }
 }

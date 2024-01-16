@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 1435689063}
   - component: {fileID: 1435689062}
   - component: {fileID: 1435689064}
+  - component: {fileID: 1435689065}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -780,6 +781,18 @@ MonoBehaviour:
   _cursorManager: {fileID: 763140720}
   _serverManager: {fileID: 1435689064}
   test_mode: 1
+  _playerInfo:
+    _id: 
+    userID: 
+    userPW: 
+    nickName: 
+    brood: 0
+    team: -1
+    color: 0
+    x: 0
+    z: 0
+    win: 0
+    lose: 0
   _mapdata:
     id: 0
     name: 
@@ -789,8 +802,8 @@ MonoBehaviour:
     maxPlayer: 0
     classification: -1
     teamCount: 0
-    roomHostID: 
-    members: []
+    roomHostUuid: 
+    memberIDs: []
     thumbnailPath: 
     mapSizeX: 0
     mapSizeY: 0
@@ -807,6 +820,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colyseusSettings: {fileID: 11400000, guid: 2f801e7765b0bf84395385d2391942b0, type: 2}
+--- !u!114 &1435689065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435689060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27460f21d11ee34b9f0909d0090c177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893675481
 GameObject:
   m_ObjectHideFlags: 0

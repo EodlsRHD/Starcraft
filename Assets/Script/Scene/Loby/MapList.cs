@@ -41,28 +41,58 @@ public class MapList : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void Open()
+    public void Open(ePlayMode playMode)
     {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        string mapsPath = path + @"/Unity_StarCraft2/maps/";
-
-        _textPath.text = mapsPath;
-
-        DirectoryInfo dInfo = new DirectoryInfo(mapsPath);
-        FileInfo[] infos = dInfo.GetFiles("*.USC2");
-
-        this.gameObject.SetActive(true);
-
-        GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
+        switch(playMode)
         {
-            for (int i = 0; i < infos.Length; i++)
-            {
-                MapTemplate tam = Instantiate(_mapTamplate, _templateParent);
-                tam.Initialize(infos[i].Name, mapsPath + infos[i].Name, OpenMapInfo);
+            case ePlayMode.Single:
+                {
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string mapsPath = path + @"/Unity_StarCraft2/maps/";
 
-                _tamplates.Add(tam);
-            }
-        });
+                    _textPath.gameObject.SetActive(true);
+                    _textPath.text = mapsPath;
+
+                    DirectoryInfo dInfo = new DirectoryInfo(mapsPath);
+                    FileInfo[] infos = dInfo.GetFiles("*.USC2");
+
+                    this.gameObject.SetActive(true);
+
+                    GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
+                    {
+                        for (int i = 0; i < infos.Length; i++)
+                        {
+                            MapTemplate tam = Instantiate(_mapTamplate, _templateParent);
+                            tam.Initialize_Single(infos[i].Name, mapsPath + infos[i].Name, OpenMapInfo);
+
+                            _tamplates.Add(tam);
+                        }
+                    });
+                }
+                break;
+
+            case ePlayMode.Online:
+                {
+                    ServerManager.instance.GetMapDataInfos((result) =>
+                    {
+                        this.gameObject.SetActive(true);
+
+                        _textPath.gameObject.SetActive(false);
+
+                        GameManager.instance.toolManager.MoveX(_rT, -510f, 1f, false, () =>
+                        {
+                            for (int i = 0; i < result.Count; i++)
+                            {
+                                MapTemplate tam = Instantiate(_mapTamplate, _templateParent);
+                                tam.Initialize_Online(result[i].name, result[i].fileDownloadUrl, OpenMapInfo);
+
+                                _tamplates.Add(tam);
+                            }
+                        });
+                    });
+                }
+                break;
+        };
     }
 
     public void Close(Action onResult)

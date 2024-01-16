@@ -206,11 +206,6 @@ public class ToolManager : MonoBehaviour
         return _filemanager.UnZipFile(path);
     }
 
-    public void ImageDownload(string url, Action<Texture, bool> onResult)
-    {
-        _filemanager.ImageDownload(url, onResult);
-    }
-
     public Sprite ConvertTextureToSprite(Texture texture)
     {
         return _filemanager.ConvertTextureToSprite(texture);

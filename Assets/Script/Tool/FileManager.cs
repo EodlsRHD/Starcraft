@@ -116,38 +116,6 @@ public class FileManager : MonoBehaviour
         return obj;
     }
 
-    public async void ImageDownload(string url, Action<Texture, bool> onResult)
-    {
-        if(url.Length == 0)
-        {
-            onResult?.Invoke(null, false);
-            return;
-        }
-
-        using (UnityWebRequest req = UnityWebRequestTexture.GetTexture(url))
-        {
-            float time = Time.realtimeSinceStartup;
-            await req.SendWebRequest();
-            Debug.Log("Time used : " + (Time.realtimeSinceStartup - time));
-
-            if (req.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.LogError("ConnectionError");
-                onResult?.Invoke(null, false);
-                return;
-            }
-
-            if (req.result == UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError("ProtocolError");
-                onResult?.Invoke(null, false);
-                return;
-            }
-
-            onResult?.Invoke(((DownloadHandlerTexture)req.downloadHandler).texture, true);
-        }
-    }
-
     public Sprite ConvertTextureToSprite(Texture texture)
     {
         Texture2D texture2D = (Texture2D)texture;

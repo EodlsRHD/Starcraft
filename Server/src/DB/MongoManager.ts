@@ -1,4 +1,4 @@
-import MongoSchemas, { ObjectData, PlayerInfo, customData } from "./MongoSchemas";
+import MongoSchemas, { MapdataInfo, ObjectData, PlayerInfo, customData } from "./MongoSchemas";
 
 export class MongoManager{
     private static instance : MongoManager = null;
@@ -83,18 +83,21 @@ export class MongoManager{
         return promise;
     }
 
-    public async UpdatePlayerInfo(id : string, newInfo : any) : Promise<PlayerInfo>{
+    public async UpdatePlayerInfo(id : string, newInfo : PlayerInfo) : Promise<PlayerInfo>{
         let promise = new Promise<PlayerInfo>(async(res, rej) => {
             let model = this.schemas.getPlayerInfoModel();
             let result = await model.findOne({_id : id});
 
-            result = newInfo;
+            if(newInfo == null)
+            {
+                return;
+            }
 
-            result.userID = newInfo.ID;
-            result.userPW = newInfo.PW;
-            result.nickName = newInfo.nickName;
-            result.win = newInfo.win;
-            result.lose = newInfo.lose;
+            if(newInfo.userID) result.userID = newInfo.userID;
+            if(newInfo.userPW) result.userPW = newInfo.userPW;
+            if(newInfo.nickName) result.nickName = newInfo.nickName;
+            if(newInfo.win) result.win = newInfo.win;
+            if(newInfo.lose) result.lose = newInfo.lose;
 
             await result.save();
 
@@ -118,6 +121,7 @@ export class MongoManager{
     public async SetObjectDatas(datas : ObjectData[]) : Promise<void>{
         let promise = new Promise<void>(async(res, rej) => {
             let model = this.schemas.getObjectDataModel();
+
             let result = new model();
             
             for (let i = 0; i < datas.length; i++) {
@@ -165,7 +169,7 @@ export class MongoManager{
         return promise;
     }
 
-    public async getCustomDatas() : Promise<customData[]>{
+    public async GetCustomDatas() : Promise<customData[]>{
         let promise = new Promise<customData[]>(async(res, rej) => {
             let model = this.schemas.getCustomData();
             let result = await model.find();
@@ -181,6 +185,49 @@ export class MongoManager{
             let model = this.schemas.getCustomData();
             model.updateMany(datas);
             
+            res();
+        });
+
+        return promise;
+    }
+
+    public async GetMapDataInfos() : Promise<MapdataInfo[]>{
+        let promise = new Promise<MapdataInfo[]>(async(res, rej) => {
+            let model = this.schemas.getMapDataInfoModel();
+            let result = await model.find();
+
+            res(result);
+        });
+
+        return promise;
+    }
+
+    public async AddMapDataInfos(newInfo : MapdataInfo) : Promise<void>{
+        let promise = new Promise<void>(async(res, rej) => {
+            let model = this.schemas.getMapDataInfoModel();
+
+            let info = new model();
+            info.name = newInfo.name;
+            info.description = newInfo.description;
+            info.version = newInfo.version;
+            info.maker = newInfo.maker;
+            info.maxPlayer = newInfo.maxPlayer;
+
+            info.classification = newInfo.classification;
+            info.teamCount = newInfo.teamCount;
+
+            info.roomHostUuid = newInfo.roomHostUuid;
+            info.members = newInfo.members;
+
+            info.thumbnailPath = newInfo.thumbnailPath;
+
+            info.mapSizeX = newInfo.mapSizeX;
+            info.mapSizeY = newInfo.mapSizeY;
+
+            info.fileDownloadUrl = newInfo.fileDownloadUrl;
+
+            await info.save();
+
             res();
         });
 

@@ -5,6 +5,7 @@ using Colyseus;
 using UnityEngine.Networking;
 using System;
 using System.Text;
+using System.IO;
 
 #region Data
 
@@ -81,6 +82,31 @@ public enum eClassification
 }
 
 [System.Serializable]
+public class MapDataInfo
+{
+    public string _id = string.Empty;
+
+    public string name = string.Empty;
+    public string description = string.Empty;
+    public string version = string.Empty;
+    public string maker = string.Empty;
+    public int maxPlayer = 0;
+
+    public eClassification classification = eClassification.Non;
+    public int teamCount = 0;
+
+    public string roomHostUuid = string.Empty;
+    public string[] members;
+
+    public string thumbnailPath = string.Empty;
+
+    public int mapSizeX = 0;
+    public int mapSizeY = 0;
+
+    public string fileDownloadUrl = string.Empty;
+}
+
+[System.Serializable]
 public class MapData
 {
     public long id = 0;
@@ -95,7 +121,7 @@ public class MapData
     public int teamCount = 0;
 
     public string roomHostUuid = string.Empty;
-    public PlayerInfo[] members;
+    public string[] memberIDs;
 
     public string thumbnailPath = string.Empty;
 
@@ -173,7 +199,7 @@ public class ObjectData
     public float moveSpeed = 0f;
 
     public ObjectCustom custom = null;
-    public ObjectMatadata metaData = null;
+    public ObjectMetadata metaData = null;
 }
 
 [System.Serializable]
@@ -196,7 +222,7 @@ public class ObjectCustom
 }
 
 [System.Serializable]
-public class ObjectMatadata
+public class ObjectMetadata
 {
     public int killCount = 0;
 
@@ -248,14 +274,31 @@ public class CustomData
     public string description = string.Empty;
 }
 
+
+public partial class MyRoomState : Colyseus.Schema.Schema
+{
+    [Colyseus.Schema.Type(0, "number")]
+    public float mapID = default(float);
+
+    [Colyseus.Schema.Type(1, "string")]
+    public string ownerID = default(string);
+}
 #endregion
 
 public class ServerManager : ColyseusManager<ServerManager>
 {
+    [System.Serializable]
+    private class OnJoinResult
+    {
+        public Colyseus.ColyseusMatchMakeResponse seatReservation = null;
+    }
+
     private static ServerManager _instance;
 
     private string token = string.Empty;
     private string refreshToken = string.Empty;
+
+    private readonly string _mapsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"/Unity_StarCraft2/maps";
 
     public static ServerManager instance
     {
@@ -281,8 +324,11 @@ public class ServerManager : ColyseusManager<ServerManager>
 
     public void Initialize()
     {
-
+        base.InitializeClient();
+        this._colyseusSettings.useSecureProtocol = false;
     }
+
+    #region PlayerInfo
 
     public void CreatePlayerInfo(string ID, string PW, string nickName, Action<PlayerInfo> onResult)
     {
@@ -459,6 +505,10 @@ public class ServerManager : ColyseusManager<ServerManager>
         });
     }
 
+    #endregion
+
+    #region Data
+
     public void GetObjectDatas(Action<List<ObjectData>> onResult)
     {
         var req = new
@@ -520,7 +570,7 @@ public class ServerManager : ColyseusManager<ServerManager>
             {
                 onResult?.Invoke(false);
                 return;
-            }
+            } 
 
             onResult?.Invoke(true);
         });
@@ -592,6 +642,146 @@ public class ServerManager : ColyseusManager<ServerManager>
             onResult?.Invoke(true);
         });
     }
+
+    #endregion
+
+    #region Room
+
+    public void JoinOrCreateRoom(MapData data, Action onResult = null)
+    {
+        GetPlayerInfo(data.roomHostUuid, (result) => 
+        {
+            RequestJoinRoom((int)data.id, result.nickName, false, data.roomHostUuid, () => 
+            {
+                onResult?.Invoke();
+            });
+        });
+    }
+
+    private void RequestJoinRoom(int mapID, string nickName, bool isPrivate = false, string roomOwner = "", Action onRoomJoinDone = null)
+    {
+        Debug.Log("Join Room mapID : " + mapID);
+
+        SendPostRequestAsync("room/join", new Dictionary<string, object>() {
+            { "mapID", mapID },
+            { "isPrivate", isPrivate },
+            { "name", name },
+            { "roomOwner", roomOwner },
+        }, async (resultJson, resultCode) =>
+        {
+            Debug.Log(resultJson);
+            OnJoinResult res = JsonUtility.FromJson<OnJoinResult>(resultJson);
+
+            Debug.Log(res.seatReservation.room.roomId);
+            var roomReserv = await client.ConsumeSeatReservation<MyRoomState>(res.seatReservation, _colyseusSettings.HeadersDictionary);
+            RoomServerManager.Instance.Initialize(roomReserv);
+
+            onRoomJoinDone();
+        });
+    }
+
+    public void GetMapDataInfos(Action<List<MapDataInfo>> onResult)
+    {
+        var req = new
+        {
+            
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            mapDatsInfoa = new List<MapDataInfo>()
+        };
+
+        SendPostRequestAsync("room/getMapDataInfos", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            if (result.resultCode == -1)
+            {
+                onResult?.Invoke(null);
+                return;
+            }
+
+            onResult?.Invoke(result.mapDatsInfoa);
+        });
+    }
+
+    public void EnterMapDataInfo(string mapID, Action<bool> onResult)
+    {
+        var req = new
+        {
+            mapID = mapID
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty
+        };
+
+        SendPostRequestAsync("room/enterMapDataInfo", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            if (result.resultCode == -1)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            onResult?.Invoke(true);
+        });
+    }
+
+    public void AddMapDataInfo(MapDataInfo info, Action<bool> onResult)
+    {
+        var req = new
+        {
+            info = info
+        };
+
+        var res = new
+        {
+            resultCode = 0,
+            message = string.Empty,
+            mapData = new MapData()
+        };
+
+        SendPostRequestAsync("room/addMapDataInfo", req, (resultJson, resultCode) =>
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
+
+            if (result == null)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            if (result.resultCode == -1)
+            {
+                onResult?.Invoke(false);
+                return;
+            }
+
+            onResult?.Invoke(true);
+        });
+    }
+
+    #endregion
 
     private async void SendPostRequestAsync(string endpoint, object body, Action<string, long> onResult)
     {
@@ -731,6 +921,72 @@ public class ServerManager : ColyseusManager<ServerManager>
             request.Dispose();
         }
 
+    }
+
+    public async void ImageDownload(string url, Action<Texture, bool> onResult)
+    {
+        if (url.Length == 0)
+        {
+            onResult?.Invoke(null, false);
+            return;
+        }
+
+        using (UnityWebRequest req = UnityWebRequestTexture.GetTexture(url))
+        {
+            float time = Time.realtimeSinceStartup;
+            await req.SendWebRequest();
+            Debug.Log("Time used : " + (Time.realtimeSinceStartup - time));
+
+            if (req.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.LogError("ImageDownload ConnectionError");
+                onResult?.Invoke(null, false);
+                return;
+            }
+
+            if (req.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("ImageDownload ProtocolError");
+                onResult?.Invoke(null, false);
+                return;
+            }
+
+            onResult?.Invoke(((DownloadHandlerTexture)req.downloadHandler).texture, true);
+        }
+    }
+
+    public async void FildDownload(string url, Action<string, bool> onResult)
+    {
+        if (url.Length == 0)
+        {
+            onResult?.Invoke(string.Empty, false);
+            return;
+        }
+
+        string downloadPath = string.Empty;
+
+        using (UnityWebRequest req = UnityWebRequest.Get(url))
+        {
+            float time = Time.realtimeSinceStartup;
+            await req.SendWebRequest();
+            Debug.Log("Time used : " + (Time.realtimeSinceStartup - time));
+
+            if (req.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.LogError("FildDownload ConnectionError");
+                onResult?.Invoke(string.Empty, false);
+                return;
+            }
+
+            if (req.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("FildDownload ProtocolError");
+                onResult?.Invoke(string.Empty, false);
+                return;
+            }
+
+            File.WriteAllBytes(_mapsPath, req.downloadHandler.data);
+        }
     }
 
     private void ShowLoading()

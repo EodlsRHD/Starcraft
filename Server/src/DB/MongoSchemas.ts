@@ -1,6 +1,29 @@
 import { Schema, model, connect, ObjectId, Model, Types, Document } from "mongoose";
 import { v4 as uuidv4 } from 'uuid';
 
+export interface MapdataInfo{
+    _id : string,
+
+    name : string,
+    description : string,
+    version : string,
+    maker : string,
+    maxPlayer : number,
+
+    classification : number,
+    teamCount : number,
+
+    roomHostUuid : string,
+    members : [string],
+
+    thumbnailPath : string,
+
+    mapSizeX : number,
+    mapSizeY : number,
+
+    fileDownloadUrl : string
+}
+
 export interface ObjectData{
     _id : string,
     key: number,
@@ -100,6 +123,29 @@ export interface customData{
 }
 
 export class MongoSchemas{
+
+    private readonly mapDataInfoSchema = new Schema<MapdataInfo>({
+        _id : {type : String, default : ()=> uuidv4()},
+        
+        name :{type : String, required : false}, 
+        description :{type : String, required : false}, 
+        version :{type : String, required : false}, 
+        maker :{type : String, required : false}, 
+        maxPlayer :{type : Number, required : false}, 
+
+        classification :{type : Number, required : false}, 
+        teamCount :{type : Number, required : false}, 
+
+        roomHostUuid :{type : String, required : false}, 
+        members :{type : [String], required : false}, 
+
+        thumbnailPath :{type : String, required : false}, 
+
+        mapSizeX :{type : Number, required : false}, 
+        mapSizeY :{type : Number, required : false}, 
+
+        fileDownloadUrl :{type : String, required : false}
+    });
 
     private readonly objectDataSchema = new Schema<ObjectData>({
         _id : {type : String, default : ()=> uuidv4()},
@@ -202,7 +248,11 @@ export class MongoSchemas{
 
         name :{type : String, required : true},
         description :{type : String, required : true},
-    })
+    });
+
+    public getMapDataInfoModel() : Model<MapdataInfo, {}, {}> {
+        return model<MapdataInfo>('mapDataInfo', this.mapDataInfoSchema);
+    }
 
     public getObjectDataModel() : Model<ObjectData, {}, {}> {
         return model<ObjectData>('ObjectData', this.objectDataSchema);

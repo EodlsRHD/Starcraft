@@ -7,28 +7,28 @@ using UnityEngine.UI;
 public class SingleGame : MonoBehaviour
 {
     [SerializeField]
-    private Button _buttonCustomPlay = null;
+    private Button _buttonPlay = null;
 
     [SerializeField]
     private Button _buttonClose = null;
 
     private Action _onCloseCallback = null;
 
-    private Action<Action> _onCustomPlayCallback = null;
+    private Action<ePlayMode, Action> _onPlayCallback = null;
 
-    public void Initialize(Action onCloseCallback, Action<Action> onCustomPlayCallback)
+    public void Initialize(Action onCloseCallback, Action<ePlayMode, Action> onPlayCallback)
     {
         if(onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
         }
 
-        if(onCustomPlayCallback != null)
+        if(onPlayCallback != null)
         {
-            _onCustomPlayCallback = onCustomPlayCallback;
+            _onPlayCallback = onPlayCallback;
         }
 
-        _buttonCustomPlay.onClick.AddListener(OnCustomPlay);
+        _buttonPlay.onClick.AddListener(OnPlay);
         _buttonClose.onClick.AddListener(OnClose);
 
         this.gameObject.SetActive(false);
@@ -49,17 +49,17 @@ public class SingleGame : MonoBehaviour
         _onCloseCallback?.Invoke();
     }
 
-    private void OnCustomPlay()
+    private void OnPlay()
     {
-        _buttonCustomPlay.gameObject.SetActive(false);
+        _buttonPlay.gameObject.SetActive(false);
         _buttonClose.gameObject.SetActive(false);
 
-        _onCustomPlayCallback?.Invoke(() => { Open(); });
+        _onPlayCallback?.Invoke(ePlayMode.Single, () => { Open(); });
     }
 
     public void ButtonsOn()
     {
-        _buttonCustomPlay.gameObject.SetActive(true);
+        _buttonPlay.gameObject.SetActive(true);
         _buttonClose.gameObject.SetActive(true);
     }
 }

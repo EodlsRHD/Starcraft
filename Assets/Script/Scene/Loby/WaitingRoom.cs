@@ -21,16 +21,18 @@ public class WaitingRoom : MonoBehaviour
 
     private RectTransform _rT = null;
 
-    private Action<Action> _onCloseCallback = null;
+    private Action<ePlayMode, Action> _onCloseCallback = null;
     private Action<MapData> _onGameStartonCallback = null;
 
     private MapData _mapData = null;
 
     private List<HomeAndAwayTamplate> _tamplates = new List<HomeAndAwayTamplate>();
 
+    private ePlayMode _playMode = ePlayMode.Non;
+
     private bool _isHost = false;
 
-    public void Initialize(Action<Action> onCloseCallback, Action<MapData> onGameStartonCallback)
+    public void Initialize(Action<ePlayMode, Action> onCloseCallback, Action<MapData> onGameStartonCallback)
     {
         _tamplate.Initialize();
 
@@ -52,16 +54,18 @@ public class WaitingRoom : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void Open(MapData data)
+    public void Open(ePlayMode playMode, MapData data)
     {
         this.gameObject.SetActive(true);
+        _templateParent.gameObject.SetActive(false);
 
         _mapData = data;
+        _playMode = playMode;
 
-        if(_mapData.members == null)
+        if (_mapData.memberIDs == null)
         {
-            _mapData.members = new PlayerInfo[_mapData.maxPlayer];
-            _mapData.members[0] = GameManager.instance.currentPlayerInfo;
+            _mapData.memberIDs = new string[_mapData.maxPlayer];
+            _mapData.memberIDs[0] = GameManager.instance.currentPlayerInfo._id;
             _mapData.roomHostUuid = GameManager.instance.currentPlayerInfo._id;
 
             _isHost = true;
@@ -92,9 +96,12 @@ public class WaitingRoom : MonoBehaviour
                             {
                                 HomeAndAwayTamplate playerTamplate = Instantiate(_tamplate, _templateParent);
 
-                                if (_mapData.members[i] != null)
+                                if (_mapData.memberIDs[i] != null)
                                 {
-                                    tamplate.SetPlayer(_mapData.members[i].userID, _mapData.members[i].nickName, true);
+                                    ServerManager.instance.GetPlayerInfo(_mapData.memberIDs[i], (result) =>
+                                    {
+                                        tamplate.SetPlayer(result.userID, result.nickName, true);
+                                    });
                                 }
                                 else
                                 {
@@ -115,9 +122,12 @@ public class WaitingRoom : MonoBehaviour
                         {
                             HomeAndAwayTamplate tamplate = Instantiate(_tamplate, _templateParent);
 
-                            if(_mapData.members[i] != null)
+                            if(_mapData.memberIDs[i] != null)
                             {
-                                tamplate.SetPlayer(_mapData.members[i].userID, _mapData.members[i].nickName, true);
+                                ServerManager.instance.GetPlayerInfo(_mapData.memberIDs[i], (result) =>
+                                {
+                                    tamplate.SetPlayer(result.userID, result.nickName, true);
+                                });
                             }
                             else
                             {
@@ -131,49 +141,53 @@ public class WaitingRoom : MonoBehaviour
             }
         }));
 
+        _templateParent.gameObject.SetActive(true);
         GameManager.instance.currentMapdata = _mapData;
     }
 
     private void OnGameStart()
     {
-        for (int i = 0; i < GameManager.instance.currentMapdata.members.Length; i++)
+        for (int i = 0; i < GameManager.instance.currentMapdata.memberIDs.Length; i++)
         {
-            if (GameManager.instance.currentMapdata.members[i] == null)
+            if (GameManager.instance.currentMapdata.memberIDs[i] == null)
             {
                 continue;
             }
 
-            foreach (var tam in _tamplates)
+            ServerManager.instance.GetPlayerInfo(_mapData.memberIDs[i], (result) =>
             {
-                if(tam.isPlayer == false)
+                foreach (var tam in _tamplates)
                 {
-                    continue;
-                }
-
-                eRace b = tam.GetRaceValue(out string id);
-
-                if ((int)b == 4) // Non
-                {
-                    InterfaceManager.instance.OpenOneButton(_mapData.name, "All users must choose the race.", () =>
+                    if (tam.isPlayer == false)
                     {
-                        InterfaceManager.instance.ClosePopUp();
-                    }, "Ok");
-
-                    return;
-                }
-
-                if (id.Equals(GameManager.instance.currentMapdata.members[i].userID, StringComparison.Ordinal))
-                {
-                    GameManager.instance.currentMapdata.members[i].brood = (byte)b;
-
-                    if(id.Equals(GameManager.instance.currentPlayerInfo.userID))
-                    {
-                        GameManager.instance.currentPlayerInfo.brood = (byte)b;
+                        continue;
                     }
 
-                    break;
+                    eRace b = tam.GetRaceValue(out string id);
+
+                    if ((int)b == 4) // Non
+                    {
+                        InterfaceManager.instance.OpenOneButton(_mapData.name, "All users must choose the race.", () =>
+                        {
+                            InterfaceManager.instance.ClosePopUp();
+                        }, "Ok");
+
+                        return;
+                    }
+
+                    if (id.Equals(result.userID, StringComparison.Ordinal))
+                    {
+                        result.brood = (byte)b;
+
+                        if (id.Equals(GameManager.instance.currentPlayerInfo.userID))
+                        {
+                            GameManager.instance.currentPlayerInfo.brood = (byte)b;
+                        }
+
+                        break;
+                    }
                 }
-            }
+            });
         }
 
         _onGameStartonCallback?.Invoke(_mapData);
@@ -193,7 +207,7 @@ public class WaitingRoom : MonoBehaviour
 
     private void OnClose(Action onResult = null)
     {
-        _onCloseCallback?.Invoke(onResult);
+        _onCloseCallback?.Invoke(_playMode, onResult);
     }
 
     private void DeleteTamplate()

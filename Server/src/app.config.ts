@@ -5,6 +5,7 @@ import { MongooseDriver } from "@colyseus/mongoose-driver";
 
 import userRouter from "./router/userRouter";
 import objectDataRouter from "./router/objectDataRouter";
+import roomRouter from "./router/roomRouter";
 
 import formData from "express-form-data";
 
@@ -68,6 +69,7 @@ export default config({
 
         app.use("/user", userRouter);
         app.use("/objectData", objectDataRouter);
+        app.use("/room", roomRouter);
 
         /**
          * Use @colyseus/monitor

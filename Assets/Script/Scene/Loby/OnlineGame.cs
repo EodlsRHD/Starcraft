@@ -9,16 +9,26 @@ public class OnlineGame : MonoBehaviour
     [SerializeField]
     private Button _buttonClose = null;
 
-    private Action _onCloseCallback = null;
+    [SerializeField]
+    private Button _buttonEnterOnline = null;
 
-    public void Initialize(Action onCloseCallback)
+    private Action _onCloseCallback = null;
+    private Action<ePlayMode, Action> _onPlayCallback = null;
+
+    public void Initialize(Action onCloseCallback, Action<ePlayMode, Action> onPlayCallback)
     {
         if(onCloseCallback != null)
         {
             _onCloseCallback = onCloseCallback;
         }
 
+        if(onPlayCallback != null)
+        {
+            _onPlayCallback = onPlayCallback;
+        }
+
         _buttonClose.onClick.AddListener(OnClose);
+        _buttonEnterOnline.onClick.AddListener(OnEnterOnline);
 
         this.gameObject.SetActive(false);
     }
@@ -37,5 +47,16 @@ public class OnlineGame : MonoBehaviour
     private void OnClose()
     {
         _onCloseCallback?.Invoke();
+    }
+
+    private void OnEnterOnline()
+    {
+        _onPlayCallback?.Invoke(ePlayMode.Online, () => { Open(); });
+    }
+
+    public void ButtonsOn()
+    {
+        _buttonEnterOnline.gameObject.SetActive(true);
+        _buttonClose.gameObject.SetActive(true);
     }
 }

@@ -28,6 +28,9 @@ public class MapInfo : MonoBehaviour
     [SerializeField]
     private Button _buttonSelectMap = null;
 
+    [SerializeField]
+    private Button _buttonChangeOnline = null;
+
     private RectTransform _rT = null;
 
     private Action<MapData> _onOpenWaitingRoomCallback = null;
@@ -47,7 +50,11 @@ public class MapInfo : MonoBehaviour
             _onCloseMapListCallback = onCloseMapListCallback;
         }
 
+        _buttonChangeOnline.onClick.AddListener(OnChangeOnline);
         _buttonSelectMap.onClick.AddListener(OnSelectMap);
+
+        _buttonChangeOnline.gameObject.SetActive(false);
+        _buttonSelectMap.gameObject.SetActive(true);
 
         _rT = this.GetComponent<RectTransform>();
 
@@ -79,7 +86,7 @@ public class MapInfo : MonoBehaviour
 
     private void OpenData(MapData data)
     {
-        GameManager.instance.toolManager.ImageDownload(data.thumbnailPath, (texture, result) =>
+        ServerManager.instance.ImageDownload(data.thumbnailPath, (texture, result) =>
         {
             _mapData = data;
 
@@ -126,9 +133,26 @@ public class MapInfo : MonoBehaviour
             _textVersion.text = string.Empty;
             _textMaker.text = string.Empty;
 
+            _buttonChangeOnline.gameObject.SetActive(false);
+            _buttonSelectMap.gameObject.SetActive(true);
+
             this.gameObject.SetActive(false);
 
             onResult?.Invoke();
+        });
+    }
+
+    public void ActiveSelectButton(bool isOn)
+    {
+        _buttonChangeOnline.gameObject.SetActive(isOn);
+        _buttonSelectMap.gameObject.SetActive(!isOn);
+    }
+
+    private void OnChangeOnline()
+    {
+        ServerManager.instance.JoinOrCreateRoom(_mapData, () => 
+        {
+            _buttonChangeOnline.gameObject.SetActive(false);
         });
     }
 

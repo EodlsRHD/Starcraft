@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum ePlayMode
+{
+    Non = -1,
+    Single,
+    Online
+}
+
 public class LobyManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,14 +22,14 @@ public class LobyManager : MonoBehaviour
     private OnlineGame _onlineGame = null;
 
     [SerializeField]
-    private CustomPlay _customPlay = null;
+    private PlayMode _play = null;
 
     void Start()
     {
         _loby.Initialize(SingleGameOpen, OnlineGameOpen);
-        _singleGame.Initialize(SingleGameClose, CustomPlayOpen);
-        _onlineGame.Initialize(OnlineGameClose);
-        _customPlay.Initialize(CustomPlayClose);
+        _singleGame.Initialize(SingleGameClose, PlayOpen);
+        _onlineGame.Initialize(OnlineGameClose, PlayOpen);
+        _play.Initialize(PlayClose);
 
         _loby.Open();
     }
@@ -51,13 +58,17 @@ public class LobyManager : MonoBehaviour
         _loby.Open();
     }
 
-    private void CustomPlayOpen(Action onResult)
+    private void PlayOpen(ePlayMode playMode, Action onResult)
     {
-        _customPlay.Open(onResult);
+        _play.Open(playMode, onResult);
     }
 
-    private void CustomPlayClose()
+    private void PlayClose()
     {
-        _customPlay.Close(() => { _singleGame.ButtonsOn(); });
+        _play.Close(() => 
+        { 
+            _singleGame.ButtonsOn();
+            _onlineGame.ButtonsOn();
+        });
     }
 }

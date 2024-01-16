@@ -117,119 +117,119 @@ public class MapManager : MonoBehaviour
 
     private void Player()
     {
-        PlayerInfo[] players = GameManager.instance.currentMapdata.members;
+        //PlayerInfo[] players = GameManager.instance.currentMapdata.memberIDs;
 
-        for (int i = 0; i < players.Length; i++)
-        {
-            if(_startPositions.Count <= i)
-            {
-                break;
-            }
+        //for (int i = 0; i < players.Length; i++)
+        //{
+        //    if(_startPositions.Count <= i)
+        //    {
+        //        break;
+        //    }
 
-            if(players[i] == null)
-            {
-                continue;
-            }
+        //    if(players[i] == null)
+        //    {
+        //        continue;
+        //    }
 
-            Node node = _startPositions[i];
+        //    Node node = _startPositions[i];
 
-            players[i].x = node.x;
-            players[i].z = node.y;
-            players[i].color = (byte)node.startPosition.playerColor;
-            players[i].team = node.startPosition.team;
+        //    players[i].x = node.x;
+        //    players[i].z = node.y;
+        //    players[i].color = (byte)node.startPosition.playerColor;
+        //    players[i].team = node.startPosition.team;
 
-            if(players[i].userID.Equals(GameManager.instance.currentPlayerInfo.userID, StringComparison.Ordinal))
-            {
-                InGameManager.instance.cameraArm = new Vector2(players[i].x, players[i].z);
-                GameManager.instance.UpdatePlayerInfo(players[i]);
-            }
-        }
+        //    if(players[i].userID.Equals(GameManager.instance.currentPlayerInfo.userID, StringComparison.Ordinal))
+        //    {
+        //        InGameManager.instance.cameraArm = new Vector2(players[i].x, players[i].z);
+        //        GameManager.instance.UpdatePlayerInfo(players[i]);
+        //    }
+        //}
     }
 
     private void SetFirstObject()
     {
-        PlayerInfo[] players = GameManager.instance.currentMapdata.members;
+        //PlayerInfo[] players = GameManager.instance.currentMapdata.memberIDs;
 
-        for (int i = 0; i < players.Length; i++)
-        {
-            if (_startPositions.Count <= i)
-            {
-                break;
-            }
+        //for (int i = 0; i < players.Length; i++)
+        //{
+        //    if (_startPositions.Count <= i)
+        //    {
+        //        break;
+        //    }
 
-            if (players[i] == null)
-            {
-                continue;
-            }
+        //    if (players[i] == null)
+        //    {
+        //        continue;
+        //    }
 
-            Node node = _startPositions[i];
+        //    Node node = _startPositions[i];
 
-            switch((eRace)players[i].brood)
-            {
-                case eRace.Terran:
-                    {
-                        if (GameManager.instance.poolMemory.CommandCenter == 0)
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, players[i], "CommandCenter", (request) => 
-                            {
-                                GameManager.instance.poolMemory.CommandCenter = request.key;
+        //    switch((eRace)players[i].brood)
+        //    {
+        //        case eRace.Terran:
+        //            {
+        //                if (GameManager.instance.poolMemory.CommandCenter == 0)
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, players[i], "CommandCenter", (request) => 
+        //                    {
+        //                        GameManager.instance.poolMemory.CommandCenter = request.key;
 
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                        else
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.CommandCenter, (request) =>
-                            {
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                    }
-                    break;
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //                else
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.CommandCenter, (request) =>
+        //                    {
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.CommandCenter, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //            }
+        //            break;
 
-                case eRace.Protoss:
-                    {
-                        if (GameManager.instance.poolMemory.Nexus == 0)
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Nexus", (request) =>
-                            {
-                                GameManager.instance.poolMemory.Nexus = request.key;
+        //        case eRace.Protoss:
+        //            {
+        //                if (GameManager.instance.poolMemory.Nexus == 0)
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Nexus", (request) =>
+        //                    {
+        //                        GameManager.instance.poolMemory.Nexus = request.key;
 
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                        else
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Nexus, (request) =>
-                            {
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                    }
-                    break;
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //                else
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Nexus, (request) =>
+        //                    {
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Nexus, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //            }
+        //            break;
 
-                case eRace.Zerg:
-                    {
-                        if (GameManager.instance.poolMemory.Hatchery == 0)
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Hatchery", (request) =>
-                            {
-                                GameManager.instance.poolMemory.Hatchery = request.key;
+        //        case eRace.Zerg:
+        //            {
+        //                if (GameManager.instance.poolMemory.Hatchery == 0)
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, "Hatchery", (request) =>
+        //                    {
+        //                        GameManager.instance.poolMemory.Hatchery = request.key;
 
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                        else
-                        {
-                            GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Hatchery, (request) =>
-                            {
-                                InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
-                            });
-                        }
-                    }
-                    break;
-            }
-        }
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //                else
+        //                {
+        //                    GameManager.instance.toolManager.RequestPool(ePoolType.Prefab, GameManager.instance.poolMemory.Hatchery, (request) =>
+        //                    {
+        //                        InstantiateObject(ref request, ref node, ref GameManager.instance.poolMemory.Hatchery, GameManager.instance.tagMemory.building);
+        //                    });
+        //                }
+        //            }
+        //            break;
+        //    }
+        //}
     }
 
     private void InstantiateResources(ref RequestPool request, ref Node node)
