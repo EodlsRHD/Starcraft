@@ -51,7 +51,7 @@ export interface ObjectData{
         custom_4_id : string
     },
 
-    mataData : {
+    metaData : {
         killCount : number,
 
         HpKey : number,
@@ -103,6 +103,7 @@ export class MongoSchemas{
 
     private readonly objectDataSchema = new Schema<ObjectData>({
         _id : {type : String, default : ()=> uuidv4()},
+        key :{type : Number, required : true}, 
 
         objType :{type : Number, required : true}, 
         raceType :{type : Number, required : true}, 
@@ -150,7 +151,7 @@ export class MongoSchemas{
             custom_4_id :{type : String, required : false},
         }, required : false},
 
-        mataData : { type : {
+        metaData : { type : {
             killCount :{type : Number, required : false}, 
 
             HpKey :{type : Number, required : false}, 

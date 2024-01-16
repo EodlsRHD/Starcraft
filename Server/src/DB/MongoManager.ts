@@ -118,9 +118,46 @@ export class MongoManager{
     public async SetObjectDatas(datas : ObjectData[]) : Promise<void>{
         let promise = new Promise<void>(async(res, rej) => {
             let model = this.schemas.getObjectDataModel();
-            model.updateMany(datas);
+            let result = new model();
             
-            console.log(datas.length);
+            for (let i = 0; i < datas.length; i++) {
+                result.key = datas[i].key;
+
+                result.objType = datas[i].objType;
+                result.raceType = datas[i].raceType;
+                result.unitType = datas[i].unitType;
+                result.unitSizeType = datas[i].unitSizeType;
+                result.unitAttackType = datas[i].unitAttackType;
+                result.farAndNeer = datas[i].farAndNeer;
+
+                result.name = datas[i].name;
+                result.productionCode = datas[i].productionCode;
+
+                result.isAir = datas[i].isAir;
+                result.maxHp = datas[i].maxHp;
+
+                result.hasShild = datas[i].hasShild;
+                result.maxShild = datas[i].maxShild;
+
+                result.hasEnergy = datas[i].hasEnergy;
+                result.maxEnergy = datas[i].maxEnergy;
+
+                result.hasAttack = datas[i].hasAttack;
+                result.hasAirAttack = datas[i].hasAirAttack;
+                result.attack = datas[i].attack;
+                result.attackRate = datas[i].attackRate;
+                result.attackRange = datas[i].attackRange;
+
+                result.defence = datas[i].defence;
+                result.moveSpeed = datas[i].moveSpeed;
+
+                result.custom = datas[i].custom;
+                result.metaData = datas[i].metaData;
+
+                await result.save();
+            }
+
+            console.log("SetObjectDatas    " + datas.length);
 
             res();
         });
