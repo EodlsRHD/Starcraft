@@ -11,7 +11,7 @@ export class MongoManager{
         {
             this.instance = new MongoManager();
         }
-
+        let a;
         return this.instance;
     }
 
