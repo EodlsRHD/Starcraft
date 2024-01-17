@@ -47,7 +47,7 @@ router.post("/setObjectDatas", async(req : Request, res : Response) => {
 router.post("/getCustomDatas", async(req : Request, res : Response) => {
     let isError = false;
 
-    let result = await MongoManager.Instance().getCustomDatas().catch((reason) => {
+    let result = await MongoManager.Instance().GetCustomDatas().catch((reason) => {
         console.log(reason);
         isError = true;
     });
