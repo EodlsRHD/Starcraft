@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aec29d58d086b446a4fe6743c93f1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colyseusSettings: {fileID: 11400000, guid: 2f801e7765b0bf84395385d2391942b0, type: 2}
+  _colyseusSettings: {fileID: 11400000, guid: 134c5b0fcdca0f141a536436f179f8bb, type: 2}
 --- !u!114 &1435689065
 MonoBehaviour:
   m_ObjectHideFlags: 0
