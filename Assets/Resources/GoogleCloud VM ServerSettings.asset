@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed729989615d4b4db072e1e8c41076c, type: 3}
   m_Name: GoogleCloud VM ServerSettings
   m_EditorClassIdentifier: 
-  colyseusServerAddress: 34.82.172.189
+  colyseusServerAddress: 34.82.221.254
   colyseusServerPort: 80
   useSecureProtocol: 0
   _requestHeaders:
