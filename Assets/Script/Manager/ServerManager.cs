@@ -170,33 +170,82 @@ public class ObjectData
     public string _id = string.Empty;
     public int key = 0;
 
+    [Header("Type")]
+    [Space(10)]
+
+    [Tooltip("0 : Building, 1 : Unit, 2 : Resources")]
     public byte objType = 0;
+
+    [Tooltip("0 : Terran, 1 : Protoss, 2 : Zerg")]
     public byte raceType = 0;
+
+    [Tooltip("0 : Biological, 1 : Mechanical")]
     public byte unitType = 0;
+
+    [Tooltip("0 : Large, 1 : Middle, 2 : Small")]
     public byte unitSizeType = 0;
+
+    [Tooltip("0 : Common, 1 : Concussive, 2 : Explosive")]
     public byte unitAttackType = 0;
+
+    [Tooltip("0 : Common, 1 : Concussive, 2 : Explosive")]
+    public byte unitAirAttackType = 0;
+
+    [Tooltip("0 : Far, 1 : Neer")]
     public byte farAndNeer = 0;
+
+    [Space(10)]
 
     public string name = string.Empty;
     public int productionCode = 0;
+    public int productionTime = 0;
+
+    [Space(10)]
+
+    public int mineral = 0;
+    public int gas = 0;
+
+    [Tooltip("building is offer")]
+    public int population = 0;
+
+    [Space(10)]
 
     public bool isAir = false;
     public int maxHp = 0;
 
+    [Space(10)]
+
     public bool hasShild = false;
     public int maxShild = 0;
+
+    [Space(10)]
 
     public bool hasEnergy = false;
     public int maxEnergy = 0;
 
+    [Space(10)]
+
     public bool hasAttack = false;
-    public bool hasAirAttack = false;
     public int attack = 0;
     public float attackRate = 0f;
     public float attackRange = 0f;
 
+    [Space(10)]
+
+    public bool hasAirAttack = false;
+    public int AirAttack = 0;
+    public float AirAttackRate = 0f;
+    public float AirAttackRange = 0f;
+
+    [Space(10)]
+
+    public bool isConcealment = false;
+    public int sight = 0;
+    public bool hasDetector = false;
     public int defence = 0;
     public float moveSpeed = 0f;
+
+    [Space(10)]
 
     public ObjectCustom custom = null;
     public ObjectMetadata metaData = null;
@@ -209,12 +258,19 @@ public class ObjectCustom
     public int custom_1_key = 0;
     public string custom_1_id = string.Empty;
 
+    [Space(10)]
+
     public bool hasCustom_2 = false;
     public int custom_2_key = 0;
     public string custom_2_id = string.Empty;
+
+    [Space(10)]
+
     public bool hasCustom_3 = false;
     public int custom_3_key = 0;
     public string custom_3_id = string.Empty;
+
+    [Space(10)]
 
     public bool hasCustom_4 = false;
     public int custom_4_key = 0;
@@ -226,18 +282,27 @@ public class ObjectMetadata
 {
     public int killCount = 0;
 
+    [Space(10)]
+
     public int HpKey = 0;
     public int attackKey = 0;
     public int defenceKey = 0;
     public int shildKey = 0;
 
+    [Space(10)]
+
     public int currentHp = 0;
     public int currentShild = 0;
     public int currentEnergy = 0;
 
+    [Space(10)]
+
     public int upgradeAttack = 0;
+    public int upgradeAirAttack = 0;
     public int upgradedDefence = 0;
     public int upgradeShild = 0;
+
+    [Space(10)]
 
     public bool isProduction = false;
     public List<string> productionUnitIDs = null;

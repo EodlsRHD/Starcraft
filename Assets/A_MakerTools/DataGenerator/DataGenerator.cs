@@ -6,46 +6,6 @@ using UnityEngine.UI;
 
 public class DataGenerator : MonoBehaviour
 {
-    [Header("Object Type")]
-    [Header("0 : Building")]
-    [Header("1 : Unit")]
-    [Header("2 : Resources")]
-
-    [Header("------------------------------------")]
-
-    [Header("Race Type")]
-    [Header("0 : Terran")]
-    [Header("1 : Protoss")]
-    [Header("2 : Zerg")]
-
-    [Header("------------------------------------")]
-
-    [Header("Unit Type")]
-    [Header("0 : Biological")]
-    [Header("1 : Mechanical")]
-
-    [Header("------------------------------------")]
-
-    [Header("Unit Size Type")]
-    [Header("0 : Large")]
-    [Header("1 : Middle")]
-    [Header("2 : Small")]
-
-    [Header("------------------------------------")]
-
-    [Header("Unit Attack Type")]
-    [Header("0 : Common")]
-    [Header("1 : Concussive")]
-    [Header("2 : Explosive")]
-
-    [Header("------------------------------------")]
-
-    [Header("Far And Neer Type")]
-    [Header("0 : Far")]
-    [Header("1 : Neer")]
-
-    [Header("------------------------------------")]
-
     [Header("Terran")]
 
     [SerializeField]

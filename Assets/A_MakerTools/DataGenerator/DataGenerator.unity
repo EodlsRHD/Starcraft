@@ -396,13 +396,18 @@ MonoBehaviour:
   - _id: 
     key: 0
     objType: 0
-    raceType: 1
+    raceType: 0
     unitType: 0
     unitSizeType: 0
     unitAttackType: 0
+    unitAirAttackType: 0
     farAndNeer: 0
-    name: CommandCenter
+    name: Command Center
     productionCode: 0
+    productionTime: 120
+    mineral: 400
+    gas: 0
+    population: 10
     isAir: 0
     maxHp: 1500
     hasShild: 0
@@ -410,14 +415,82 @@ MonoBehaviour:
     hasEnergy: 0
     maxEnergy: 0
     hasAttack: 0
-    hasAirAttack: 0
     attack: 0
     attackRate: 0
     attackRange: 0
-    defence: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
     moveSpeed: 0
     custom:
-      hasCustom_1: 1
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Comsat Station
+    productionCode: 0
+    productionTime: 40
+    mineral: 50
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 0
@@ -439,11 +512,1934 @@ MonoBehaviour:
       currentShild: 0
       currentEnergy: 0
       upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Nuclear Silo
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 600
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Supply Depot
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 0
+    population: 8
+    isAir: 0
+    maxHp: 500
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
       upgradedDefence: 0
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
-  _tUnits: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Refinery
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 750
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Barracks
+    productionCode: 0
+    productionTime: 80
+    mineral: 150
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 1000
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Engineering Bay
+    productionCode: 0
+    productionTime: 60
+    mineral: 125
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 850
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Missile Turret
+    productionCode: 0
+    productionTime: 30
+    mineral: 75
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 200
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 20
+    attackRate: 15
+    attackRange: 7
+    hasAirAttack: 1
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 11
+    hasDetector: 1
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Academy
+    productionCode: 0
+    productionTime: 80
+    mineral: 150
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 600
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Bunker
+    productionCode: 0
+    productionTime: 30
+    mineral: 100
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 350
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Factory
+    productionCode: 0
+    productionTime: 80
+    mineral: 200
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 1250
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Machine Shop
+    productionCode: 0
+    productionTime: 40
+    mineral: 50
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 750
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Starport
+    productionCode: 0
+    productionTime: 70
+    mineral: 150
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 1300
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Control Tower
+    productionCode: 0
+    productionTime: 40
+    mineral: 50
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Science Facility
+    productionCode: 0
+    productionTime: 60
+    mineral: 100
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 850
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Covert Ops
+    productionCode: 0
+    productionTime: 40
+    mineral: 50
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 750
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Physics Lab
+    productionCode: 0
+    productionTime: 40
+    mineral: 50
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 600
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Armory
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 50
+    population: 0
+    isAir: 0
+    maxHp: 750
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 1
+      productionUnitIDs: []
+  _tUnits:
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: SCV
+    productionCode: 0
+    productionTime: 20
+    mineral: 50
+    gas: 0
+    population: 1
+    isAir: 0
+    maxHp: 60
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 5
+    attackRate: 15
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Marine
+    productionCode: 0
+    productionTime: 24
+    mineral: 50
+    gas: 0
+    population: 1
+    isAir: 0
+    maxHp: 40
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 6
+    attackRate: 15.5
+    attackRange: 4
+    hasAirAttack: 1
+    AirAttack: 6
+    AirAttackRate: 15.5
+    AirAttackRange: 4
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 1
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Firebat
+    productionCode: 0
+    productionTime: 24
+    mineral: 50
+    gas: 25
+    population: 1
+    isAir: 0
+    maxHp: 50
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 16
+    attackRate: 22
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 1
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ghost
+    productionCode: 0
+    productionTime: 45
+    mineral: 25
+    gas: 75
+    population: 1
+    isAir: 0
+    maxHp: 45
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 1
+    attack: 10
+    attackRate: 22
+    attackRange: 7
+    hasAirAttack: 1
+    AirAttack: 10
+    AirAttackRate: 22
+    AirAttackRange: 7
+    isConcealment: 0
+    sight: 9
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Medic
+    productionCode: 0
+    productionTime: 30
+    mineral: 50
+    gas: 25
+    population: 1
+    isAir: 0
+    maxHp: 45
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 9
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 1
+    unitAttackType: 1
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vulture
+    productionCode: 0
+    productionTime: 30
+    mineral: 75
+    gas: 0
+    population: 2
+    isAir: 0
+    maxHp: 80
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 20
+    attackRate: 30
+    attackRange: 5
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 3.126
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Spider Mine
+    productionCode: 0
+    productionTime: 0
+    mineral: 0
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 20
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 125
+    attackRate: 0
+    attackRange: 3
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 3.126
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Siege Tank
+    productionCode: 0
+    productionTime: 50
+    mineral: 150
+    gas: 100
+    population: 2
+    isAir: 0
+    maxHp: 150
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 30
+    attackRate: 37
+    attackRange: 7
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 3
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Siege Tank_mode
+    productionCode: 0
+    productionTime: 50
+    mineral: 150
+    gas: 100
+    population: 2
+    isAir: 0
+    maxHp: 150
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 70
+    attackRate: 75
+    attackRange: 12
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 5
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Goliath
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 50
+    population: 2
+    isAir: 0
+    maxHp: 125
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 12
+    attackRate: 22
+    attackRange: 6
+    hasAirAttack: 1
+    AirAttack: 20
+    AirAttackRate: 22
+    AirAttackRange: 5
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.2
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 4
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 2
+    farAndNeer: 0
+    name: Wraith
+    productionCode: 0
+    productionTime: 60
+    mineral: 150
+    gas: 100
+    population: 2
+    isAir: 1
+    maxHp: 120
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 1
+    attack: 8
+    attackRate: 30
+    attackRange: 5
+    hasAirAttack: 1
+    AirAttack: 20
+    AirAttackRate: 22
+    AirAttackRange: 5
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 3.126
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 4
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Dropship
+    productionCode: 0
+    productionTime: 50
+    mineral: 100
+    gas: 100
+    population: 2
+    isAir: 1
+    maxHp: 150
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.563
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Science Vessel
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 225
+    population: 2
+    isAir: 1
+    maxHp: 200
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 1
+    defence: 1
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Battlecruiser
+    productionCode: 0
+    productionTime: 133
+    mineral: 400
+    gas: 300
+    population: 6
+    isAir: 1
+    maxHp: 500
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 1
+    attack: 25
+    attackRate: 30
+    attackRange: 6
+    hasAirAttack: 1
+    AirAttack: 25
+    AirAttackRate: 30
+    AirAttackRange: 6
+    isConcealment: 0
+    sight: 11
+    hasDetector: 0
+    defence: 3
+    moveSpeed: 1.172
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 3
+      upgradeAirAttack: 3
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 0
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Valkyrie
+    productionCode: 0
+    productionTime: 50
+    mineral: 250
+    gas: 125
+    population: 3
+    isAir: 1
+    maxHp: 200
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 1
+    AirAttack: 6
+    AirAttackRate: 64
+    AirAttackRange: 6
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 2
+    moveSpeed: 3.094
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 1
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
   _pBuilding:
   - _id: 
     key: 0
@@ -452,20 +2448,899 @@ MonoBehaviour:
     unitType: 0
     unitSizeType: 0
     unitAttackType: 0
+    unitAirAttackType: 0
     farAndNeer: 0
-    name: Nexus
+    name: 'Nexus '
     productionCode: 0
+    productionTime: 120
+    mineral: 400
+    gas: 0
+    population: 9
     isAir: 0
-    maxHp: 1000
+    maxHp: 750
     hasShild: 1
-    maxShild: 1000
+    maxShild: 750
     hasEnergy: 0
     maxEnergy: 0
     hasAttack: 0
-    hasAirAttack: 0
     attack: 0
     attackRate: 0
     attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 11
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Gateway
+    productionCode: 0
+    productionTime: 60
+    mineral: 150
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Robotics Support Bay
+    productionCode: 0
+    productionTime: 30
+    mineral: 150
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 450
+    hasShild: 1
+    maxShild: 450
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Robotics Facility
+    productionCode: 0
+    productionTime: 80
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Cybernetics Core
+    productionCode: 0
+    productionTime: 60
+    mineral: 200
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Stargate
+    productionCode: 0
+    productionTime: 70
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 600
+    hasShild: 1
+    maxShild: 600
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Citadel of Adun
+    productionCode: 0
+    productionTime: 60
+    mineral: 150
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 450
+    hasShild: 1
+    maxShild: 450
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Shield Battery
+    productionCode: 0
+    productionTime: 30
+    mineral: 100
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 200
+    hasShild: 1
+    maxShild: 200
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Arbiter Tribunal
+    productionCode: 0
+    productionTime: 60
+    mineral: 200
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Assimilator
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 450
+    hasShild: 1
+    maxShild: 450
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Observatory
+    productionCode: 0
+    productionTime: 30
+    mineral: 50
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 250
+    hasShild: 1
+    maxShild: 250
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Templar Archives
+    productionCode: 0
+    productionTime: 60
+    mineral: 150
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Pylon
+    productionCode: 0
+    productionTime: 30
+    mineral: 100
+    gas: 0
+    population: 8
+    isAir: 0
+    maxHp: 300
+    hasShild: 1
+    maxShild: 300
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Forge
+    productionCode: 0
+    productionTime: 40
+    mineral: 150
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 550
+    hasShild: 1
+    maxShild: 550
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Photon Cannon
+    productionCode: 0
+    productionTime: 50
+    mineral: 150
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 100
+    hasShild: 1
+    maxShild: 100
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 20
+    attackRate: 22
+    attackRange: 7
+    hasAirAttack: 1
+    AirAttack: 20
+    AirAttackRate: 22
+    AirAttackRange: 7
+    isConcealment: 0
+    sight: 11
+    hasDetector: 1
     defence: 0
     moveSpeed: 0
     custom:
@@ -491,11 +3366,632 @@ MonoBehaviour:
       currentShild: 0
       currentEnergy: 0
       upgradeAttack: 0
+      upgradeAirAttack: 0
       upgradedDefence: 0
-      upgradeShild: 0
+      upgradeShild: 1
       isProduction: 0
       productionUnitIDs: []
-  _pUnits: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Fleet Beacon
+    productionCode: 0
+    productionTime: 60
+    mineral: 300
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 500
+    hasShild: 1
+    maxShild: 500
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 11
+    hasDetector: 1
+    defence: 0
+    moveSpeed: 0
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 1
+      isProduction: 1
+      productionUnitIDs: []
+  _pUnits:
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Probe
+    productionCode: 0
+    productionTime: 20
+    mineral: 50
+    gas: 0
+    population: 1
+    isAir: 0
+    maxHp: 20
+    hasShild: 1
+    maxShild: 20
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 5
+    attackRate: 22
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Zealot
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 0
+    population: 2
+    isAir: 0
+    maxHp: 100
+    hasShild: 1
+    maxShild: 60
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 16
+    attackRate: 22
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 2
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 0
+    unitSizeType: 2
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Dark Templar
+    productionCode: 0
+    productionTime: 50
+    mineral: 125
+    gas: 100
+    population: 2
+    isAir: 0
+    maxHp: 80
+    hasShild: 1
+    maxShild: 40
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 40
+    attackRate: 30
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 1
+    sight: 7
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 3
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Dragoon
+    productionCode: 0
+    productionTime: 50
+    mineral: 125
+    gas: 50
+    population: 2
+    isAir: 0
+    maxHp: 100
+    hasShild: 1
+    maxShild: 80
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 20
+    attackRate: 30
+    attackRange: 4
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.461
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 2
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Reaver
+    productionCode: 0
+    productionTime: 70
+    mineral: 200
+    gas: 200
+    population: 4
+    isAir: 0
+    maxHp: 100
+    hasShild: 1
+    maxShild: 80
+    hasEnergy: 0
+    maxEnergy: 5
+    hasAttack: 1
+    attack: 100
+    attackRate: 60
+    attackRange: 8
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0.833
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 25
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Shuttle
+    productionCode: 0
+    productionTime: 60
+    mineral: 200
+    gas: 0
+    population: 2
+    isAir: 1
+    maxHp: 80
+    hasShild: 1
+    maxShild: 60
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.084
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 25
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 2
+    farAndNeer: 0
+    name: Scout
+    productionCode: 0
+    productionTime: 80
+    mineral: 275
+    gas: 125
+    population: 3
+    isAir: 1
+    maxHp: 150
+    hasShild: 1
+    maxShild: 100
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 8
+    attackRate: 30
+    attackRange: 4
+    hasAirAttack: 1
+    AirAttack: 28
+    AirAttackRate: 22
+    AirAttackRange: 4
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 2
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 1
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 2
+    farAndNeer: 0
+    name: Arbiter
+    productionCode: 0
+    productionTime: 160
+    mineral: 100
+    gas: 350
+    population: 4
+    isAir: 1
+    maxHp: 200
+    hasShild: 1
+    maxShild: 150
+    hasEnergy: 1
+    maxEnergy: 200
+    hasAttack: 1
+    attack: 10
+    attackRate: 45
+    attackRange: 5
+    hasAirAttack: 1
+    AirAttack: 10
+    AirAttackRate: 45
+    AirAttackRange: 5
+    isConcealment: 0
+    sight: 9
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 2
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 1
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Archon
+    productionCode: 0
+    productionTime: 20
+    mineral: 0
+    gas: 0
+    population: 4
+    isAir: 1
+    maxHp: 10
+    hasShild: 1
+    maxShild: 350
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 30
+    attackRate: 20
+    attackRange: 2
+    hasAirAttack: 1
+    AirAttack: 30
+    AirAttackRate: 20
+    AirAttackRange: 2
+    isConcealment: 0
+    sight: 8
+    hasDetector: 0
+    defence: 1
+    moveSpeed: 2.344
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 2
+      upgradedDefence: 1
+      upgradeShild: 1
+      isProduction: 0
+      productionUnitIDs: []
   _zBuilding:
   - _id: 
     key: 0
@@ -504,9 +4000,14 @@ MonoBehaviour:
     unitType: 0
     unitSizeType: 0
     unitAttackType: 0
+    unitAirAttackType: 0
     farAndNeer: 0
     name: Hatchery
     productionCode: 0
+    productionTime: 0
+    mineral: 0
+    gas: 0
+    population: 0
     isAir: 0
     maxHp: 1250
     hasShild: 0
@@ -514,10 +4015,16 @@ MonoBehaviour:
     hasEnergy: 0
     maxEnergy: 0
     hasAttack: 0
-    hasAirAttack: 0
     attack: 0
     attackRate: 0
     attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
     defence: 0
     moveSpeed: 0
     custom:
@@ -543,6 +4050,7 @@ MonoBehaviour:
       currentShild: 0
       currentEnergy: 0
       upgradeAttack: 0
+      upgradeAirAttack: 0
       upgradedDefence: 0
       upgradeShild: 0
       isProduction: 0
