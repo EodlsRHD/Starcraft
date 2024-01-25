@@ -6226,6 +6226,192 @@ MonoBehaviour:
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 2
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 1
+    name: Ultralisk
+    productionCode: 0
+    productionTime: 60
+    mineral: 200
+    gas: 200
+    population: 4
+    isAir: 0
+    maxHp: 400
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 20
+    attackRate: 15
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 7
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.531
+    custom:
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 3
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 2
+    unitType: 0
+    unitSizeType: 1
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Defiler
+    productionCode: 0
+    productionTime: 50
+    mineral: 50
+    gas: 150
+    population: 2
+    isAir: 0
+    maxHp: 80
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 10
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 1.875
+    custom:
+      hasCustom_1: 1
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 1
+    raceType: 2
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infested Terran
+    productionCode: 0
+    productionTime: 40
+    mineral: 100
+    gas: 50
+    population: 1
+    isAir: 0
+    maxHp: 60
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 500
+    attackRate: 1
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 5
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 2.813
+    custom:
+      hasCustom_1: 1
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 1
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 1
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 1
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
   _customs:
   - _id: 
     orderKey: 0
