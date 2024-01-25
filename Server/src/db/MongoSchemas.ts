@@ -114,7 +114,7 @@ export interface PlayerInfo{
     lose : number
 }
 
-export interface customData{
+export interface objectDataInfo{
     _id : string,
     orderKey : number,
 
@@ -242,7 +242,7 @@ export class MongoSchemas{
         versionKey : false
     });
 
-    private readonly customData = new Schema<customData>({
+    private readonly objectDataInfoSchema = new Schema<objectDataInfo>({
         _id :{type : String, default : () => uuidv4()},
         orderKey :{type : Number, required : false}, 
 
@@ -262,8 +262,8 @@ export class MongoSchemas{
         return model<PlayerInfo>('User', this.playerInfoSchema);
     }
 
-    public getCustomData() : Model<customData, {}, {}> {
-        return model<customData>('CustomData', this.customData);
+    public getObjectDataInfoModel() : Model<objectDataInfo, {}, {}> {
+        return model<objectDataInfo>('ObjectDataInfo', this.objectDataInfoSchema);
     }
 }
 

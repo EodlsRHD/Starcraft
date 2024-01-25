@@ -30,25 +30,41 @@ public class DataGenerator : MonoBehaviour
     [SerializeField]
     private List<ObjectData> _zUnits = new List<ObjectData>();
 
-    [Header("Custom")]
+    [Header("ObjectDataInfo")]
 
     [SerializeField]
-    private List<CustomData> _customs = new List<CustomData>();
+    private List<ObjectDataInfo> _objectDataInfos = new List<ObjectDataInfo>();
+
+    [Header("Research and Upgrade Info")]
+
+    [SerializeField]
+    private List<ObjectData> _researchAndUpgrades = new List<ObjectData>();
+
+    [SerializeField]
+    private List<ObjectDataInfo> _researchAndUpgradeInfos = new List<ObjectDataInfo>();
 
     [Header("UI")]
 
     [SerializeField]
-    private Button _buttonUpload = null;
+    private Button _buttonObjectDataUpload = null;
+
+    [SerializeField]
+    private Button _buttonObjectDataInfoUpdate = null;
 
     private void Start()
     {
-        _buttonUpload.onClick.AddListener(() =>
+        _buttonObjectDataUpload.onClick.AddListener(() =>
+        {
+
+        });
+
+        _buttonObjectDataUpload.onClick.AddListener(() =>
         {
             Debug.Log("Upload start");
 
             Debug.Log("CustomDatas...");
 
-            ServerManager.instance.SetCustomDatas(_customs, (result) =>
+            ServerManager.instance.SetObjectDataInfos(_objectDataInfos, (result) =>
             {
                 if(result == false)
                 {

@@ -14,7 +14,9 @@ public enum eObject
     Non = -1,
     Building,
     Unit,
-    Resources
+    Resources,
+    Research,
+    Upgrade
 }
 
 public enum eRace
@@ -254,6 +256,14 @@ public class ObjectData
 [System.Serializable]
 public class ObjectCustom
 {
+    public bool useMove = false;
+    public bool useStop = false;
+    public bool useAttack = false;
+    public bool usePatrol = false;
+    public bool useHold = false;
+
+    [Space(10)]
+
     public bool hasCustom_1 = false;
     public int custom_1_key = 0;
     public string custom_1_id = string.Empty;
@@ -330,10 +340,10 @@ public class PlayerInfo
 }
 
 [System.Serializable]
-public class CustomData
+public class ObjectDataInfo
 {
     public string _id = string.Empty;
-    public int orderKey = 0; // Object has this key.
+    public int objectDataID = 0; // ObjectData ID
 
     public string name = string.Empty;
     public string description = string.Empty;
@@ -641,7 +651,7 @@ public class ServerManager : ColyseusManager<ServerManager>
         });
     }
 
-    public void GetCustomDatas(Action<List<CustomData>> onResult)
+    public void GetObjectDataInfos(Action<List<ObjectDataInfo>> onResult)
     {
         var req = new
         {
@@ -652,10 +662,10 @@ public class ServerManager : ColyseusManager<ServerManager>
         {
             resultCode = 0,
             message = string.Empty,
-            custom = new List<CustomData>()
+            custom = new List<ObjectDataInfo>()
         };
 
-        SendPostRequestAsync("objectData/getCustomDatas", req, (resultJson, resultCode) =>
+        SendPostRequestAsync("objectData/getObjectDataInfos", req, (resultJson, resultCode) =>
         {
             var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
 
@@ -675,7 +685,7 @@ public class ServerManager : ColyseusManager<ServerManager>
         });
     }
 
-    public void SetCustomDatas(List<CustomData> customDatas, Action<bool> onResult)
+    public void SetObjectDataInfos(List<ObjectDataInfo> customDatas, Action<bool> onResult)
     {
         var req = new
         {
@@ -688,7 +698,7 @@ public class ServerManager : ColyseusManager<ServerManager>
             message = string.Empty
         };
 
-        SendPostRequestAsync("objectData/SetCustomDatas", req, (resultJson, resultCode) =>
+        SendPostRequestAsync("objectData/setObjectDataInfos", req, (resultJson, resultCode) =>
         {
             var result = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(resultJson, res);
 

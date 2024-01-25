@@ -44,10 +44,10 @@ router.post("/setObjectDatas", async(req : Request, res : Response) => {
     res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
 });
 
-router.post("/getCustomDatas", async(req : Request, res : Response) => {
+router.post("/getObjectDataInfos", async(req : Request, res : Response) => {
     let isError = false;
 
-    let result = await MongoManager.Instance().GetCustomDatas().catch((reason) => {
+    let result = await MongoManager.Instance().GetObectDataInfos().catch((reason) => {
         console.log(reason);
         isError = true;
     });
@@ -61,12 +61,12 @@ router.post("/getCustomDatas", async(req : Request, res : Response) => {
     res.send({ resultCode : eResultCode.SUCCESSE, objectDatas : result});
 });
 
-router.post("/SetCustomDatas", async(req : Request, res : Response) => {
+router.post("/setObjectDataInfos", async(req : Request, res : Response) => {
     let customDatas = req.body.customDatas;
 
     let isError = false;
 
-    let result = await MongoManager.Instance().SetCustomDatas(customDatas).catch((reason) => {
+    let result = await MongoManager.Instance().SetObjectDataInfos(customDatas).catch((reason) => {
         console.log(reason);
         isError = true;
     });

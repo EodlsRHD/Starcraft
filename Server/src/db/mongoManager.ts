@@ -1,4 +1,4 @@
-import MongoSchemas, { MapdataInfo, ObjectData, PlayerInfo, customData } from "./MongoSchemas";
+import MongoSchemas, { MapdataInfo, ObjectData, PlayerInfo, objectDataInfo } from "./MongoSchemas";
 
 export class MongoManager{
     private static instance : MongoManager = null;
@@ -169,9 +169,9 @@ export class MongoManager{
         return promise;
     }
 
-    public async GetCustomDatas() : Promise<customData[]>{
-        let promise = new Promise<customData[]>(async(res, rej) => {
-            let model = this.schemas.getCustomData();
+    public async GetObectDataInfos() : Promise<objectDataInfo[]>{
+        let promise = new Promise<objectDataInfo[]>(async(res, rej) => {
+            let model = this.schemas.getObjectDataInfoModel();
             let result = await model.find();
 
             res(result);
@@ -180,9 +180,9 @@ export class MongoManager{
         return promise;
     }
 
-    public async SetCustomDatas(datas : customData[]) : Promise<void>{
+    public async SetObjectDataInfos(datas : objectDataInfo[]) : Promise<void>{
         let promise = new Promise<void>(async(res, rej) => {
-            let model = this.schemas.getCustomData();
+            let model = this.schemas.getObjectDataInfoModel();
             model.updateMany(datas);
             
             res();
