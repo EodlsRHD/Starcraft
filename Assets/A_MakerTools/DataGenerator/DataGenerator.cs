@@ -14,6 +14,9 @@ public class DataGenerator : MonoBehaviour
     [SerializeField]
     private List<ObjectData> _tUnits = new List<ObjectData>();
 
+    [SerializeField]
+    private List<ObjectData> _tResearchAndTools = new List<ObjectData>();
+
     [Header("Protoss")]
 
     [SerializeField]
@@ -21,6 +24,9 @@ public class DataGenerator : MonoBehaviour
 
     [SerializeField]
     private List<ObjectData> _pUnits = new List<ObjectData>();
+
+    [SerializeField]
+    private List<ObjectData> _pResearchAndTools = new List<ObjectData>();
 
     [Header("Zerg")]
 
@@ -30,18 +36,16 @@ public class DataGenerator : MonoBehaviour
     [SerializeField]
     private List<ObjectData> _zUnits = new List<ObjectData>();
 
+    [SerializeField]
+    private List<ObjectData> _zResearchAndTools = new List<ObjectData>();
+
     [Header("ObjectDataInfo")]
 
     [SerializeField]
     private List<ObjectDataInfo> _objectDataInfos = new List<ObjectDataInfo>();
 
-    [Header("Research and Upgrade Info")]
-
     [SerializeField]
-    private List<ObjectData> _researchAndUpgrades = new List<ObjectData>();
-
-    [SerializeField]
-    private List<ObjectDataInfo> _researchAndUpgradeInfos = new List<ObjectDataInfo>();
+    private List<ObjectDataInfo> _researchAndToolInfos = new List<ObjectDataInfo>();
 
     [Header("UI")]
 

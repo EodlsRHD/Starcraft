@@ -393,7 +393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Building_Landing
+      name: Building_Land
       rect:
         serializedVersion: 2
         x: 0
@@ -643,25 +643,25 @@ TextureImporter:
       Attack_Zerg_Non_False_Far: 2130006713
       Attack_Zerg_Non_False_Neer: -42356005
       Attack_Zerg_Non_True_Non: -2146611435
-      Building_Landing: 613184587
-      Building_TakeOff: -1708595908
-      Defence_Protoss_Non_False_Non: -1509654727
-      Defence_Protoss_Non_True_Non: -672780295
-      Defence_Terran_Biological_False_Non: -1609397558
-      Defence_Terran_Mechanical_False_Non: -2108682993
-      Defence_Terran_Non_True_Non: 384111145
-      Defence_Zerg_Non_False_Non: 1966367667
-      Defence_Zerg_Non_True_Non: -1017984649
-      Hold: -2063958375
-      Move: -1853482836
-      Patrol: 176883499
-      Shild_Protoss_Non_False_Non: 2051059532
-      StarCraft_Upgrade_Order_1: -825285861
-      StarCraft_Upgrade_Order_16: 1023942510
-      StarCraft_Upgrade_Order_2: 1628543287
-      StarCraft_Upgrade_Order_3: -51617386
-      StarCraft_Upgrade_Order_4: 639294832
-      Stop: 1316996691
+      Building_Land: 613184587
+      Building_TakeOff: -1509654727
+      Defence_Protoss_Non_False_Non: -672780295
+      Defence_Protoss_Non_True_Non: -1609397558
+      Defence_Terran_Biological_False_Non: -2108682993
+      Defence_Terran_Mechanical_False_Non: 384111145
+      Defence_Terran_Non_True_Non: 1966367667
+      Defence_Zerg_Non_False_Non: -1017984649
+      Defence_Zerg_Non_True_Non: -2063958375
+      Hold: -1853482836
+      Move: 176883499
+      Patrol: 2051059532
+      Shild_Protoss_Non_False_Non: -825285861
+      StarCraft_Upgrade_Order_1: 1023942510
+      StarCraft_Upgrade_Order_16: 1628543287
+      StarCraft_Upgrade_Order_2: -51617386
+      StarCraft_Upgrade_Order_3: 639294832
+      StarCraft_Upgrade_Order_4: 1316996691
+      Stop: 613184587
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

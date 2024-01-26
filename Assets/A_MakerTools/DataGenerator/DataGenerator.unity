@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Data Upload
+  m_text: Info Upload
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tBuilding:
-  - _id: Command Center
+  - _id: 
     key: 0
     objType: 0
     raceType: 0
@@ -565,13 +565,23 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: SCV
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 0
       custom_2_key: 0
       custom_2_id: 
@@ -580,9 +590,14 @@ MonoBehaviour:
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Land
     metaData:
       killCount: 0
+      HpName: Command Center
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -596,7 +611,7 @@ MonoBehaviour:
       upgradeShild: 0
       isProduction: 1
       productionUnitIDs: []
-  - _id: Comsat Station
+  - _id: 
     key: 0
     objType: 0
     raceType: 0
@@ -632,10 +647,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Scanner Sweep
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -650,6 +675,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Comsat Station
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -663,7 +693,7 @@ MonoBehaviour:
       upgradeShild: 0
       isProduction: 1
       productionUnitIDs: []
-  - _id: Nuclear Silo
+  - _id: 
     key: 0
     objType: 0
     raceType: 0
@@ -699,10 +729,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Arm Nuclear Silo
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -717,6 +757,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Nuclear Silo
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -766,10 +811,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -784,6 +839,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Supply Depot
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -833,10 +893,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -851,6 +921,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Refinery
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -900,13 +975,23 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Train Marine
       useStop: 0
+      stop_key: 0
+      stop_id: Train Firebat
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Train Medic
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: Train Ghost
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 0
       custom_2_key: 0
       custom_2_id: 
@@ -915,9 +1000,14 @@ MonoBehaviour:
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Liftoff
     metaData:
       killCount: 0
+      HpName: Barracks
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -967,10 +1057,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Upgrade Infantry Weapons
       useStop: 0
+      stop_key: 0
+      stop_id: Upgrade Infantry Armor
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -982,9 +1082,14 @@ MonoBehaviour:
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Liftoff
     metaData:
       killCount: 0
+      HpName: Engineering Bay
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1034,10 +1139,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1052,6 +1167,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Missile Turret
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1101,10 +1221,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research U-238 Shells
       useStop: 0
+      stop_key: 0
+      stop_id: Research Stim Pack Tech
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Research Restoration
       useHold: 0
+      hold_key: 0
+      hold_id: Research Optical Flare
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: Research Caduceus Reactor
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1119,6 +1249,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Academy
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1168,10 +1303,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1180,12 +1325,17 @@ MonoBehaviour:
       custom_2_id: 
       hasCustom_3: 1
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Load
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Unload All
     metaData:
       killCount: 0
+      HpName: Bunker
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1235,24 +1385,39 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Build Vulture
       useStop: 0
+      stop_key: 0
+      stop_id: Build Siege Tank
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Build Goliath
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Build Machine Shop
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Liftoff
     metaData:
       killCount: 0
+      HpName: Factory
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1302,10 +1467,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research Ion Thrusters
       useStop: 0
+      stop_key: 0
+      stop_id: Research Spider Mines
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Research Siege Tech
       useHold: 0
+      hold_key: 0
+      hold_id: Research Charon Boosters
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1320,6 +1495,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Machine Shop
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1369,24 +1549,39 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Build Wraith
       useStop: 0
+      stop_key: 0
+      stop_id: Build Dropship
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Build Science Vessel
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: Build Battlecruiser
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: Build Valkyrie
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Build Control Tower
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Liftoff
     metaData:
       killCount: 0
+      HpName: Starport
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1436,10 +1631,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research Cloaking Field
       useStop: 0
+      stop_key: 0
+      stop_id: Research Apollo Reactor
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1454,6 +1659,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1503,24 +1713,39 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research EMP Shockwave
       useStop: 0
+      stop_key: 0
+      stop_id: Research Irradiate
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Research Titan Reactor
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Build Covert Ops
       hasCustom_3: 1
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Build Physics Lab
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Liftoff
     metaData:
       killCount: 0
+      HpName: Science Facility
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1570,10 +1795,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research Lockdown
       useStop: 0
+      stop_key: 0
+      stop_id: Research Personnel Cloaking
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Research Ocular Implants
       useHold: 0
+      hold_key: 0
+      hold_id: Research Moebius Reactor
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1588,6 +1823,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Covert Ops
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1637,10 +1877,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Research Yamato Gun
       useStop: 0
+      stop_key: 0
+      stop_id: Research Colossus Reactor
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1655,6 +1905,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Physics Lab
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1704,10 +1959,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Upgrade Vehicle Weapons
       useStop: 0
+      stop_key: 0
+      stop_id: 'Upgrade Vehicle Plating '
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: Upgrade Ship Weapons
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: Upgrade Ship Plating
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -1722,6 +1987,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1771,25 +2041,40 @@ MonoBehaviour:
     defence: 0
     moveSpeed: 2.344
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
       usePatrol: 0
-      useHold: 0
+      patrol_key: 0
+      patrol_id: Gather
       hasCustom_1: 0
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Return Cargo
       hasCustom_2: 0
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Build Structure
       hasCustom_3: 0
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Build Advanced Structure
       hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: SCV
+      attackName: Fusion Cutter
+      AirAttackName: 
+      defenceName: Terran Infantry Armor
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1799,7 +2084,7 @@ MonoBehaviour:
       currentEnergy: 0
       upgradeAttack: 0
       upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -1838,17 +2123,27 @@ MonoBehaviour:
     defence: 0
     moveSpeed: 1.875
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Stim Packs
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
@@ -1857,6 +2152,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Marine
+      attackName: Gauss Rifle
+      AirAttackName: 
+      defenceName: Terran Infantry Armor
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1864,9 +2164,9 @@ MonoBehaviour:
       currentHp: 0
       currentShild: 0
       currentEnergy: 0
-      upgradeAttack: 0
-      upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 1
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -1905,17 +2205,27 @@ MonoBehaviour:
     defence: 1
     moveSpeed: 1.875
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Stim Packs
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
@@ -1924,6 +2234,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Firebat
+      attackName: Flame Thrower
+      AirAttackName: 
+      defenceName: Terran Infantry Armor
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1931,9 +2246,9 @@ MonoBehaviour:
       currentHp: 0
       currentShild: 0
       currentEnergy: 0
-      upgradeAttack: 0
+      upgradeAttack: 2
       upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -1972,25 +2287,40 @@ MonoBehaviour:
     defence: 0
     moveSpeed: 1.875
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Cloak
       hasCustom_3: 1
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Lockdown
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Nuclear Strike
     metaData:
       killCount: 0
+      HpName: Ghost
+      attackName: C-10 Canister Rifle
+      AirAttackName: 
+      defenceName: Terran Infantry Armor
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -1998,9 +2328,9 @@ MonoBehaviour:
       currentHp: 0
       currentShild: 0
       currentEnergy: 0
-      upgradeAttack: 0
-      upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradeAttack: 1
+      upgradeAirAttack: 1
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -2039,25 +2369,40 @@ MonoBehaviour:
     defence: 0
     moveSpeed: 1.875
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: 'Heal '
       hasCustom_3: 1
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Restoration
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Optical Flare
     metaData:
       killCount: 0
+      HpName: Medic
+      attackName: 
+      AirAttackName: 
+      defenceName: Terran Infantry Armor
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2067,7 +2412,7 @@ MonoBehaviour:
       currentEnergy: 0
       upgradeAttack: 0
       upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -2106,25 +2451,40 @@ MonoBehaviour:
     defence: 0
     moveSpeed: 3.126
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
-      hasCustom_2: 0
+      hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Spider Mines
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 1
+      hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Vulture
+      attackName: Fragmentation Grenade
+      AirAttackName: 
+      defenceName: Terran Vehicle Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2132,9 +2492,9 @@ MonoBehaviour:
       currentHp: 0
       currentShild: 0
       currentEnergy: 0
-      upgradeAttack: 0
+      upgradeAttack: 2
       upgradeAirAttack: 0
-      upgradedDefence: 0
+      upgradedDefence: 1
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -2174,10 +2534,20 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2187,11 +2557,16 @@ MonoBehaviour:
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 1
+      hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2241,24 +2616,39 @@ MonoBehaviour:
     moveSpeed: 1.875
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
-      hasCustom_2: 0
+      hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Siege Mode
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 1
+      hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Siege Tank
+      attackName: Arclite Cannon
+      AirAttackName: 
+      defenceName: Terran Vehicle Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2308,24 +2698,39 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
-      useStop: 0
-      useAttack: 0
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
       usePatrol: 0
-      useHold: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
-      hasCustom_2: 0
+      hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Tank Mode
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 1
+      hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Siege Tank
+      attackName: Arclite Shock Cannon
+      AirAttackName: 
+      defenceName: Terran Vehicle Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2374,11 +2779,21 @@ MonoBehaviour:
     defence: 1
     moveSpeed: 2.2
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2388,11 +2803,16 @@ MonoBehaviour:
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 1
+      hasCustom_4: 0
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Goliath
+      attackName: Twin Autocannons
+      AirAttackName: Hellfire Missile Pack
+      defenceName: Terran Vehicle Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2442,16 +2862,26 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Cloak
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
@@ -2460,6 +2890,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Wraith
+      attackName: Burst Lasers
+      AirAttackName: Gemini Missiles
+      defenceName: Terran Ship Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2508,11 +2943,21 @@ MonoBehaviour:
     defence: 1
     moveSpeed: 2.563
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2524,9 +2969,14 @@ MonoBehaviour:
       custom_3_id: 
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Load
     metaData:
       killCount: 0
+      HpName: Dropship
+      attackName: 
+      AirAttackName: 
+      defenceName: Terran Ship Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2575,25 +3025,40 @@ MonoBehaviour:
     defence: 1
     moveSpeed: 2.344
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Activate Defensive Matrix
       hasCustom_3: 1
       custom_3_key: 0
-      custom_3_id: 
+      custom_3_id: Activate EMP Shockwave
       hasCustom_4: 1
       custom_4_key: 0
-      custom_4_id: 
+      custom_4_id: Irradiate
     metaData:
       killCount: 0
+      HpName: Science Vessel
+      attackName: 
+      AirAttackName: 
+      defenceName: Terran Ship Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2642,25 +3107,40 @@ MonoBehaviour:
     defence: 3
     moveSpeed: 1.172
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
       hasCustom_2: 1
       custom_2_key: 0
-      custom_2_id: 
+      custom_2_id: Yamato Gun
       hasCustom_3: 0
       custom_3_key: 0
       custom_3_id: 
-      hasCustom_4: 0
+      hasCustom_4: 1
       custom_4_key: 0
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Battlecruiser
+      attackName: ATS Laser Battery
+      AirAttackName: ATA Laser Battery
+      defenceName: Terran Ship Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2709,11 +3189,21 @@ MonoBehaviour:
     defence: 2
     moveSpeed: 3.094
     custom:
-      useMove: 0
-      useStop: 0
-      useAttack: 0
-      usePatrol: 0
-      useHold: 0
+      useMove: 1
+      move_key: 0
+      move_id: 
+      useStop: 1
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
+      useHold: 1
+      hold_key: 0
+      hold_id: 
+      usePatrol: 1
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2728,6 +3218,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Valkyrie
+      attackName: 
+      AirAttackName: Halo Rockets
+      defenceName: Terran Ship Plating
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2738,6 +3233,3287 @@ MonoBehaviour:
       upgradeAttack: 0
       upgradeAirAttack: 1
       upgradedDefence: 1
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  _tResearchAndTools:
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Scanner Sweep
+    productionCode: 0
+    productionTime: 0
+    mineral: 0
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 50
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 2
+    unitAirAttackType: 2
+    farAndNeer: 0
+    name: Nuclear
+    productionCode: 0
+    productionTime: 100
+    mineral: 200
+    gas: 200
+    population: 8
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 1
+    attack: 500
+    attackRate: 0
+    attackRange: 999999
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Weapons 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Weapons 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 175
+    gas: 175
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Weapons 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 250
+    gas: 250
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Armor 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Armor 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 175
+    gas: 175
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Infantry Armor 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 250
+    gas: 250
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: U-238 Shells
+    productionCode: 0
+    productionTime: 100
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Stim Pack Tech
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Restoration
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Optical Flare
+    productionCode: 0
+    productionTime: 120
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Caduceus Reactor
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ion Thrusters
+    productionCode: 0
+    productionTime: 100
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Spider Mines
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Siege Tech
+    productionCode: 0
+    productionTime: 80
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Charon Boosters[
+    productionCode: 0
+    productionTime: 133
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Cloaking Field
+    productionCode: 0
+    productionTime: 100
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Apollo Reactor
+    productionCode: 0
+    productionTime: 166
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: EMP Shockwave
+    productionCode: 0
+    productionTime: 120
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Irradiate
+    productionCode: 0
+    productionTime: 80
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Titan Reactor
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Lockdown
+    productionCode: 0
+    productionTime: 100
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Personnel Cloaking
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ocular Implants
+    productionCode: 0
+    productionTime: 166
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Moebius Reactor
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Yamato Gun
+    productionCode: 0
+    productionTime: 120
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Colossus Reactor
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Weapons 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Plating 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Weapons 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 175
+    gas: 175
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Plating 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 175
+    gas: 175
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Weapons 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 250
+    gas: 250
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Vehicle Plating 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 250
+    gas: 250
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Weapons 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Weapons 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Weapons 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Plating 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Plating 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 225
+    gas: 225
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 4
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Ship Plating 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 300
+    gas: 300
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
@@ -2778,13 +6554,23 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Probe
       useStop: 0
-      useAttack: 0
-      usePatrol: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 1
+      attack_key: 0
+      attack_id: 
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 0
       custom_2_key: 0
       custom_2_id: 
@@ -2796,6 +6582,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 'Nexus '
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: Protoss Plasma Shields
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2845,13 +6636,23 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Warp in Zealot
       useStop: 0
+      stop_key: 0
+      stop_id: Warp in Dragoon
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Warp in High Templar
       useHold: 0
-      hasCustom_1: 0
+      hold_key: 0
+      hold_id: Warp in Dark Templar
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 1
       custom_1_key: 0
-      custom_1_id: 
+      custom_1_id: Set Rally Point
       hasCustom_2: 0
       custom_2_key: 0
       custom_2_id: 
@@ -2863,6 +6664,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: Protoss Plasma Shields
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2912,10 +6718,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: Upgrade Scarab Damage
       useStop: 0
+      stop_key: 0
+      stop_id: Increase Reaver Capacity
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: Develop Gravitic Drive
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2930,6 +6746,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: Robotics Support Bay
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: Protoss Plasma Shields
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -2979,10 +6800,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -2997,6 +6828,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3046,10 +6882,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3064,6 +6910,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3113,10 +6964,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3131,6 +6992,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3180,10 +7046,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3198,6 +7074,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3247,10 +7128,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3265,6 +7156,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3314,10 +7210,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3332,6 +7238,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3381,10 +7292,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3399,6 +7320,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3448,10 +7374,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3466,6 +7402,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3515,10 +7456,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3533,6 +7484,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3582,10 +7538,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3600,6 +7566,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3649,10 +7620,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3667,6 +7648,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3716,10 +7702,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3734,6 +7730,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3783,10 +7784,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3801,6 +7812,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3851,10 +7867,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3869,6 +7895,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3918,10 +7949,20 @@ MonoBehaviour:
     moveSpeed: 1.875
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -3936,6 +7977,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -3985,10 +8031,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4003,6 +8059,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4052,10 +8113,20 @@ MonoBehaviour:
     moveSpeed: 2.461
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4070,6 +8141,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4119,10 +8195,20 @@ MonoBehaviour:
     moveSpeed: 0.833
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4137,6 +8223,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4186,10 +8277,20 @@ MonoBehaviour:
     moveSpeed: 2.084
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4204,6 +8305,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4253,10 +8359,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4271,6 +8387,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4320,10 +8441,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4338,6 +8469,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4387,10 +8523,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4405,6 +8551,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4454,10 +8605,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4472,6 +8633,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4521,10 +8687,20 @@ MonoBehaviour:
     moveSpeed: 1.562
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4539,6 +8715,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4588,10 +8769,20 @@ MonoBehaviour:
     moveSpeed: 1.562
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4606,6 +8797,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4655,10 +8851,20 @@ MonoBehaviour:
     moveSpeed: 6.249
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4673,6 +8879,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4722,10 +8933,20 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4740,6 +8961,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4789,10 +9015,20 @@ MonoBehaviour:
     moveSpeed: 1.562
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4807,6 +9043,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4820,6 +9061,7 @@ MonoBehaviour:
       upgradeShild: 1
       isProduction: 0
       productionUnitIDs: []
+  _pResearchAndTools: []
   _zBuilding:
   - _id: 
     key: 0
@@ -4857,10 +9099,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4875,6 +9127,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4924,10 +9181,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -4942,6 +9209,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -4991,10 +9263,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5009,6 +9291,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5058,10 +9345,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5076,6 +9373,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5125,10 +9427,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5143,6 +9455,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5192,10 +9509,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5210,6 +9537,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5259,10 +9591,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5277,6 +9619,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5326,10 +9673,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5344,6 +9701,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5393,10 +9755,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5411,6 +9783,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5460,10 +9837,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5478,6 +9865,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5527,10 +9919,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5545,6 +9947,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5594,10 +10001,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5612,6 +10029,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5661,10 +10083,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5679,6 +10111,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5728,10 +10165,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5746,6 +10193,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5795,10 +10247,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5813,6 +10275,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5862,10 +10329,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5880,6 +10357,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5929,10 +10411,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -5947,6 +10439,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -5996,10 +10493,20 @@ MonoBehaviour:
     moveSpeed: 0
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6014,6 +10521,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6064,10 +10576,20 @@ MonoBehaviour:
     moveSpeed: 0.938
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6082,6 +10604,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6131,10 +10658,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6149,6 +10686,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6198,10 +10740,20 @@ MonoBehaviour:
     moveSpeed: 0.39
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6216,6 +10768,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6265,10 +10822,20 @@ MonoBehaviour:
     moveSpeed: 2.612
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6283,6 +10850,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6332,10 +10904,20 @@ MonoBehaviour:
     moveSpeed: 1.741
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6350,6 +10932,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6399,10 +10986,20 @@ MonoBehaviour:
     moveSpeed: 2.813
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6417,6 +11014,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6466,10 +11068,20 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6484,6 +11096,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6533,10 +11150,20 @@ MonoBehaviour:
     moveSpeed: 1.172
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6551,6 +11178,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6600,10 +11232,20 @@ MonoBehaviour:
     moveSpeed: 2.344
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6618,6 +11260,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6667,10 +11314,20 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6685,6 +11342,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6734,10 +11396,20 @@ MonoBehaviour:
     moveSpeed: 3.126
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 1
       custom_1_key: 0
       custom_1_id: 
@@ -6752,6 +11424,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6801,10 +11478,20 @@ MonoBehaviour:
     moveSpeed: 2.743
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6819,6 +11506,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6868,10 +11560,20 @@ MonoBehaviour:
     moveSpeed: 2.531
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 0
       custom_1_key: 0
       custom_1_id: 
@@ -6886,6 +11588,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -6935,10 +11642,20 @@ MonoBehaviour:
     moveSpeed: 1.875
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 1
       custom_1_key: 0
       custom_1_id: 
@@ -6953,6 +11670,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -7002,10 +11724,20 @@ MonoBehaviour:
     moveSpeed: 2.813
     custom:
       useMove: 0
+      move_key: 0
+      move_id: 
       useStop: 0
+      stop_key: 0
+      stop_id: 
       useAttack: 0
-      usePatrol: 0
+      attack_key: 0
+      attack_id: 
       useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
       hasCustom_1: 1
       custom_1_key: 0
       custom_1_id: 
@@ -7020,6 +11752,11 @@ MonoBehaviour:
       custom_4_id: 
     metaData:
       killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
       HpKey: 0
       attackKey: 0
       defenceKey: 0
@@ -7033,11 +11770,702 @@ MonoBehaviour:
       upgradeShild: 0
       isProduction: 0
       productionUnitIDs: []
-  _customs:
+  _zResearchAndTools: []
+  _objectDataInfos:
   - _id: 
     objectDataID: 0
-    name: 
-    description: 
+    name: Command Center
+    description: The Command Center serves as the focal point for all Terran forward
+      bases. Originally designed as a mobile resource processing unit for the Federal
+      Resource Exploration Council, the command center can hover in the air and move
+      near new minerals or vespene geysers. The command center is also capable of
+      producing construction robots and serves as a storage place for collected minerals
+      and vespene gas. The headquarters is heavily armored and very sturdy, but is
+      very vulnerable to enemy attacks when moving at slow speeds.
+    condition: 
+    mineral: 400
+    gas: 0
+    productionTime: 120
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Comsat Station
+    description: Constructing this wing at your command center will provide you with
+      improved communication and scanning capabilities.
+    condition: Command Center
+    mineral: 50
+    gas: 50
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Nuclear silo
+    description: Following the events of the Korhal Rebellion, the use of strategic
+      nuclear missiles against human settlements was strictly prohibited. However,
+      small tactical nuclear warheads are still in use by Terran Confederate forces.
+    condition: Command Center
+    mineral: 100
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Supply Depot
+    description: The supply depot stores all supplies, equipment, auxiliary items,
+      and accessories required on a daily basis for the operation of a Terran forward
+      base. As bases with various functions and purposes are created, the amount
+      of supplies needed for the colony's residents and soldiers is increasing day
+      by day.
+    condition: 
+    mineral: 100
+    gas: 0
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Refinery
+    description: Although crude, the Bespene Refinery was designed to enable rapid
+      mining of Bespene gas, which was extremely difficult in a barren local environment.
+      The refinery built on top of the Bespene Geyser automatically stores gas in
+      boxes[1], allowing construction robots to easily transport it.
+    condition: 
+    mineral: 100
+    gas: 0
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Barracks
+    description: The barracks train all Terran infantry units. Like the headquarters,
+      it can hover low and travel long distances in search of new important locations
+      or deployed units.
+    condition: Command Center
+    mineral: 150
+    gas: 0
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Engineering bay
+    description: Engineering labs are essential for improving the weapons and armor
+      used by Terran ground forces. The mobile Engineering Lab is one of the key
+      buildings in the Terran settlement.
+    condition: Command Center
+    mineral: 125
+    gas: 0
+    productionTime: 60
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Missile Turret
+    description: The missile turret, which can be built at a relatively low cost,
+      automatically fires missiles when it detects an approaching enemy aircraft.
+      Missile turrets are also equipped with powerful detection devices that can
+      detect cloaked enemy units.
+    condition: Engineering bay
+    mineral: 75
+    gas: 0
+    productionTime: 30
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Academy
+    description: The Coalition Marine Command is always researching new technologies
+      and finding ways to improve the level of infantry. The Military Academy is
+      a key center where such research is conducted.
+    condition: Barracks
+    mineral: 150
+    gas: 0
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Bunker
+    description: Designed to protect infantry from enemy firearms attacks, cover
+      shelters are constructed to defend strategically important locations. Infantry
+      hidden within a cover can safely hide and fire on the enemy until the cover
+      is destroyed.
+    condition: Barracks
+    mineral: 100
+    gas: 0
+    productionTime: 30
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Factory
+    description: A huge, fully automated military factory is the production base
+      for most ground vehicle equipment. The equipment that can be produced at a
+      military factory is diverse, from a quick hover vehicle body mount to a heavy
+      siege tank. Munitions factories are heavily armored and mobile, but they are
+      essential facilities for building strong military power, so they can easily
+      become priority targets for enemy forces.
+    condition: Barracks
+    mineral: 200
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Machine Shop
+    description: A military factory is basically a place where vehicles and accessories
+      that have already been designed are assembled. Machine rooms must be built
+      to develop new technologies and improve the designs of existing vehicles for
+      large armored vehicles.
+    condition: Factory
+    mineral: 50
+    gas: 50
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Starport
+    description: If a huge space airport, which is the culmination of highly developed
+      earth science, is built, it will be possible to manufacture and maintain aircraft
+      and space battleships capable of space flight. Like all other major buildings,
+      the spaceport can be moved, but it is extremely vulnerable to enemy attacks
+      while moving.
+    condition: Factory
+    mineral: 150
+    gas: 100
+    productionTime: 70
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Control Tower
+    description: To build and upgrade a spaceship, you must build a control tower.
+    condition: Starport
+    mineral: 50
+    gas: 50
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Science Facility
+    description: This is where Terran researchers are forced to work to develop new
+      weapons and defense systems for the Federation. There are also rumors that
+      they are researching Protoss scientific technology that is advanced beyond
+      imagination. Scientists here are constantly trying to catch up with the aliens'
+      advanced technological civilization.
+    condition: Starport
+    mineral: 100
+    gas: 150
+    productionTime: 60
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Covert Ops
+    description: Only the most trusted officers and scientists are allowed into the
+      secret operations room. Here, all research and experiments to support the federal
+      intelligence corps are conducted.
+    condition: Science Facility
+    mineral: 50
+    gas: 50
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Physics Lab
+    description: By adding a physics laboratory fully equipped with a high-energy
+      particle accelerator and various analytical devices to the science facility,
+      Terran scientists were able to experiment with a wider range of technological
+      advancements.
+    condition: Science Facility
+    mineral: 50
+    gas: 50
+    productionTime: 40
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Armory
+    description: Within the old walls of the armory, scientists are working day and
+      night to develop large-scale weapons and armor for Terran vehicles and spacecraft.
+    condition: Factory
+    mineral: 100
+    gas: 50
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: SCV
+    description: First used to rebuild Tasonia's orbital satellite, the T-280 SCV
+      gradually became widely used throughout the colony due to its advantages in
+      both building construction and gathering natural resources. This convenience
+      and unparalleled reliability have made the SCV an essential part of every Terran
+      colony base and Marine garrison.
+    condition: Command Center
+    mineral: 50
+    gas: 0
+    productionTime: 20
+    energy: 0
+    population: 1
+  - _id: 
+    objectDataID: 0
+    name: SCV
+    description: First used to rebuild Tasonia's orbital satellite, the T-280 SCV
+      gradually became widely used throughout the colony due to its advantages in
+      both building construction and gathering natural resources. This convenience
+      and unparalleled reliability have made the SCV an essential part of every Terran
+      colony base and Marine garrison.
+    condition: Command Center
+    mineral: 50
+    gas: 0
+    productionTime: 20
+    energy: 0
+    population: 1
+  _researchAndToolInfos:
+  - _id: 
+    objectDataID: 0
+    name: Scanner Sweep
+    description: Use the scanner to reveal areas containing cloaked or burrowed units.
+    condition: 
+    mineral: 0
+    gas: 0
+    productionTime: 0
+    energy: 50
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: 'Arm Nuclear Silo '
+    description: A nuclear silo may build and store one missile each.
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 100
+    energy: 0
+    population: 8
+  - _id: 
+    objectDataID: 0
+    name: Infantry Weapons 1
+    description: Upgrades the attack power of infantry units by 1 level.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Infantry Weapons 2
+    description: Upgrades the attack power of infantry units by 1 level.
+    condition: 
+    mineral: 175
+    gas: 175
+    productionTime: 298
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Infantry Weapons 3
+    description: Upgrades the attack power of infantry units by 1 level.
+    condition: 
+    mineral: 250
+    gas: 250
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Infantry Armor 1
+    description: Upgrades the defense of infantry units by 1 level.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Infantry Armor 2
+    description: Upgrades the defense of infantry units by 1 level.
+    condition: 
+    mineral: 175
+    gas: 175
+    productionTime: 298
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Infantry Armor 3
+    description: Upgrades the defense of infantry units by 1 level.
+    condition: 
+    mineral: 250
+    gas: 250
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research U-238 Shells
+    description: Bullets made from depleted uranium from which radioactivity has
+      been removed dramatically improve the range of the C-14 Gauss rifle.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 100
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Stim Pack Tech
+    description: Combat stimulants increase infantry speed and reflexes. However,
+      tissue damage is likely to occur.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Restoration
+    description: With the introduction of ultra-fine local anesthetics and ultra-precision
+      laser technology, surgical techniques have made remarkable progress. Foreign
+      substances and alien viruses could now be removed through emergency surgery,
+      which lowered the death rate of the injured, and this surgical method was distributed
+      to field medics.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Optical Flare
+    description: The Medic's only defensive armament is the A-13 flashbang launcher.
+      Originally developed to illuminate the battlefield, these launchers and flash
+      grenades have been modified to deliver bursts of ultraviolet spectrum as well
+      as blinding white light. These explosions have the effect of causing serious
+      damage to the target's retina or visual organs.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 120
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Caduceus Reactor
+    description: Increases Madic's maximum energy amount.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Ion Thrusters
+    description: Ion thrusters, originally developed for atmospheric airships, were
+      improved for use as levitating vehicles. When equipped with an ion thruster,
+      the movement speed of the corpse hawk becomes much faster.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 100
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Spider Mines
+    description: Corpses can be equipped with subtle motion-detecting mines. If you
+      throw a spider mine on the ground, it will burrow into the ground and hide.
+      Afterwards, when the target approaches, it is automatically tracked and destroyed.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Siege Tech
+    description: This technology allows you to improve your Arclight Siege Tank and
+      convert it into a stationary battery. The range and destructive power of siege
+      tanks transformed into stationary batteries have increased.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Charon Boostersv
+    description: Improvements in propulsion technology and modern targeting system
+      software have significantly improved the range of the Goliath Hellfire-AA pellet
+      missile.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 133
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Cloaking Field
+    description: When the cloaking field is activated, the wraith can hide from most
+      enemy units.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 100
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Apollo Reactor
+    description: Ghost fighters equipped with high-output uranium reactors have dramatically
+      increased concealment time.
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research EMP Shockwave
+    description: A scientific ship equipped with an EMP generator has a short range,
+      but can neutralize nearby enemy defense shields and electronic equipment by
+      generating powerful shock waves.
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 120
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Irradiate
+    description: "Radioactive field generation technology, which was accidentally
+      discovered while researching nuclear waste disposal methods, has recently become
+      a major research field for science ships. The effect of contamination is limited
+      to the surrounding area of \u200B\u200Bthe designated target."
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Titan Reactor
+    description: When mounted on an exploratory science vessel, this massive reactor
+      greatly increases the ship's energy reserves.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Lockdown
+    description: Developed for the Ghost's C-10 shotgun, the rope round temporarily
+      disables enemy mechanical units within range.
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 100
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Personnel Cloaking
+    description: Wraith using this equipment, which converts the concealment technology
+      used by ghosts into personal use, can infiltrate enemy lines much more easily.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 80
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Ocular Implants
+    description: As a way to improve his ability to carry out covert operations,
+      Ghost removes his own eyes and implants a prosthetic biological device that
+      expands his vision.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Moebius Reactor
+    description: A compact reactor developed for ghosts improves their locking and
+      cloaking capabilities.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Yamato Gun
+    description: The Yamato Cannon applies a high-density magnetic field to a small-scale
+      nuclear explosion, releasing it as a high-density energy beam. Thanks to the
+      Yamato gun, the battle cruiser was equipped with destructive power that could
+      easily penetrate almost any enemy defense line.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 120
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Research Colossus Reactor
+    description: By producing more energy from massive nuclear reactors, the battlecruiser
+      can more effectively manage the massive energy consumption of Yamato's guns.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 166
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Weapons 1
+    description: The vehicle's attack power increases by 1 level.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Weapons 2
+    description: The vehicle's attack power increases by 1 level.
+    condition: 
+    mineral: 175
+    gas: 175
+    productionTime: 298
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Weapons 3
+    description: The vehicle's attack power increases by 1 level.
+    condition: 
+    mineral: 250
+    gas: 250
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Plating 1
+    description: The vehicle's defense increases by 1 level.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Plating 2
+    description: The vehicle's defense increases by 1 level.
+    condition: 
+    mineral: 175
+    gas: 175
+    productionTime: 298
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Vehicle Plating 3
+    description: The vehicle's defense increases by 1 level.
+    condition: 
+    mineral: 250
+    gas: 250
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Weapons 1
+    description: The attack power of the spaceship increases by 1 level.
+    condition: 
+    mineral: 100
+    gas: 100
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Weapons 2
+    description: The attack power of the spaceship increases by 1 level.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Weapons 3
+    description: The attack power of the spaceship increases by 1 level.
+    condition: 
+    mineral: 200
+    gas: 200
+    productionTime: 330
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Plating 1
+    description: The ship's defense increases by 1 level.
+    condition: 
+    mineral: 150
+    gas: 150
+    productionTime: 266
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Plating 2
+    description: The ship's defense increases by 1 level.
+    condition: 
+    mineral: 225
+    gas: 225
+    productionTime: 298
+    energy: 0
+    population: 0
+  - _id: 
+    objectDataID: 0
+    name: Upgrade Ship Plating 3
+    description: The ship's defense increases by 1 level.
+    condition: 
+    mineral: 300
+    gas: 300
+    productionTime: 330
+    energy: 0
+    population: 0
   _buttonObjectDataUpload: {fileID: 1561744009}
   _buttonObjectDataInfoUpdate: {fileID: 1189981261}
 --- !u!4 &1069413944

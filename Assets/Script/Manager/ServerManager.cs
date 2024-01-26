@@ -16,7 +16,7 @@ public enum eObject
     Unit,
     Resources,
     Research,
-    Upgrade
+    Tool
 }
 
 public enum eRace
@@ -175,7 +175,7 @@ public class ObjectData
     [Header("Type")]
     [Space(10)]
 
-    [Tooltip("0 : Building, 1 : Unit, 2 : Resources")]
+    [Tooltip("0 : Building, 1 : Unit, 2 : Resources, 3 : Research, 4 : Tool")]
     public byte objType = 0;
 
     [Tooltip("0 : Terran, 1 : Protoss, 2 : Zerg")]
@@ -223,6 +223,8 @@ public class ObjectData
     [Space(10)]
 
     public bool hasEnergy = false;
+
+    [Tooltip("When this object has no energy, use it as a common value.")]
     public int maxEnergy = 0;
 
     [Space(10)]
@@ -257,10 +259,32 @@ public class ObjectData
 public class ObjectCustom
 {
     public bool useMove = false;
+    public int move_key = 0;
+    public string move_id = string.Empty;
+
+    [Space(10)]
+
     public bool useStop = false;
+    public int stop_key = 0;
+    public string stop_id = string.Empty;
+
+    [Space(10)]
+
     public bool useAttack = false;
-    public bool usePatrol = false;
+    public int attack_key = 0;
+    public string attack_id = string.Empty;
+
+    [Space(10)]
+
     public bool useHold = false;
+    public int hold_key = 0;
+    public string hold_id = string.Empty;
+
+    [Space(10)]
+
+    public bool usePatrol = false;
+    public int patrol_key = 0;
+    public string patrol_id = string.Empty;
 
     [Space(10)]
 
@@ -291,6 +315,14 @@ public class ObjectCustom
 public class ObjectMetadata
 {
     public int killCount = 0;
+
+    [Space(10)]
+
+    public string HpName = string.Empty;
+    public string attackName = string.Empty;
+    public string AirAttackName = string.Empty;
+    public string defenceName = string.Empty;
+    public string shildName = string.Empty;
 
     [Space(10)]
 
@@ -347,8 +379,13 @@ public class ObjectDataInfo
 
     public string name = string.Empty;
     public string description = string.Empty;
+    public string condition = string.Empty;
+    public int mineral = 0;
+    public int gas = 0;
+    public int productionTime = 0;
+    public int energy = 0;
+    public int population = 0;
 }
-
 
 public partial class MyRoomState : Colyseus.Schema.Schema
 {
