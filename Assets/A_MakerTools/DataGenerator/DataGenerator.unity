@@ -9061,7 +9061,3123 @@ MonoBehaviour:
       upgradeShild: 1
       isProduction: 0
       productionUnitIDs: []
-  _pResearchAndTools: []
+  _pResearchAndTools:
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Burrow
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Mutate into Lair
+    productionCode: 0
+    productionTime: 100
+    mineral: 150
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Mutate into Hive
+    productionCode: 0
+    productionTime: 120
+    mineral: 200
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Evolve Ventral Sacs '
+    productionCode: 0
+    productionTime: 160
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Evolve Antennae '
+    productionCode: 0
+    productionTime: 133
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Pneumatized Carapace
+    productionCode: 0
+    productionTime: 133
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Metabolic Boost
+    productionCode: 0
+    productionTime: 100
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Adrenal Glands
+    productionCode: 0
+    productionTime: 100
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Mutate into Spore Colony
+    productionCode: 0
+    productionTime: 20
+    mineral: 50
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Mutate into Sunken Colony
+    productionCode: 0
+    productionTime: 20
+    mineral: 50
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Melee Attacks 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Melee Attacks 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Melee Attacks 2
+    productionCode: 0
+    productionTime: 330
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Missile Attacks 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Missile Attacks 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Missile Attacks 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Carapace 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Carapace 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 225
+    gas: 225
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Carapace 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 300
+    gas: 300
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Muscular Augments
+    productionCode: 0
+    productionTime: 100
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Evolve Grooved Spines '
+    productionCode: 0
+    productionTime: 100
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Lurker Aspect
+    productionCode: 0
+    productionTime: 120
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Flyer Attacks 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Flyer Attacks 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 175
+    gas: 175
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Upgrade Flyer Attacks 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 250
+    gas: 250
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Flyer Carapace 1
+    productionCode: 0
+    productionTime: 266
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Flyer Carapace 2
+    productionCode: 0
+    productionTime: 298
+    mineral: 225
+    gas: 255
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Flyer Carapace 3
+    productionCode: 0
+    productionTime: 330
+    mineral: 300
+    gas: 300
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Mutate into Greater Spire
+    productionCode: 0
+    productionTime: 120
+    mineral: 100
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Spawn Broodling
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Ensnare '
+    productionCode: 0
+    productionTime: 80
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Gamete Meiosis
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Anabolic Synthesis
+    productionCode: 0
+    productionTime: 133
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Evolve Chitinous Plating
+    productionCode: 0
+    productionTime: 133
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Plague '
+    productionCode: 0
+    productionTime: 100
+    mineral: 200
+    gas: 200
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: 'Consume '
+    productionCode: 0
+    productionTime: 100
+    mineral: 100
+    gas: 100
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Metasynaptic Node
+    productionCode: 0
+    productionTime: 166
+    mineral: 150
+    gas: 150
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
+  - _id: 
+    key: 0
+    objType: 0
+    raceType: 0
+    unitType: 0
+    unitSizeType: 0
+    unitAttackType: 0
+    unitAirAttackType: 0
+    farAndNeer: 0
+    name: Place Nydus Canal Exit
+    productionCode: 0
+    productionTime: 40
+    mineral: 0
+    gas: 0
+    population: 0
+    isAir: 0
+    maxHp: 0
+    hasShild: 0
+    maxShild: 0
+    hasEnergy: 0
+    maxEnergy: 0
+    hasAttack: 0
+    attack: 0
+    attackRate: 0
+    attackRange: 0
+    hasAirAttack: 0
+    AirAttack: 0
+    AirAttackRate: 0
+    AirAttackRange: 0
+    isConcealment: 0
+    sight: 0
+    hasDetector: 0
+    defence: 0
+    moveSpeed: 0
+    custom:
+      useMove: 0
+      move_key: 0
+      move_id: 
+      useStop: 0
+      stop_key: 0
+      stop_id: 
+      useAttack: 0
+      attack_key: 0
+      attack_id: 
+      useHold: 0
+      hold_key: 0
+      hold_id: 
+      usePatrol: 0
+      patrol_key: 0
+      patrol_id: 
+      hasCustom_1: 0
+      custom_1_key: 0
+      custom_1_id: 
+      hasCustom_2: 0
+      custom_2_key: 0
+      custom_2_id: 
+      hasCustom_3: 0
+      custom_3_key: 0
+      custom_3_id: 
+      hasCustom_4: 0
+      custom_4_key: 0
+      custom_4_id: 
+    metaData:
+      killCount: 0
+      HpName: 
+      attackName: 
+      AirAttackName: 
+      defenceName: 
+      shildName: 
+      HpKey: 0
+      attackKey: 0
+      defenceKey: 0
+      shildKey: 0
+      currentHp: 0
+      currentShild: 0
+      currentEnergy: 0
+      upgradeAttack: 0
+      upgradeAirAttack: 0
+      upgradedDefence: 0
+      upgradeShild: 0
+      isProduction: 0
+      productionUnitIDs: []
   _zBuilding:
   - _id: 
     key: 0
