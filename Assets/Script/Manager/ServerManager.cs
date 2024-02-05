@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 using System;
 using System.Text;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 #region Data
 
@@ -237,9 +238,9 @@ public class ObjectData
     [Space(10)]
 
     public bool hasAirAttack = false;
-    public int AirAttack = 0;
-    public float AirAttackRate = 0f;
-    public float AirAttackRange = 0f;
+    public int airAttack = 0;
+    public float airAttackRate = 0f;
+    public float airAttackRange = 0f;
 
     [Space(10)]
 
@@ -318,9 +319,9 @@ public class ObjectMetadata
 
     [Space(10)]
 
-    public string HpName = string.Empty;
+    public string hpName = string.Empty;
     public string attackName = string.Empty;
-    public string AirAttackName = string.Empty;
+    public string airAttackName = string.Empty;
     public string defenceName = string.Empty;
     public string shildName = string.Empty;
 
@@ -328,6 +329,7 @@ public class ObjectMetadata
 
     public int HpKey = 0;
     public int attackKey = 0;
+    public int airAttackKey = 0;
     public int defenceKey = 0;
     public int shildKey = 0;
 
@@ -379,7 +381,8 @@ public class ObjectDataInfo
 
     public string name = string.Empty;
     public string description = string.Empty;
-    public string condition = string.Empty;
+    public string useCondition = string.Empty;
+
     public int mineral = 0;
     public int gas = 0;
     public int productionTime = 0;
@@ -1109,5 +1112,40 @@ public class ServerManager : ColyseusManager<ServerManager>
     private void HideLoading()
     {
 
+    }
+}
+
+public class GenericAwaiter<T> : INotifyCompletion where T : AsyncOperation
+{
+    private T asyncOperation;
+    private Action continuation;
+
+    public GenericAwaiter(T asyncOp)
+    {
+        this.asyncOperation = asyncOp;
+        asyncOp.completed += OnRequestCompleted;
+    }
+
+    public bool IsCompleted { get { return asyncOperation.isDone; } }
+
+    public void GetResult() { }
+
+    public void OnCompleted(Action continuation)
+    {
+        this.continuation = continuation;
+    }
+
+    private void OnRequestCompleted(AsyncOperation obj)
+    {
+        continuation();
+        asyncOperation = null;
+    }
+}
+
+public static class ExtensionMethods
+{
+    public static GenericAwaiter<UnityWebRequestAsyncOperation> GetAwaiter(this UnityWebRequestAsyncOperation asyncOp)
+    {
+        return new GenericAwaiter<UnityWebRequestAsyncOperation>(asyncOp);
     }
 }

@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
-using UnityEngine.Networking;
-using System.Runtime.CompilerServices;
 using System.IO.Compression;
 using System.Linq;
 using System.Runtime.InteropServices;
-using Cysharp.Threading.Tasks;
 
 public struct UnZipMapFile
 {
@@ -121,39 +118,4 @@ public class FileManager : MonoBehaviour
         Texture2D texture2D = (Texture2D)texture;
         return Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), new Vector2(texture2D.width * 0.5f, texture2D.height * 0.5f));
     }
-}
-
-public class GenericAwaiter<T> : INotifyCompletion where T : AsyncOperation
-{
-	private T asyncOperation;
-	private Action continuation;
-
-	public GenericAwaiter(T asyncOp)
-	{
-		this.asyncOperation = asyncOp;
-		asyncOp.completed += OnRequestCompleted;
-	}
-
-	public bool IsCompleted { get { return asyncOperation.isDone; } }
-
-	public void GetResult() { }
-
-	public void OnCompleted(Action continuation)
-	{
-		this.continuation = continuation;
-	}
-
-	private void OnRequestCompleted(AsyncOperation obj)
-	{
-		continuation();
-		asyncOperation = null;
-	}
-}
-
-public static class ExtensionMethods
-{
-	public static GenericAwaiter<UnityWebRequestAsyncOperation> GetAwaiter(this UnityWebRequestAsyncOperation asyncOp)
-	{
-		return new GenericAwaiter<UnityWebRequestAsyncOperation>(asyncOp);
-	}
 }

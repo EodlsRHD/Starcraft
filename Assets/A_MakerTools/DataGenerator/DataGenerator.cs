@@ -57,9 +57,63 @@ public class DataGenerator : MonoBehaviour
 
     private void Start()
     {
-        _buttonObjectDataUpload.onClick.AddListener(() =>
+        _buttonObjectDataInfoUpdate.onClick.AddListener(() =>
         {
+            Debug.Log("Upload start");
 
+            Debug.Log("Research And Tool Info...");
+
+            ServerManager.instance.SetObjectDataInfos(_researchAndToolInfos, (result) =>
+            {
+                if (result == false)
+                {
+                    Debug.Log("Research And Tool Info Upload false");
+                    return;
+                }
+
+                Debug.Log("Terran Research and Tool...");
+
+                Debug.Log("Done...");
+
+                ServerManager.instance.SetObjectDatas(_tResearchAndTools, (result) =>
+                {
+                    if (result == false)
+                    {
+                        Debug.Log("Research And Tool Info Upload false");
+                        return;
+                    }
+
+                    Debug.Log("Done...");
+
+                    Debug.Log("Protoss Research and Tool...");
+
+                    ServerManager.instance.SetObjectDatas(_pResearchAndTools, (result) =>
+                    {
+                        if (result == false)
+                        {
+                            Debug.Log("Research And Tool Info Upload false");
+                            return;
+                        }
+
+                        Debug.Log("Done...");
+
+                        Debug.Log("Zerg Research and Tool...");
+
+                        ServerManager.instance.SetObjectDatas(_zResearchAndTools, (result) =>
+                        {
+                            if (result == false)
+                            {
+                                Debug.Log("Research And Tool Info Upload false");
+                                return;
+                            }
+
+                            Debug.Log("Done...");
+
+                            Debug.Log("All Done...");
+                        });
+                    });
+                });
+            });
         });
 
         _buttonObjectDataUpload.onClick.AddListener(() =>
@@ -72,7 +126,7 @@ public class DataGenerator : MonoBehaviour
             {
                 if(result == false)
                 {
-                    Debug.Log("Upload false");
+                    Debug.Log("CustomDatas Upload false");
                     return;
                 }
 
@@ -84,7 +138,7 @@ public class DataGenerator : MonoBehaviour
                 {
                     if (result == false)
                     {
-                        Debug.Log("Upload false");
+                        Debug.Log("Terran Building Upload false");
                         return;
                     }
 
@@ -96,7 +150,7 @@ public class DataGenerator : MonoBehaviour
                     {
                         if (result == false)
                         {
-                            Debug.Log("Upload false");
+                            Debug.Log("Terran Unit Upload false");
                             return;
                         }
 
@@ -108,7 +162,7 @@ public class DataGenerator : MonoBehaviour
                         {
                             if (result == false)
                             {
-                                Debug.Log("Upload false");
+                                Debug.Log("Zerg Building Upload false");
                                 return;
                             }
 
@@ -120,7 +174,7 @@ public class DataGenerator : MonoBehaviour
                             {
                                 if (result == false)
                                 {
-                                    Debug.Log("Upload false");
+                                    Debug.Log("Zerg Unit Upload false");
                                     return;
                                 }
 
@@ -132,7 +186,7 @@ public class DataGenerator : MonoBehaviour
                                 {
                                     if (result == false)
                                     {
-                                        Debug.Log("Upload false");
+                                        Debug.Log("Protoss BuildingUpload false");
                                         return;
                                     }
 
@@ -144,7 +198,7 @@ public class DataGenerator : MonoBehaviour
                                     {
                                         if (result == false)
                                         {
-                                            Debug.Log("Upload false");
+                                            Debug.Log("Protoss Unit Upload false");
                                             return;
                                         }
 

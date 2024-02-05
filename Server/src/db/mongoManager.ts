@@ -122,9 +122,9 @@ export class MongoManager{
         let promise = new Promise<void>(async(res, rej) => {
             let model = this.schemas.getObjectDataModel();
 
-            let result = new model();
-            
             for (let i = 0; i < datas.length; i++) {
+                let result = new model();
+
                 result.key = datas[i].key;
 
                 result.objType = datas[i].objType;
@@ -158,10 +158,12 @@ export class MongoManager{
                 result.custom = datas[i].custom;
                 result.metaData = datas[i].metaData;
 
+                console.log("Upload name    " + result.name);
+
                 await result.save();
             }
 
-            console.log("SetObjectDatas    " + datas.length);
+            console.log("SetObjectDatas    " + datas.length + "--------------------------------------------");
 
             res();
         });
@@ -183,8 +185,29 @@ export class MongoManager{
     public async SetObjectDataInfos(datas : objectDataInfo[]) : Promise<void>{
         let promise = new Promise<void>(async(res, rej) => {
             let model = this.schemas.getObjectDataInfoModel();
-            model.updateMany(datas);
             
+            for (let i = 0; i < datas.length; i++) {
+                let result = new model();
+
+                result.objectDataID = datas[i].objectDataID;
+
+                result.name = datas[i].name;
+                result.description = datas[i].description;
+                result.useCondition = datas[i].useCondition;
+
+                result.mineral = datas[i].mineral;
+                result.gas = datas[i].gas;
+                result.productionTime = datas[i].productionTime;
+                result.energy = datas[i].energy;
+                result.population = datas[i].population;
+
+                console.log("Upload name    " + result.name);
+
+                await result.save();
+            }
+            
+            console.log("SetObjectDataInfos    " + datas.length + "===========================================");
+
             res();
         });
 
