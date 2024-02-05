@@ -330,8 +330,8 @@ export class MongoSchemas{
         objectDataID :{type : Number, required : false}, 
 
         name :{type : String, required : true},
-        description :{type : String, required : true},
-        useCondition :{type : String, required : true},
+        description :{type : String, required : false},
+        useCondition :{type : String, required : false},
 
         mineral :{type : Number, required : false}, 
         gas :{type : Number, required : false}, 
