@@ -71,47 +71,19 @@ public class DataGenerator : MonoBehaviour
                     return;
                 }
 
-                Debug.Log("Terran Research and Tool...");
+                Debug.Log("CustomDatas...");
 
-                Debug.Log("Done...");
-
-                ServerManager.instance.SetObjectDatas(_tResearchAndTools, (result) =>
+                ServerManager.instance.SetObjectDataInfos(_objectDataInfos, (result) =>
                 {
                     if (result == false)
                     {
-                        Debug.Log("Research And Tool Info Upload false");
+                        Debug.Log("CustomDatas Upload false");
                         return;
                     }
 
-                    Debug.Log("Done...");
+                    Debug.Log("Done");
 
-                    Debug.Log("Protoss Research and Tool...");
-
-                    ServerManager.instance.SetObjectDatas(_pResearchAndTools, (result) =>
-                    {
-                        if (result == false)
-                        {
-                            Debug.Log("Research And Tool Info Upload false");
-                            return;
-                        }
-
-                        Debug.Log("Done...");
-
-                        Debug.Log("Zerg Research and Tool...");
-
-                        ServerManager.instance.SetObjectDatas(_zResearchAndTools, (result) =>
-                        {
-                            if (result == false)
-                            {
-                                Debug.Log("Research And Tool Info Upload false");
-                                return;
-                            }
-
-                            Debug.Log("Done...");
-
-                            Debug.Log("All Done...");
-                        });
-                    });
+                    Debug.Log("All Done..." + _researchAndToolInfos.Count + _objectDataInfos.Count);
                 });
             });
         });
@@ -120,21 +92,9 @@ public class DataGenerator : MonoBehaviour
         {
             Debug.Log("Upload start");
 
-            Debug.Log("CustomDatas...");
+            Debug.Log("Terran Building...");
 
-            ServerManager.instance.SetObjectDataInfos(_objectDataInfos, (result) =>
-            {
-                if(result == false)
-                {
-                    Debug.Log("CustomDatas Upload false");
-                    return;
-                }
-
-                Debug.Log("Done");
-
-                Debug.Log("Terran Building...");
-
-                ServerManager.instance.SetObjectDatas(_tBuilding, (result) =>
+            ServerManager.instance.SetObjectDatas(_tBuilding, (result) =>
                 {
                     if (result == false)
                     {
@@ -204,14 +164,54 @@ public class DataGenerator : MonoBehaviour
 
                                         Debug.Log("Done...");
 
-                                        Debug.Log("All Done...");
+                                        Debug.Log("Terran Research and Tool...");
+
+                                        ServerManager.instance.SetObjectDatas(_tResearchAndTools, (result) =>
+                                        {
+                                            if (result == false)
+                                            {
+                                                Debug.Log("Research And Tool Info Upload false");
+                                                return;
+                                            }
+
+                                            Debug.Log("Done...");
+
+                                            Debug.Log("Protoss Research and Tool...");
+
+                                            ServerManager.instance.SetObjectDatas(_pResearchAndTools, (result) =>
+                                            {
+                                                if (result == false)
+                                                {
+                                                    Debug.Log("Research And Tool Info Upload false");
+                                                    return;
+                                                }
+
+                                                Debug.Log("Done...");
+
+                                                Debug.Log("Zerg Research and Tool...");
+
+                                                ServerManager.instance.SetObjectDatas(_zResearchAndTools, (result) =>
+                                                {
+                                                    if (result == false)
+                                                    {
+                                                        Debug.Log("Research And Tool Info Upload false");
+                                                        return;
+                                                    }
+
+                                                    Debug.Log("Done...");
+
+                                                    Debug.Log("All Done..." + _tBuilding.Count + _tUnits.Count + _tResearchAndTools.Count +
+                                                                               _pBuilding.Count + _pUnits.Count + _pResearchAndTools.Count +
+                                                                               _zBuilding.Count + _zUnits.Count + _zResearchAndTools.Count);
+                                                });
+                                            });
+                                        });
                                     });
                                 });
                             });
                         });
                     });
                 });
-            });
         });
     }
 }
