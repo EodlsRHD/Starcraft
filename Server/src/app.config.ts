@@ -20,7 +20,7 @@ import path from "path";
 import { MyRoom } from "./rooms/MyRoom";
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://admin:admin@starcraft.lxxbebz.mongodb.net/StarcraftDataBase?retryWrites=true&w=majority").then(() => {
+mongoose.connect("").then(() => {
     console.log("Connected to MongoDB");
 }).catch(() => {
     console.log("Couldn't connect to MongoDB");
